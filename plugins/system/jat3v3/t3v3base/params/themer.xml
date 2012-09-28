@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
-	<fields name="jat3v3" addfieldpath="/plugins/system/jat3v3/includes/depend">
+	<fields name="thememagic" addfieldpath="/plugins/system/jat3v3/includes/depend">
 		<fieldset name="scaffolding_params" label="T3V3_THEMER_SCAFFOLDING">
 			
 			<field name="bodyBackground" type="color" default="" label="T3V3_VARS_BODY_BACKGROUND_LABEL" description="T3V3_VARS_BODY_BACKGROUND_DESC" />

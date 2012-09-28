@@ -1,6 +1,7 @@
-// 
+// ------------------------------------------------------
 // NAVIGATIONS ELEMENTS
 // ------------------------------------------------------
+
 
 // NAV
 // ------------------------------------------------------
@@ -44,6 +45,8 @@
 }
 
 
+
+// -------------------------------------------------------
 // DROPDOWN
 // -------------------------------------------------------
 
@@ -199,7 +202,7 @@
 
 
 
-//
+// ------------------------------------------------------
 // DEFAULT JOOMLA! MENU 
 // ------------------------------------------------------
 .module_menu .nav {
@@ -234,14 +237,19 @@
 
 
 
-// 
+// -------------------------------------------------------
 //  JA MAIN MENU
 // -------------------------------------------------------
+
 .ja-mainnav {
+  #gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
+  border-top: 1px solid @navbarBackground;
+  border-bottom: 1px solid darken(@navbarBackground, 10%);
   height: @navbarHeight - 2px; //Minus the border
 }
 
 .ja-mainnav .navbar {
+  color: @navbarText;
   margin-bottom: 0;
   margin-top: -1px;
 }
@@ -251,7 +259,7 @@
   padding:  0;
   background: transparent;
   border: 0;
-  
+  border-left: 1px solid darken(@navbarBackground, 5%);
   .border-radius(0);
   .box-shadow(none);
 }
@@ -263,10 +271,12 @@
   margin: 0;
 }
 
+
 // Links
 // -----
 .ja-mainnav .navbar .nav > li > a {
   border-top: 0;
+  border-right: 1px solid darken(@navbarBackground, 5%);
   padding: ((@navbarHeight - @baseLineHeight) / 2) @baseLineHeight;
   text-shadow: none;
 }
@@ -283,7 +293,9 @@
 .ja-mainnav .navbar .nav > .active > a,
 .ja-mainnav .navbar .nav > .active > a:hover,
 .ja-mainnav .navbar .nav > .active > a:focus {
+  color: @navbarLinkColorActive;
   text-shadow: none;
+  #gradient > .vertical(lighten(@navbarLinkBackgroundActive, 10%), @navbarLinkBackgroundActive);
   .box-shadow(none );
 }
 
@@ -411,9 +423,12 @@
 }
 
 
-//  JA MAIN MENU (Inverted)
+// ------------------------------------------------------
+// JA MAIN MENU (Inverted)
 // -------------------------------------------------------
-.jat3navbar() when (@T3NavbarInverted = 1) { 
+.T3Navbar() when (@T3NavbarInverted = 1) {
+
+  // Begin: Mixin Styling
   #gradient > .vertical(@grayDark, @grayDarker);
   border-top: 1px solid @grayDark;
   border-bottom: 1px solid @grayDark;
@@ -452,61 +467,6 @@
     #gradient > .vertical(lighten(@linkColor, 10%), @linkColor);
   }
 
-  // DROPDOWN
-  // -------------------------------------------------------
-
-  // The dropdown menu
-  // -----------------
-  .dropdown-menu {
-    background-color: lighten(@grayDark, 10%);
-    border: 1px solid lighten(@grayDark, 20%);
-
-    // Links within the dropdown menu
-    a {
-    color: @grayLighter;
-    border-top: 1px solid lighten(@grayDark, 20%);
-    }
-  }
-}
-
-.jat3navbar() when (@T3NavbarInverted = 0) { 
-  #gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
-  border-top: 1px solid @navbarBackground;
-  border-bottom: 1px solid darken(@navbarBackground, 10%);
-  
-  .navbar {
-    color: @navbarText;
-  }
-
-  .navbar-inner {
-    border-left: 1px solid darken(@navbarBackground, 5%);
-  }
-
-
-  // NAVBAR
-  // -------------------------------------------------------
-  
-  // Links
-  // -----
-  .navbar .nav > li > a {
-    border-right: 1px solid darken(@navbarBackground, 5%);
-  }
-
-  // Hover
-  .navbar .nav > li > a:focus,
-  .navbar .nav > li > a:hover {
-     background-color: @navbarLinkBackgroundHover;
-    #gradient > .vertical(lighten(@navbarLinkBackgroundHover, 10%), @navbarLinkBackgroundHover);
-  }
-
-  // Active nav items
-  .navbar .nav > .active > a,
-  .navbar .nav > .active > a:hover,
-  .navbar .nav > .active > a:focus {
-      color: @navbarLinkColorActive;
-    #gradient > .vertical(lighten(@navbarLinkBackgroundActive, 10%), @navbarLinkBackgroundActive);
-  }
-
 
   // DROPDOWN
   // -------------------------------------------------------
@@ -523,16 +483,23 @@
     border-top: 1px solid lighten(@grayDark, 20%);
     }
   }
+
+  // Open dropdown
+  .nav li.dropdown.open > .dropdown-toggle,
+  .nav li.dropdown.active > .dropdown-toggle,
+  .nav li.dropdown.open.active > .dropdown-toggle {
+    background-color: lighten(@grayDark, 10%);
+    #gradient > .vertical(lighten(@grayDark, 20%), lighten(@grayDark, 10%));
+  }
+
+  // End: Mixin Styling
 }
 
+.T3Navbar() when (@T3NavbarInverted = 0) {
+  // Leave blank here because we will use the default style.
+}
+
+// Calling the styles
 .ja-mainnav {
-  .jat3navbar
-}
-
-// Open dropdown
-.ja-mainnav .nav li.dropdown.open > .dropdown-toggle,
-.ja-mainnav .nav li.dropdown.active > .dropdown-toggle,
-.ja-mainnav .nav li.dropdown.open.active > .dropdown-toggle {
-  background-color: lighten(@grayDark, 10%);
-  #gradient > .vertical(lighten(@grayDark, 20%), lighten(@grayDark, 10%));
+  .T3Navbar
 }

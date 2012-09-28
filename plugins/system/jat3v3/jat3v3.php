@@ -72,6 +72,9 @@ class plgSystemJaT3v3 extends JPlugin
 					$jdoc->addScript(T3V3_URL.'/assets/js/thememagic.js');
 					
 					$theme = $params->get('theme');
+					$params = new JRegistry;
+					$themeinfo = new stdClass;
+
 					if($theme){
 						$themepath = T3V3_TEMPLATE_PATH . '/assets/less/themes/' . $theme;
 
@@ -83,8 +86,6 @@ class plgSystemJaT3v3 extends JPlugin
 							//default variables
 							$varfile = T3V3_TEMPLATE_PATH . '/assets/less/variables.less';
 							if(file_exists($varfile)){
-								$themeinfo = new stdClass;
-								$params = new JRegistry;
 								$params->loadString(JFile::read($varfile), 'LESS');
 								
 								//get all less files in "theme" folder
@@ -114,30 +115,20 @@ class plgSystemJaT3v3 extends JPlugin
 								//and overwrite those defaults variables
 								foreach ($cparams->toArray() as $key => $value) {
 									$params->set($key, $value);
-								}	
-								
-								$jdoc->addScriptDeclaration ( '
-									var T3V3Theme = window.T3V3Theme || {};
-									T3V3Theme.vars = ' . json_encode($params->toArray()) . ';
-									T3V3Theme.others = ' . json_encode($themeinfo) . ';
-									T3V3Theme.theme = \'' . $theme . '\';
-									if(typeof less != \'undefined\'){
-										less.refresh();
-									}
-								' );
+								}
 							}
 						}
-					} else {
-						$jdoc->addScriptDeclaration ( '
-							var T3V3Theme = window.T3V3Theme || {};
-							T3V3Theme.vars = [];
-							T3V3Theme.others = [];
-							T3V3Theme.theme = \'default\';
-							if(typeof less != \'undefined\'){
-								less.refresh();
-							}
-						' );
 					}
+
+					$jdoc->addScriptDeclaration('
+						var T3V3Theme = window.T3V3Theme || {};
+						T3V3Theme.vars = ' . json_encode($params->toArray()) . ';
+						T3V3Theme.others = ' . json_encode($themeinfo) . ';
+						T3V3Theme.theme = \'' . $theme . '\';
+						if(typeof less != \'undefined\'){
+							less.refresh();
+						}
+					');
 				}
 			}
 		}

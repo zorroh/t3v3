@@ -252,11 +252,11 @@ class ThemeHelper
 		$backurl->delVar('t3action');
 		$backurl->delVar('t3task');
 
-		$form = new JForm('jat3v3.themer', array('control' => 'jaform'));
+		$form = new JForm('thememagic.themer', array('control' => 'jaform'));
 		$form->load(JFile::read(T3V3_PATH . DIRECTORY_SEPARATOR . 'params' . DIRECTORY_SEPARATOR . 'themer.xml'));
 		$form->loadFile(T3V3_TEMPLATE_PATH . DIRECTORY_SEPARATOR . 'templateDetails.xml', false, '//config');
 
-		$fieldSets = $form->getFieldsets('jat3v3');
+		$fieldSets = $form->getFieldsets('thememagic');
 
 		include T3V3_ADMIN_PATH.'/admin/tpls/thememagic.php';
 		

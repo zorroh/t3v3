@@ -265,8 +265,8 @@ var T3V3Theme = window.T3V3Theme || {};
 		serializeArray: function(){
 			var els = [],
 				allelms = document.adminForm.elements,
-				pname1 = 'jaform\\[jat3v3\\]\\[.*\\]',
-				pname2 = 'jaform\\[jat3v3\\]\\[.*\\]\\[\\]';
+				pname1 = 'jaform\\[thememagic\\]\\[.*\\]',
+				pname2 = 'jaform\\[thememagic\\]\\[.*\\]\\[\\]';
 				
 			for (var i = 0, il = allelms.length; i < il; i++){
 				var el = allelms[i];
@@ -369,7 +369,7 @@ var T3V3Theme = window.T3V3Theme || {};
 		},
 		
 		getName: function(el){
-			var matches = el.name.match('jaform\\[jat3v3\\]\\[([^\\]]*)\\]');
+			var matches = el.name.match('jaform\\[thememagic\\]\\[([^\\]]*)\\]');
 			if (matches){
 				return matches[1];
 			}

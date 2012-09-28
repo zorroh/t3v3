@@ -76,11 +76,11 @@ defined('_JEXEC') or die;
     <!-- //MAIN CONTENT -->
     
     <?php if ($this->countModules($mastcol)) : ?>
-    <!-- MASSCOL 1 -->
+    <!-- MASTCOL 1 -->
     <div class="ja-mastcol ja-mastcol-1 <?php echo $this->getClass($layout, $col) ?>" <?php echo $this->getData ($layout, $col++) ?>>
       <jdoc:include type="modules" name="<?php echo $mastcol ?>" style="JAxhtml" />
     </div>
-    <!-- //MASSCOL 1 -->
+    <!-- //MASTCOL 1 -->
     <?php endif ?>
 
     <?php if ($this->countModules("$sidebar1 or $mastcol")) : ?>
