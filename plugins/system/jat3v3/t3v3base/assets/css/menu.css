@@ -1,0 +1,281 @@
+.nav-mega .mega-menu {
+	position: absolute;
+	float: left;
+	min-width: 160px;
+	display: none;
+	top: 30%;
+}
+
+.nav-mega .mega-menu ul {
+	list-style: none;
+	margin: 0;
+}
+
+.nav-mega > .nav > li > .mega-menu {
+	top: 100%;
+}
+
+.nav-mega .anim-menu {
+	background: white;
+	z-index: 1000;
+	float: left;
+	min-width: 160px;
+	padding: 4px 0;
+	margin: 1px 0 0;
+	list-style: none;
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	*border-right-width: 2px;
+	*border-bottom-width: 2px;
+	-webkit-border-radius: 5px;
+	 -moz-border-radius: 5px;
+		  border-radius: 5px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	 -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	 -moz-background-clip: padding;
+		  background-clip: padding-box;
+}
+
+.nav-mega .dropdown-toggle .caret {
+	float: right;
+}
+
+.navbar .anim-menu:before {
+  position: absolute;
+  top: -7px;
+  left: 9px;
+  display: inline-block;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-left: 7px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  content: '';
+}
+
+.navbar .anim-menu:after {
+  position: absolute;
+  top: -5px;
+  left: 10px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  border-left: 6px solid transparent;
+  content: '';
+}
+
+.navbar .anim-menu .anim-menu:before {
+  position: absolute;
+  top: 9px;
+  left: -14px;
+  display: inline-block;
+  border-top: 7px solid transparent;
+  border-right: 7px solid #ccc;
+  border-bottom: 7px solid transparent;
+  border-right-color: rgba(0, 0, 0, 0.2);
+  content: '';
+}
+
+.navbar .anim-menu .anim-menu:after {
+  position: absolute;
+  top: 10px;
+  left: -11px;
+  display: inline-block;
+  border-top: 6px solid transparent;
+  border-right: 6px solid #ffffff;
+  border-bottom: 6px solid transparent;
+  content: '';
+}
+
+.navbar-fixed-bottom .anim-menu:before {
+  top: auto;
+  bottom: -7px;
+  border-top: 7px solid #ccc;
+  border-bottom: 0;
+  border-top-color: rgba(0, 0, 0, 0.2);
+}
+
+.navbar-fixed-bottom .anim-menu:after {
+  top: auto;
+  bottom: -6px;
+  border-top: 6px solid #ffffff;
+  border-bottom: 0;
+}
+
+.navbar .pull-right .anim-menu,
+.navbar .anim-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+
+.navbar .pull-right .anim-menu:before,
+.navbar .anim-menu.pull-right:before {
+  right: 12px;
+  left: auto;
+}
+
+.navbar .pull-right .anim-menu:after,
+.navbar .anim-menu.pull-right:after {
+  right: 13px;
+  left: auto;
+}
+
+.anim-menu .divider {
+  *width: 100%;
+  height: 1px;
+  margin: 8px 1px;
+  *margin: -5px 0 5px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+}
+
+.anim-menu a {
+  display: block;
+  padding: 3px 15px;
+  clear: both;
+  font-weight: normal;
+  line-height: 18px;
+  color: #333333;
+  white-space: nowrap;
+}
+
+.anim-menu li > a:hover,
+.anim-menu .active > a,
+.anim-menu .active > a:hover,
+.anim-menu .over > a {
+  text-decoration: none;
+  color: white;
+  background-color: #0088cc;
+  background-color: #0081c2;
+  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='argb(#0088cc)', endColorstr='argb(#0077b3)', GradientType=0);
+}
+
+.pull-right > .mega-menu {
+  right: 0;
+  left: auto;
+}
+
+.dropup .mega-menu,
+.navbar-fixed-bottom .dropdown .mega-menu {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 1px;
+}
+
+/* menu image*/
+.nav-mega .has-image {
+	padding-left: 16px;
+	background-repeat: no-repeat;
+}
+
+/* group */
+.nav-header > a {
+	padding: 0;
+	text-decoration: none !important;
+}
+
+.nav-header > a > span {
+	display: block;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 18px;
+	color: #999;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	text-transform: uppercase;
+}
+
+.nav-header > a > small {
+	font-size: 10px;
+	text-transform: none;
+}
+
+@media (max-width: 767px) {
+  .ja-mainnav {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .ja-mainnav .navbar .btn-navbar {
+    margin-bottom: 10px;
+  }
+  .ja-mainnav .nav-collapse {
+    margin-top: 10px;
+    background: #ffffff;
+    background-color: #f7f7f7;
+    background-image: -moz-linear-gradient(top,#f2f2f2,#ffffff);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#f2f2f2),to(#ffffff));
+    background-image: -webkit-linear-gradient(top,#f2f2f2,#ffffff);
+    background-image: -o-linear-gradient(top,#f2f2f2,#ffffff);
+    background-image: linear-gradient(to bottom,#f2f2f2,#ffffff);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffffffff', GradientType=0);
+  }
+  .ja-mainnav .nav-collapse .nav {
+    float: none;
+    margin: 10px 20px 10px;
+  }
+  .ja-mainnav .nav-collapse .nav > li {
+    float: none;
+  }
+  .ja-mainnav .nav-collapse .nav > li > a {
+    margin-bottom: 2px;
+  }
+  .ja-mainnav .nav-collapse .nav > .divider-vertical {
+    display: none;
+  }
+  .ja-mainnav .nav-collapse .nav .nav-header {
+    color: #555;
+    text-shadow: none;
+  }
+  .ja-mainnav .nav-collapse .nav > li > a,
+  .ja-mainnav .nav-collapse .dropdown-menu a {
+    padding: 9px 15px;
+    font-weight: bold;
+    color: #555;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .ja-mainnav .nav-collapse .dropdown-menu li + li a {
+    margin-bottom: 2px;
+  }
+  .ja-mainnav .nav-collapse .nav > li > a:hover,
+  .ja-mainnav .nav-collapse .dropdown-menu a:hover {
+    background-color: #f2f2f2;
+  }
+  .ja-mainnav .nav-collapse .dropdown-menu,
+  .ja-mainnav .nav-collapse .mega-menu,
+  .ja-mainnav .nav-collapse .anim-menu  {
+    position: static;
+    top: auto;
+    left: auto;
+    float: none;
+    display: block !important;
+	opacity: 1 !important;
+    max-width: none;
+    margin: 0 15px !important;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  
+  .ja-mainnav .navbar .nav > li > .dropdown-menu:before,
+  .ja-mainnav .navbar .nav > li > .dropdown-menu:after,
+  .ja-mainnav .navbar .nav > li > .dropdown-menu .divider {
+    display: none;
+  }
+}
