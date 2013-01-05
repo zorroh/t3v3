@@ -1,0 +1,86 @@
+.table th {
+    background: none repeat scroll 0 0 transparent;
+    color: #444444;
+    font-weight: bold;
+}
+.table-striped tbody tr:nth-child(2n+1) td, .table-striped tbody tr:nth-child(2n+1) th {
+    background-color: none;
+}
+
+.responsive-utilities th small {
+    color: #999999;
+    display: block;
+    font-weight: normal;
+}
+.responsive-utilities tbody th {
+    font-weight: normal;
+	background: none
+}
+.responsive-utilities td {
+    text-align: center;
+}
+.responsive-utilities td.is-visible {
+    background-color: #DFF0D8 !important;
+    color: #468847;
+}
+.responsive-utilities td.is-hidden {
+    background-color: #F9F9F9 !important;
+    color: #CCCCCC;
+}
+.responsive-utilities-test {
+    list-style: none outside none;
+    margin-left: 0;
+    margin-top: 5px;
+    overflow: hidden;
+}
+.responsive-utilities-test li {
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 4px 4px 4px;
+    color: #999999;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    height: 43px;
+    line-height: 43px;
+    position: relative;
+    text-align: center;
+    width: 25%;
+}
+.responsive-utilities-test li + li {
+    margin-left: 10px;
+}
+.responsive-utilities-test span {
+    border-radius: 4px 4px 4px 4px;
+    bottom: -1px;
+    left: -1px;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+}
+.responsive-utilities-test span {
+    background-color: none;
+    border: 1px solid #D6E9C6;
+    color: #468847;
+}
+.table-bordered {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-collapse: separate;
+    border-color: #DDDDDD #DDDDDD #DDDDDD -moz-use-text-color;
+    border-image: none;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px 0;
+}
+.table {
+    margin-bottom: 20px;
+    width: 100%;
+}
+table {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    max-width: 100%;
+}

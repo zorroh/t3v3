@@ -1,0 +1,234 @@
+#megamenu-admin {
+  min-height: 800px;
+  background: url(grid-bg.jpg) top left;
+  margin: 0 -20px;
+}
+
+/* Toolbox
+---------------------*/
+#megamenu-toolbox {
+  height: 100px;
+  float: left;
+}
+
+#megamenu-toolbox .toolbox {
+  height: 100px;
+  padding: 20px;
+  display: none;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+
+#megamenu-toolbox .toolbox ul {
+  float: left;
+  margin-right: 20px;
+}
+
+#megamenu-toolbox .toolbox li > label {
+  font-size: 11px;
+  color: #999;
+  padding-left: 5px;
+}
+
+
+/* Toolbox Actions ---- */
+.t3-row-mega .toolbox-actions-group {
+  height: 100px;
+  float: right;
+  padding-right: 30px;
+}
+
+.t3-row-mega .toolbox-actions-group .btn {
+  margin-top: 40px;
+}
+
+
+/* The Menu
+---------------------*/
+#megamenu-container {
+  float: left;
+  margin-left: 20px;
+}
+
+#megamenu-container * {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+
+#ja-mega-menu > .nav {
+}
+
+#ja-mega-menu .nav > li {
+  margin-right: 20px;
+}
+
+#ja-mega-menu .nav > li:first-child {
+}
+
+#ja-mega-menu .nav > li > a  {
+  border: 1px dotted #999;
+  padding: 8px 20px;
+  background: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.1s ease 0s;
+  -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.1s ease 0s;
+}
+
+#ja-mega-menu .mega-inner {
+  padding: 10px;
+}
+
+
+/* Dropdown ---*/
+#ja-mega-menu .dropdown-menu::before,
+#ja-mega-menu .dropdown-menu::after {
+  display: none; /* Hide the Arrow */
+}
+
+#ja-mega-menu .dropdown-menu {
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px dotted #999;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: all 0.1s ease 0s;
+  -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.1s ease 0s;
+  min-width: 200px;
+}
+
+#ja-mega-menu .dropdown-menu .dropdown-menu {
+  margin-top: 0;
+  margin-left: 11px;
+}
+
+#ja-mega-menu .dropdown-menu > li a,
+#ja-mega-menu .mega-dropdown-menu > li a {
+  padding: 5px 20px 5px 10px;
+  border: 1px dotted #ccc;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #999;
+  transition: all 0.1s ease 0s;
+  -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.1s ease 0s;
+}
+
+#ja-mega-menu .dropdown-group {
+  padding: 10px 10px 5px;
+  border: 1px dotted #999;
+  border-radius: 5px;
+  margin: 10px 0 10px 10px;
+  transition: all 0.1s ease 0s;
+  -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.1s ease 0s;
+}
+
+/* Module in Menu ---*/
+#megamenu-admin .ja-module {
+  pointer-events: none;
+  cursor: default;
+  position: relative;
+}
+
+#megamenu-admin .ja-module:after {
+  display: block;
+  position: absolute;
+  background: #ddd;
+  right: -10px;
+  top: -10px;
+  content: "Module";
+  width: 80px;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px #fff;
+  color: #999;
+  border-radius: 0 4px 0 5px;
+}
+
+#megamenu-admin .ja-module .module-inner {
+  opacity: .3;
+  font-size: 12px;
+}
+
+#megamenu-admin .ja-module .module-title {
+  margin-top: 0;
+}
+
+
+/* Grid Outline ---*/
+#megamenu-admin .mega-menu > .row-fluid {
+  margin-top: 0;
+}
+
+#megamenu-admin .mega-menu > .row-fluid + .row-fluid  {
+  margin-top: 10px;
+}
+
+#megamenu-admin .row-fluid [class*="span"] {
+  border: 1px dotted #aaa;
+  border-radius: 5px;
+  transition: all 0.1s ease 0s;
+  -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.1s ease 0s;
+}
+
+
+/* Selected Item ---*/
+#megamenu-admin .nav-child.hover,
+#megamenu-admin ul[class*="level"] > li > a.hover,
+#megamenu-admin .row-fluid [class*="span"].hover {
+  background: #fffbf0 !important;
+  color: #333333 !important;
+  border: 1px solid #ffbb00 !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,.3);
+  border-radius: 5px;
+}
+
+#megamenu-admin .selected  {
+  background: #fffbf0 !important;
+  color: #333333 !important;
+  border: 1px solid #ffbb00 !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,.3);
+  border-radius: 5px;
+}
+
+#megamenu-admin ul[class*="level"] > li > a:hover,
+#megamenu-admin ul[class*="level"] > li > a:focus,
+#megamenu-admin ul[class*="level"] > li > a:active,
+#megamenu-admin ul[class*="level"] > li > a:visited {
+  background: #fffbf0 !important;
+  color: #333333 !important;
+}
+
+#ja-mega-menu .dropdown-menu > li a.hover:after,
+#ja-mega-menu .mega-dropdown-menu > li a.hover:after,
+#ja-mega-menu .dropdown-menu > li a.selected:after,
+#ja-mega-menu .mega-dropdown-menu > li a.selected:after {
+  border-left-color: #333;
+}
+
+
+/* Fix for Joomla! Default Admin Template
+--------------------------------------------------*/
+#megamenu-admin .dropdown-menu a {
+  white-space: normal;
+}
+
+#megamenu-admin .row-fluid [class*="span"] {
+  margin-left: 2.5641%;
+}
+
+#megamenu-admin .row-fluid [class*="span"]:first-child {
+  margin-left: 0;
+}
