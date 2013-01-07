@@ -97,10 +97,6 @@ h1.page-title small {
   margin-left: 15px;
 }
 
-#t3-toolbar #t3-toolbar-save .icon-save::before {
-  color: #fff !important;
-}
-
 #t3-toolbar #t3-toolbar-close {
   margin-left: 20px;
 }
@@ -334,6 +330,11 @@ input[type="tel"], input[type="color"], .uneditable-input,
 .input-append .add-on, .input-prepend .add-on, .input-append .btn, .input-prepend .btn {
   height: 22px;
   line-height: 22px;
+}
+
+select, input[type="file"] {
+  height: 32px;
+  line-height: 32px;
 }
 
 
@@ -1074,6 +1075,11 @@ button.btn-primary:active {
   border-radius: 0;
   margin-bottom: 0;
 }
+
+.btn-success .icon-save::before {
+  color: #fff !important;
+}
+
 
 
 
