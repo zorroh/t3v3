@@ -558,7 +558,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 						url: T3V3Admin.rooturl,
 						data:{'t3action':'module', 'mid': value}
 					}).done(function ( data ) {
-						currentSelected.html(data);
+						currentSelected.find('.mega-inner').html(data);
 					});
 					currentSelected.data (name, value);
 				}
