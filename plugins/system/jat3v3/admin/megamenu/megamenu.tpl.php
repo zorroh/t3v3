@@ -155,3 +155,7 @@
 
   <div id="megamenu-container" class="navbar clearfix"></div> 
 </div>
+
+<script type="text/javascript">
+  jQuery('#megamenu-admin select').chosen();
+</script>

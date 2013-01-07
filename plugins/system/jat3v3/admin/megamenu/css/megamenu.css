@@ -25,6 +25,9 @@
   float: left;
   margin-right: 20px;
 }
+#megamenu-toolbox .toolbox ul.chzn-results {
+  margin-right: 4px;
+}
 
 #megamenu-toolbox .toolbox li > label {
   font-size: 11px;
