@@ -1,0 +1,9 @@
+.mega-dropdown-menu {
+  margin: 0;
+}
+.mega-dropdown-menu > li,
+.dropdown-group > li,
+.mega-group > li {
+  list-style: none;
+  margin-left: 0;
+}

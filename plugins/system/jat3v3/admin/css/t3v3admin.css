@@ -3,7 +3,7 @@
 /* JoomlArt.com
 ---------------------------------------------------*/
 
-@import "../fonts/font-awesome-v2.0/css/font-awesome.css";
+@import "../fonts/font-awesome/css/font-awesome.css";
 
 body {
   background: #fff;
@@ -1080,6 +1080,11 @@ button.btn-primary:active {
   color: #fff !important;
 }
 
+/* Fix for Font Awesome */
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "FontAwesome";
+}
 
 
 /* -------------------------------------------------

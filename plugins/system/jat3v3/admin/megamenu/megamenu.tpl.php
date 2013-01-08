@@ -36,6 +36,8 @@
                 <label for="toggleSub1">Yes</label>
               </fieldset>
             </li>
+          </ul>
+          <ul>
             <li>
               <label>Group</label>
               <fieldset class="radio btn-group toolitem-group">
@@ -88,7 +90,7 @@
             <li>
               <label>Submenu Width (px)</label>
               <fieldset class="">
-                <input type="text" class="toolsub-width toolbox-input" name="toolsub-width" data-name="width" value="" />
+                <input type="text" class="toolsub-width toolbox-input input-small" name="toolsub-width" data-name="width" value="" />
               </fieldset>
             </li>
           </ul>
@@ -105,7 +107,7 @@
           <ul>
             <li>
               <label>Menu Grid</label>
-              <fieldset class="">
+              <fieldset class="btn-group">
                 <a href="" class="btn toolcol-addcol toolbox-action" data-action="addColumn">Add Column</a>
                 <a href="" class="btn toolcol-removecol toolbox-action" data-action="removeColumn">Remove Column</a>
               </fieldset>
@@ -115,7 +117,7 @@
             <li>
               <label>Col Width (1-12)</label>
               <fieldset class="">
-                <input type="text" class="toolcol-width toolbox-input" name="toolcol-width" data-name="width" value="" />
+                <input type="text" class="toolcol-width toolbox-input input-small" name="toolcol-width" data-name="width" value="" />
               </fieldset>
             </li>
           </ul>
@@ -146,7 +148,7 @@
       </div> 
       
       <div class="toolbox-actions-group">
-        <button class="btn btn-success toolbox-action toolbox-saveConfig" data-action="saveConfig"><i class="icon-save" style="color: #fff;"></i>Save</button>
+        <button class="btn btn-success toolbox-action toolbox-saveConfig" data-action="saveConfig"><i class="icon-save"></i>Save</button>
         <button class="btn toolbox-action toolbox-resetConfig">Reset</button>
       </div>
 
@@ -155,7 +157,3 @@
 
   <div id="megamenu-container" class="navbar clearfix"></div> 
 </div>
-
-<script type="text/javascript">
-  jQuery('#megamenu-admin select').chosen();
-</script>

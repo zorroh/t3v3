@@ -27,4 +27,11 @@ button{font-size:16px}.modal-t3-signup .modal-body
 p{line-height:24px}.modal-t3-signup .form-t3-signup{margin-top:40px}.modal-t3-signup .modal-body
 input{padding:9px
 25px 8px 15px}.modal-t3-signup .modal-body .add-on{padding:9px
-9px 8px}.modal-t3-signup .btn-large{-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.15);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.15);box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.15)}
+9px 8px}.modal-t3-signup .btn-large{-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.15);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.15);box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.15)}.home .ja-sl-1{margin-top:-1px}.home .ja-sl-1
+.jumbotron{background-color:#c00;background-image:-webkit-gradient(radial,center center,0,center center,460,from(#ff0000),to(#c00));background-image:-webkit-radial-gradient(circle,#ff0000,#c00);background-image:-moz-radial-gradient(circle,#ff0000,#c00);background-image:-o-radial-gradient(circle,#ff0000,#c00);background-repeat:no-repeat;color:#eee}.home .ja-sl-1 .jumbotron
+h1{color:#fff}.home .ja-sl-1 .jumbotron .btn-large{color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,0.25);background-color:#363636;background-image:-moz-linear-gradient(top,#444,#222);background-image:-webkit-gradient(linear,0 0,0 100%,from(#444),to(#222));background-image:-webkit-linear-gradient(top,#444,#222);background-image:-o-linear-gradient(top,#444,#222);background-image:linear-gradient(to bottom,#444,#222);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0);border-color:#222 #222 #000;border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);*background-color:#222;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false)}.home .ja-sl-1 .jumbotron .btn-large:hover,
+.home .ja-sl-1 .jumbotron .btn-large:active,
+.home .ja-sl-1 .jumbotron .btn-large.active,
+.home .ja-sl-1 .jumbotron .btn-large.disabled,
+.home .ja-sl-1 .jumbotron .btn-large[disabled]{color:#fff;background-color:#222;*background-color:#151515}.home .ja-sl-1 .jumbotron .btn-large:active,
+.home .ja-sl-1 .jumbotron .btn-large.active{background-color:#090909 \9}

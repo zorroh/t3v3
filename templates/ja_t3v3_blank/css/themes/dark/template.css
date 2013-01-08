@@ -83,7 +83,7 @@
   transition: all .2s ease-in-out;
 }
 a.thumbnail:hover {
-  border-color: #eee;
+  border-color: #33ccff;
   -webkit-box-shadow: 0 1px 4px rgba(0,105,214,0.25);
   -moz-box-shadow: 0 1px 4px rgba(0,105,214,0.25);
   box-shadow: 0 1px 4px rgba(0,105,214,0.25);
@@ -178,31 +178,6 @@ a.thumbnail:hover {
 .row-fluid .spanfirst {
   margin-left: 0 !important;
 }
-.row .span50,
-.row-fluid .span50 {
-  width: 50%;
-  float: left;
-}
-.row .span33,
-.row-fluid .span33 {
-  width: 33.3333%;
-  float: left;
-}
-.row .span25,
-.row-fluid .span25 {
-  width: 25%;
-  float: left;
-}
-.row .span20,
-.row-fluid .span20 {
-  width: 20%;
-  float: left;
-}
-.row .span16,
-.row-fluid .span16 {
-  width: 16.6666%;
-  float: left;
-}
 .wrap {
   width: auto;
   clear: both;
@@ -216,11 +191,11 @@ body {
   margin: 0;
 }
 a {
-  color: #eee;
+  color: #33ccff;
   text-decoration: none;
 }
 a:hover {
-  color: #c8c8c8;
+  color: #00ace6;
   text-decoration: underline;
 }
 img {
@@ -770,14 +745,14 @@ label.invalid {
   color: #eee;
 }
 .nav .dropdown-toggle .caret {
-  border-top-color: #eee;
-  border-bottom-color: #eee;
+  border-top-color: #33ccff;
+  border-bottom-color: #33ccff;
   margin-top: 8px;
   margin-left: 5px;
 }
 .nav .dropdown-toggle:hover .caret {
-  border-top-color: #c8c8c8;
-  border-bottom-color: #c8c8c8;
+  border-top-color: #00ace6;
+  border-bottom-color: #00ace6;
 }
 .nav .active .dropdown-toggle .caret {
   border-top-color: #fff;
@@ -1072,7 +1047,7 @@ label.invalid {
   padding: 5px 20px;
   text-shadow: none;
 }
-.ja-mainnav .dropdown-menu li:first-child a {
+.ja-mainnav .dropdown-menu li:first-child > a {
   border-top: 0;
 }
 .ja-mainnav .navbar .nav > li > .dropdown-menu:before {
@@ -1126,14 +1101,14 @@ label.invalid {
 .ja-mainnav .navbar .nav > .active > a:hover,
 .ja-mainnav .navbar .nav > .active > a:focus {
   color: #fff;
-  background-color: #008ada;
-  background-image: -moz-linear-gradient(top,#0097ee,#07b);
-  background-image: -webkit-gradient(linear,0 0,0 100%,from(#0097ee),to(#07b));
-  background-image: -webkit-linear-gradient(top,#0097ee,#07b);
-  background-image: -o-linear-gradient(top,#0097ee,#07b);
-  background-image: linear-gradient(to bottom,#0097ee,#07b);
+  background-color: #52d4ff;
+  background-image: -moz-linear-gradient(top,#66d9ff,#33ccff);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#66d9ff),to(#33ccff));
+  background-image: -webkit-linear-gradient(top,#66d9ff,#33ccff);
+  background-image: -o-linear-gradient(top,#66d9ff,#33ccff);
+  background-image: linear-gradient(to bottom,#66d9ff,#33ccff);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0097ed', endColorstr='#ff0077bb', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff65d8ff', endColorstr='#ff32ccff', GradientType=0);
 }
 .ja-mainnav .dropdown-menu {
   background-color: #5e5e5e;
@@ -1146,14 +1121,14 @@ label.invalid {
 .ja-mainnav .nav li.dropdown.open > .dropdown-toggle,
 .ja-mainnav .nav li.dropdown.active > .dropdown-toggle,
 .ja-mainnav .nav li.dropdown.open.active > .dropdown-toggle {
-  background-color: #008ada;
-  background-image: -moz-linear-gradient(top,#0097ee,#07b);
-  background-image: -webkit-gradient(linear,0 0,0 100%,from(#0097ee),to(#07b));
-  background-image: -webkit-linear-gradient(top,#0097ee,#07b);
-  background-image: -o-linear-gradient(top,#0097ee,#07b);
-  background-image: linear-gradient(to bottom,#0097ee,#07b);
+  background-color: #52d4ff;
+  background-image: -moz-linear-gradient(top,#66d9ff,#33ccff);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#66d9ff),to(#33ccff));
+  background-image: -webkit-linear-gradient(top,#66d9ff,#33ccff);
+  background-image: -o-linear-gradient(top,#66d9ff,#33ccff);
+  background-image: linear-gradient(to bottom,#66d9ff,#33ccff);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0097ed', endColorstr='#ff0077bb', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff65d8ff', endColorstr='#ff32ccff', GradientType=0);
 }
 .ja-module {
   background: transparent;

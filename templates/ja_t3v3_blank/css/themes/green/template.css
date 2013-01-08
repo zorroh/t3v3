@@ -178,31 +178,6 @@ a.thumbnail:hover {
 .row-fluid .spanfirst {
   margin-left: 0 !important;
 }
-.row .span50,
-.row-fluid .span50 {
-  width: 50%;
-  float: left;
-}
-.row .span33,
-.row-fluid .span33 {
-  width: 33.3333%;
-  float: left;
-}
-.row .span25,
-.row-fluid .span25 {
-  width: 25%;
-  float: left;
-}
-.row .span20,
-.row-fluid .span20 {
-  width: 20%;
-  float: left;
-}
-.row .span16,
-.row-fluid .span16 {
-  width: 16.6666%;
-  float: left;
-}
 .wrap {
   width: auto;
   clear: both;
@@ -1072,7 +1047,7 @@ label.invalid {
   padding: 5px 20px;
   text-shadow: none;
 }
-.ja-mainnav .dropdown-menu li:first-child a {
+.ja-mainnav .dropdown-menu li:first-child > a {
   border-top: 0;
 }
 .ja-mainnav .navbar .nav > li > .dropdown-menu:before {
@@ -2200,47 +2175,6 @@ address {
 }
 .poweredby {
   float: right;
-}
-.home .ja-sl-1 .jumbotron {
-  background-color: #690;
-  background-image: -webkit-gradient(radial,center center,0,center center,460,from(#88cc00),to(#690));
-  background-image: -webkit-radial-gradient(circle,#88cc00,#690);
-  background-image: -moz-radial-gradient(circle,#88cc00,#690);
-  background-image: -o-radial-gradient(circle,#88cc00,#690);
-  background-repeat: no-repeat;
-  color: #eee;
-}
-.home .ja-sl-1 .jumbotron h1 {
-  color: #fff;
-}
-.home .ja-sl-1 .jumbotron .btn-large {
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-  background-color: #363636;
-  background-image: -moz-linear-gradient(top,#444,#222);
-  background-image: -webkit-gradient(linear,0 0,0 100%,from(#444),to(#222));
-  background-image: -webkit-linear-gradient(top,#444,#222);
-  background-image: -o-linear-gradient(top,#444,#222);
-  background-image: linear-gradient(to bottom,#444,#222);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0);
-  border-color: #222 #222 #000000;
-  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
-  *background-color: #222;
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-}
-.home .ja-sl-1 .jumbotron .btn-large:hover,
-.home .ja-sl-1 .jumbotron .btn-large:active,
-.home .ja-sl-1 .jumbotron .btn-large.active,
-.home .ja-sl-1 .jumbotron .btn-large.disabled,
-.home .ja-sl-1 .jumbotron .btn-large[disabled] {
-  color: #fff;
-  background-color: #222;
-  *background-color: #151515;
-}
-.home .ja-sl-1 .jumbotron .btn-large:active,
-.home .ja-sl-1 .jumbotron .btn-large.active {
-  background-color: #090909 \9;
 }
 .ja-footer {
   background: #690;

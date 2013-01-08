@@ -3,7 +3,7 @@
 /* JoomlArt.com
 ---------------------------------------------------*/
 
-@import "../fonts/font-awesome-v2.0/css/font-awesome.css";
+@import "../../fonts/font-awesome/css/font-awesome.css";
 
 
 /* Layout
@@ -109,8 +109,6 @@ a.btn, a.btn:hover {
 .header #ja-theme-form select {
   margin-left: 10px;
   margin-right: 10px;
-  padding-top: 0;
-  padding-bottom: 0;
   padding-right: 0;
   width: 100px;
 }

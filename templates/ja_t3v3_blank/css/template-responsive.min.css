@@ -225,7 +225,17 @@ a{color:#999}.navbar-inverse .nav-collapse .nav > li > a:hover,
 .span1{width:18.534482758621%;*width:18.480834689951%}.span2 .row [class*="span"]{margin-left:18.867924528302%;*margin-left:18.814276459632%}.span2 .row [class*="span"]:first-child{margin-left:0}.span2 .row
 .span2{width:62.721893491124%;*width:62.668245422455%}.span2 .row
 .span1{width:25.443786982249%;*width:25.390138913579%}.span1 .row [class*="span"]{margin-left:46.511627906977%;*margin-left:46.457979838307%}.span1 .row [class*="span"]:first-child{margin-left:0}.span1 .row
-.span1{width:40.566037735849%;*width:40.51238966718%}.spanfirst{margin-left:0 !important}}.hidden{display:none !important;visibility:hidden}@media (min-width: 768px) and (max-width: 979px){.jumbotron{padding:20px
+.span1{width:40.566037735849%;*width:40.51238966718%}.spanfirst{margin-left:0 !important}}.row .span50,
+.row-fluid
+.span50{width:50%;float:left}.row .span33,
+.row-fluid
+.span33{width:33.3333%;float:left}.row .span25,
+.row-fluid
+.span25{width:25%;float:left}.row .span20,
+.row-fluid
+.span20{width:20%;float:left}.row .span16,
+.row-fluid
+.span16{width:16.6666%;float:left}.hidden{display:none !important;visibility:hidden}@media (min-width: 768px) and (max-width: 979px){.jumbotron{padding:20px
 0}.jumbotron
 h1{font-size:28px}.jumbotron
 p{font-size:14px}.masthead{padding:40px
