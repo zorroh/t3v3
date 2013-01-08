@@ -784,11 +784,11 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 							}),
 						jdevices = $([
 							'<div class="btn-group t3-layout-devices hide">',
-								'<button class="btn t3-dv-wide" data-device="wide" title="', T3V3Admin.langs.devideWide, '">', T3V3Admin.langs.devideWide, '</button>',
-								'<button class="btn t3-dv-normal" data-device="normal" title="', T3V3Admin.langs.devideNormal, '">', T3V3Admin.langs.devideNormal, '</button>',
-								'<button class="btn t3-dv-xtablet" data-device="xtablet" title="', T3V3Admin.langs.devideXTablet , '">', T3V3Admin.langs.devideXTablet, '</button>',
-								'<button class="btn t3-dv-tablet" data-device="tablet" title="', T3V3Admin.langs.devideTablet, '">', T3V3Admin.langs.devideTablet, '</button>',
-								'<button class="btn t3-dv-mobile" data-device="mobile" title="', T3V3Admin.langs.devideMobile, '">', T3V3Admin.langs.devideMobile, '</button>',
+								'<button class="btn t3-dv-wide" data-device="wide" title="', T3V3Admin.langs.devideWide, '"><i class="icon-desktop"></i>', T3V3Admin.langs.devideWide, '</button>',
+								'<button class="btn t3-dv-normal" data-device="normal" title="', T3V3Admin.langs.devideNormal, '"><i class="icon-laptop"></i>', T3V3Admin.langs.devideNormal, '</button>',
+								'<button class="btn t3-dv-xtablet" data-device="xtablet" title="', T3V3Admin.langs.devideXTablet , '"><i class="icon-laptop"></i>', T3V3Admin.langs.devideXTablet, '</button>',
+								'<button class="btn t3-dv-tablet" data-device="tablet" title="', T3V3Admin.langs.devideTablet, '"><i class="icon-tablet"></i>', T3V3Admin.langs.devideTablet, '</button>',
+								'<button class="btn t3-dv-mobile" data-device="mobile" title="', T3V3Admin.langs.devideMobile, '"><i class="icon-mobile-phone"></i>', T3V3Admin.langs.devideMobile, '</button>',
 							'</div>'].join(''))
 							.appendTo(jtbs.find('.t3-row-device'))
 							.on('click', '.btn', function(e){
@@ -807,7 +807,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 								return false;
 							}),
 						
-						jresetall = $('<button class="btn btn-danger t3-reset-all pull-right">' + T3V3Admin.langs.layoutResetAll + '</button>')
+						jresetall = $('<button class="btn btn-danger t3-reset-all pull-right"><i class="icon-undo"></i>' + T3V3Admin.langs.layoutResetAll + '</button>')
 							.insertAfter(jmodes)
 							.on('click', function(){
 								T3V3AdminLayout.t3resetall(jelms);

@@ -149,7 +149,7 @@
       
       <div class="toolbox-actions-group">
         <button class="btn btn-success toolbox-action toolbox-saveConfig" data-action="saveConfig"><i class="icon-save"></i>Save</button>
-        <button class="btn toolbox-action toolbox-resetConfig">Reset</button>
+        <button class="btn btn-danger toolbox-action toolbox-resetConfig"><i class="icon-undo"></i>Reset</button>
       </div>
 
     </div>
