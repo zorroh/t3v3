@@ -69,18 +69,7 @@
         <div id="megamenu-toolsub" class="toolbox">
           <ul>
             <li>
-              <label>Megamenu</label>
-              <fieldset class="radio btn-group toolitem-megasub">
-                <input type="radio" id="toggleMega0" class="toolbox-toggle" data-action="toggleMega" name="toggleMega" value="0"/>
-                <label for="toggleMega0">No</label>
-                <input type="radio" id="toggleMega1" class="toolbox-toggle" data-action="toggleMega" name="toggleMega" value="1" checked="checked"/>
-                <label for="toggleMega1">Yes</label>
-              </fieldset>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <label>Menu Grid</label>
+              <label>Submenu Grid</label>
               <fieldset class="btn-group">
                 <a href="" class="btn toolsub-addrow toolbox-action" data-action="addRow">Add Row</a>
               </fieldset>
@@ -88,7 +77,7 @@
           </ul>
           <ul>
             <li>
-              <label>Megamenu Width (px)</label>
+              <label>Submenu Width (px)</label>
               <fieldset class="">
                 <input type="text" class="toolsub-width toolbox-input input-small" name="toolsub-width" data-name="width" value="" />
               </fieldset>
@@ -106,7 +95,7 @@
         <div id="megamenu-toolcol" class="toolbox">
           <ul>
             <li>
-              <label>Menu Grid</label>
+              <label>Submenu Grid</label>
               <fieldset class="btn-group">
                 <a href="" class="btn toolcol-addcol toolbox-action" data-action="addColumn">Add Column</a>
                 <a href="" class="btn toolcol-removecol toolbox-action" data-action="removeColumn">Remove Column</a>
@@ -115,7 +104,7 @@
           </ul>
           <ul>
             <li>
-              <label>Col Width (1-12)</label>
+              <label>Column Width (1-12)</label>
               <fieldset class="">
                 <input type="text" class="toolcol-width toolbox-input input-small" name="toolcol-width" data-name="width" value="" />
               </fieldset>

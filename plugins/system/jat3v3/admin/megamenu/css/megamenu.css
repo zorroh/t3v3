@@ -90,6 +90,15 @@
   padding: 10px;
 }
 
+/* The caret */
+#ja-mega-menu .nav .caret {
+  display: none;
+}
+
+#ja-mega-menu .nav .dropdown-toggle .caret {
+  display: inline-block;
+}
+
 
 /* Dropdown ---*/
 #ja-mega-menu .dropdown-menu::before,
