@@ -69,7 +69,7 @@
         <div id="megamenu-toolsub" class="toolbox">
           <ul>
             <li>
-              <label>Mega Submenu</label>
+              <label>Megamenu</label>
               <fieldset class="radio btn-group toolitem-megasub">
                 <input type="radio" id="toggleMega0" class="toolbox-toggle" data-action="toggleMega" name="toggleMega" value="0"/>
                 <label for="toggleMega0">No</label>
@@ -88,7 +88,7 @@
           </ul>
           <ul>
             <li>
-              <label>Submenu Width (px)</label>
+              <label>Megamenu Width (px)</label>
               <fieldset class="">
                 <input type="text" class="toolsub-width toolbox-input input-small" name="toolsub-width" data-name="width" value="" />
               </fieldset>
