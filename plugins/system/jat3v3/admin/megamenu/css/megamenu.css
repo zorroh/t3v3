@@ -256,3 +256,8 @@
 #megamenu-admin .row-fluid [class*="span"]:first-child {
   margin-left: 0;
 }
+
+/* Fix right spacing for chzn chosen in Megamenu Admin UI */
+#megamenu-admin ul.chzn-results {
+  margin-right: 4px;
+}
