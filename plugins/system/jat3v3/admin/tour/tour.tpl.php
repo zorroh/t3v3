@@ -231,7 +231,7 @@ defined('_JEXEC') or die;
 			dismiss : <?php echo json_encode(JText::_('T3V3_TOUR_GUIDE_DISMISS_1')) ?>,
 			beforeShow	: function() {jQuery('.mode-layout').trigger ('click')}
 		},
-				{
+		{
 			id		: '19',
 			element : ".t3-layout-mode-r",
 			position: "right",
@@ -282,6 +282,16 @@ defined('_JEXEC') or die;
 			text    : <?php echo json_encode(JText::_('T3V3_TOUR_GUIDE_19_CONTENT')) ?>,
 			dismiss : <?php echo json_encode(JText::_('T3V3_TOUR_GUIDE_DISMISS_1')) ?>,
 			beforeShow	: function() {jQuery('.t3-admin-nav ul li:eq(5) a').tab ('show')}
+		},
+		{
+			id		: '24',
+			element : "#jform_params_mm_enable label:last",
+			position: "right",
+			highlighter: "", 
+			monitor	: "mouseover",
+			title	: <?php echo json_encode(JText::_('T3V3_TOUR_GUIDE_24_TITLE')) ?>,
+			text    : <?php echo json_encode(JText::_('T3V3_TOUR_GUIDE_24_CONTENT')) ?>,
+			dismiss : <?php echo json_encode(JText::_('T3V3_TOUR_GUIDE_DISMISS_1')) ?>,
 		}
 	];
 
@@ -309,7 +319,7 @@ defined('_JEXEC') or die;
 		},
 		{
 			when: function() {return jQuery('.t3-admin-nav ul li:eq(4)').hasClass('active');},
-			tour: ["19"],
+			tour: ["24"],
 			/*intro	: <?php echo json_encode(JText::_('T3V3_TOUR_INTRO_TOUR4')) ?>*/
 		},
 		{

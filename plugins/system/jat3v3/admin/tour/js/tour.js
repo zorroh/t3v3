@@ -243,7 +243,7 @@
 			});
 
 			// add help button to tab description
-			$('.t3-fieldset-desc').not($('#navigation_params .t3-fieldset-desc')).append ('<span class="t3-tour-help"><i class="icon-question-sign"></i></span>');
+			$('.t3-fieldset-desc').append ('<span class="t3-tour-help"><i class="icon-question-sign"></i></span>');
 			$('.t3-tour-help').click(function(){
 				self.showControls();
 			})
