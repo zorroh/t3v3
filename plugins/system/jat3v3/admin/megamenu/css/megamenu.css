@@ -138,9 +138,6 @@
 }
 
 #ja-mega-menu .dropdown-group {
-  padding: 10px 10px 5px;
-  border: 1px dotted #999;
-  border-radius: 5px;
   margin: 10px 0 10px 10px;
   transition: all 0.1s ease 0s;
   -webkit-transition: all 0.1s ease 0s;

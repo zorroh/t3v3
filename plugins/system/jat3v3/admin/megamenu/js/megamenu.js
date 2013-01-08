@@ -11,7 +11,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		var options = $.extend(defaultOptions, options);
 		megamenu = $(this);
 		nav_items = megamenu.find('ul[class*="level"]>li>a');
-		nav_subs = megamenu.find('.nav-child');
+		nav_subs = megamenu.find('.nav-child').not('.mega-group');
 		nav_cols = megamenu.find('[class*="span"]');
 		
 		nav_all = nav_items.add(nav_subs).add(nav_cols);
@@ -161,17 +161,15 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 	actions.toggleGroup = function () {
 		if (!currentSelected) return ;
 		var liitem = currentSelected.parent(),
-		sub = liitem.find ('.nav-child:first');
+			sub = liitem.find ('.nav-child:first');
 		if (liitem.data('level') == 1) return; // ignore for top level
-		if (!sub.length) return ;
 		if (liitem.data('group')) {
 			liitem.data('group', 0);
 			liitem.addClass('dropdown-submenu');
 			currentSelected.addClass ('dropdown-toggle').data('toggle', 'dropdown');
 			if (liitem.hasClass ('mega')) {
 				sub.removeClass ('dropdown-group mega-group').addClass ('dropdown-menu mega-menu');
-				sub.css('width', 400);
-				sub.data('width', 400);
+				sub.css('width', sub.data('width'));
 			} else {
 				sub.removeClass ('dropdown-group mega-group').addClass ('dropdown-menu');				
 			}
@@ -183,11 +181,10 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 			if (liitem.hasClass ('mega')) {
 				sub.removeClass ('dropdown-menu mega-menu').addClass ('dropdown-group mega-group');
 				sub.css('width', '');
-				sub.data('width', '');
 			} else {
 				sub.removeClass ('dropdown-menu mega-menu').addClass ('dropdown-group');				
 			}
-			rebindEvents(sub);
+			unbindEvents(sub);
 		}
 		// update toolbox status
 		update_toolbox ();

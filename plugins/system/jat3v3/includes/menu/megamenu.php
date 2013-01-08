@@ -23,21 +23,24 @@ class T3V3MenuMegamenu {
 			$key = 'item-'.$item->id;
 			$setting = isset($this->settings[$key]) ? $this->settings[$key] : array();
 
-			$item->setting = $setting;
-			
-			$item->group = 0;
 			$item->mega = 0;
+			$item->group = 0;
 			$item->dropdown = 0;
-			if (isset($setting['sub'])) {
-				$item->mega = 1;
-			}
 			if (isset($setting['group'])) {
-					$item->group = 1;
+				$item->group = 1;
+				$item->mega = 1;
 			} else {
-				if ((isset($this->children[$item->id]) && !isset($setting['hidesub'])) || $item->mega) {
+				if ((isset($this->children[$item->id]) && !isset($setting['hidesub'])) || isset($setting['sub'])) {
 					$item->dropdown = 1;
+					$item->mega = 1;
 				}
 			}
+			// set default sub if not exists
+			if ($item->mega && !isset($setting['sub'])) {
+				$c = $this->children[$item->id][0]->id;
+				$setting['sub'] = array('rows'=>array(array(array('width'=>12, 'item'=>$c))));
+			}
+			$item->setting = $setting;
 		}
 	}
 
