@@ -8,7 +8,7 @@ class T3v3AdminMegamenu {
 		$file = T3V3_TEMPLATE_PATH.'/etc/megamenu.ini';
 		$currentconfig = json_decode(@file_get_contents ($file), true);
 		$mmconfig = ($currentconfig && isset($currentconfig[$menutype])) ? $currentconfig[$menutype] : array();
-
+		$mmconfig['editmode'] = true;
 		$menu = new T3V3MenuMegamenu ($menutype, $mmconfig);
 		$menu->render();
 	}

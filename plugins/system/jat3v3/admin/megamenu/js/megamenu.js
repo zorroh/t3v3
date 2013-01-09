@@ -15,10 +15,21 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		nav_cols = megamenu.find('[class*="span"]');
 		
 		nav_all = nav_items.add(nav_subs).add(nav_cols);
-		// megamenu.data('nav_all', nav_all);
+		// hide sub 
+		nav_items.each (function () {
+			var a = $(this),
+				liitem = a.closest('li');
+			if (liitem.data ('sub') == 'hide') {
+				var sub = liitem.find('.nav-child:first');
+				// check if have menu-items in sub
+				sub.css('display','none');
+				a.removeClass ('dropdown-toggle').data('toggle', '');
+				liitem.removeClass('dropdown dropdown-submenu mega');				
+			}
+		});
 		// hide toolbox
 		hide_toolbox(true);
-		
+		// bind events for all selectable elements
 		bindEvents (nav_all);
 
 		// unbind all events for toolbox actions & inputs
