@@ -228,7 +228,7 @@ h1.page-title small {
 .t3-inline-nav .nav-tabs > li > a {
   padding: 10px 20px;
   color: #666;
-  text-shadow: 1px 1px 1px #fff;
+  text-shadow: 0 1px 1px #fff;
 }
 
 .t3-inline-nav .nav-tabs > li > a:hover {
@@ -409,7 +409,7 @@ select, input[type="file"] {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  text-shadow: 0 1px 2px #fff;
+  text-shadow: 0 1px 1px #fff;
   text-align: right;
 }
 
@@ -466,7 +466,7 @@ select, input[type="file"] {
   width: auto !important;
   display: block;
   float: left;
-  padding: 5px 0 0 0;
+  padding: 8px 0 0 0;
 }
 
 .t3-adminform .form-horizontal .t3-header .controls {
