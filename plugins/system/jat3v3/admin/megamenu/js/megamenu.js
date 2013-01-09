@@ -11,7 +11,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		var options = $.extend(defaultOptions, options);
 		megamenu = $(this);
 		nav_items = megamenu.find('ul[class*="level"]>li>a');
-		nav_subs = megamenu.find('.nav-child').not('.mega-group');
+		nav_subs = megamenu.find('.nav-child');
 		nav_cols = megamenu.find('[class*="span"]');
 		
 		nav_all = nav_items.add(nav_subs).add(nav_cols);

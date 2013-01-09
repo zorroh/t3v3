@@ -81,6 +81,7 @@ class T3V3MenuMegamenuTpl {
 		$data = "data-id=\"{$item->id}\" data-level=\"{$item->level}\"";
 		if ($item->group) $data .= " data-group=\"1\"";
 		if (isset($setting['class'])) $data .= " data-class=\"{$setting['class']}\"";
+		if (isset($setting['hidesub'])) $data .= " data-sub=\"hide\"";
 
 		return "<li $cls $data>";
 	}

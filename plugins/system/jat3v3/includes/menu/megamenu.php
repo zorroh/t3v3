@@ -12,6 +12,7 @@ class T3V3MenuMegamenu {
 		$menu = $app->getMenu('site');
 		$items = $menu->getItems('menutype', $menutype);
 		$this->settings = $settings;
+		$this->editmode = isset ($settings['editmode']);
 		foreach ($items as &$item) {
 			$parent = isset($this->children[$item->parent_id]) ? $this->children[$item->parent_id] : array();
 			$parent[] = $item;
@@ -28,13 +29,12 @@ class T3V3MenuMegamenu {
 			$item->dropdown = 0;
 			if (isset($setting['group'])) {
 				$item->group = 1;
-				$item->mega = 1;
 			} else {
-				if ((isset($this->children[$item->id]) && !isset($setting['hidesub'])) || isset($setting['sub'])) {
+				if ((isset($this->children[$item->id]) && ($this->editmode || !isset($setting['hidesub']))) || isset($setting['sub'])) {
 					$item->dropdown = 1;
-					$item->mega = 1;
 				}
 			}
+			$item->mega = $item->group || $item->dropdown;
 			// set default sub if not exists
 			if ($item->mega && !isset($setting['sub'])) {
 				$c = $this->children[$item->id][0]->id;
@@ -98,8 +98,6 @@ class T3V3MenuMegamenu {
 
 		if ($item->mega) {
 			$this->mega($item);
-		} else {
-			if (!isset($setting['hidesub'])) $this->nav ($item);
 		}
 		$this->_('enditem', array ('item'=>$item));
 	}
