@@ -17,7 +17,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		nav_all = nav_items.add(nav_subs).add(nav_cols);
 		// megamenu.data('nav_all', nav_all);
 		// hide toolbox
-		hide_toobox();
+		hide_toolbox(true);
 		
 		bindEvents (nav_all);
 
@@ -31,7 +31,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		});
 		// deselect when click outside menu
 		$('body').click (function(event) {
-			hide_toobox ();
+			hide_toolbox (true);
 			event.stopPropagation();                
 		});
 
@@ -399,15 +399,20 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		return currentSelected[0].tagName == 'A' ? 'item' : (currentSelected.hasClass ('nav-child') ? 'sub' : 'col');
 	}
 
-	hide_toobox = function () {
+	hide_toolbox = function (show_intro) {
 		$('#megamenu-toolbox .toolbox').hide();
 		currentSelected = null;
 		if (megamenu && megamenu.data('nav_all')) megamenu.data('nav_all').removeClass ('selected');
 		megamenu.find ('li').removeClass ('open');
+		if (show_intro) {
+			$('#megamenu-intro').show();
+		} else {
+			$('#megamenu-intro').hide();
+		}
 	}
 
 	show_toolbox = function (selected) {
-		hide_toobox ();
+		hide_toolbox (false);
 		currentSelected = selected;
 		// remove class open for other
 		megamenu.find ('ul[class*="level"] > li').each (function(){
