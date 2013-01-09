@@ -113,7 +113,7 @@
   display: none;
 }
 
-#ja-mega-menu .nav .dropdown-toggle .caret {
+#ja-mega-menu .nav > .dropdown > .dropdown-toggle .caret {
   display: inline-block;
 }
 
@@ -158,6 +158,10 @@
 #ja-mega-menu .dropdown-menu .dropdown-menu {
   margin-top: 0;
   margin-left: 11px;
+}
+
+#ja-mega-menu .dropdown-menu .dropdown-menu .dropdown-menu {
+  margin-left: 22px;
 }
 
 #ja-mega-menu .mega-nav li a {
@@ -209,8 +213,8 @@
   margin-top: 0;
 }
 
-#megamenu-admin .hover .ja-module:after,
-#megamenu-admin .selected .ja-module:after {
+#megamenu-admin [class*="span"].hover .ja-module:after,
+#megamenu-admin [class*="span"].selected .ja-module:after {
   border-style: solid;
   border-color: #fb0;
   background: #fb0;
@@ -286,4 +290,13 @@
 /* Fix right spacing for chzn chosen in Megamenu Admin UI */
 #megamenu-admin ul.chzn-results {
   margin-right: 4px;
+}
+
+/* Fix submenu auto open on hover */
+#megamenu-admin .dropdown-submenu:hover .dropdown-menu {
+  display: none;
+}
+
+#megamenu-admin .dropdown-submenu:hover > .dropdown-menu {
+  display: block;
 }
