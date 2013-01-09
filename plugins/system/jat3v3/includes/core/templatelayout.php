@@ -74,7 +74,7 @@ class T3v3TemplateLayout extends T3v3Template
 		$content = ob_get_contents();
 		ob_end_clean();
 
-		if ($this->_block == $block || isset($vars['spl'])) {
+		if (isset($vars['spl'])) {
 			$content = preg_replace ('#(<[A-Za-z]+[^>^\/]*)>#', '\1 data-original="' . $block . '"' . (isset($vars['spl']) ? ' data-spotlight="' . $vars['name'] . '"' : '') . '>', $content, 1);
 			$this->_block = null;
 		}
@@ -213,6 +213,10 @@ class T3v3TemplateLayout extends T3v3Template
 
 		//normal
 		$this->loadBlock ('spotlight', $vars);
+	}
+
+	function mainnav(){
+		echo '<jdoc:include type="modules" name="mainnav" style="raw" />';
 	}
 
 	function getPosname ($condition) {

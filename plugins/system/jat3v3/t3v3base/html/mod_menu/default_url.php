@@ -9,7 +9,7 @@
 defined('_JEXEC') or die;
 
 // Note. It is important to remove spaces between elements.
-$class = $item->anchor_css ? 'class="'.$item->anchor_css.'" ' : '';
+$class = $item->anchor_css ? $item->anchor_css : '';
 $title = $item->anchor_title ? 'title="'.$item->anchor_title.'" ' : '';
 $dropdown = '';
 $caret = '';
@@ -18,6 +18,10 @@ if($item->deeper && $item->level < 2){
 	$class .= ' dropdown-toggle';
 	$dropdown = ' data-toggle="dropdown"';
 	$caret = '<b class="caret"></b>';
+}
+
+if(!empty($class)){
+	$class = 'class="'. trim($class) .'" ';
 }
 
 if ($item->menu_image) {

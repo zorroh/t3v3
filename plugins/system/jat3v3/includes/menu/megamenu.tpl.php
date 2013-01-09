@@ -99,7 +99,47 @@ class T3V3MenuMegamenuTpl {
 			$attr = ' class="dropdown-toggle" data-toggle="dropdown"';
 			$caret = '<b class="caret"></b>';
 		}
+		if($item->browserNav > 0){
+			$attr .= ' target="blank"';
+		}
 
-		return '<a href="#" '.$attr.'><span>'.$item->title.'</span>'.$caret.'</a>';
+		$flink = $item->link;
+		switch ($item->type)
+		{
+			case 'separator':
+			case 'heading':
+				// No further action needed.
+				break;
+
+			case 'url':
+				if ((strpos($item->link, 'index.php?') === 0) && (strpos($item->link, 'Itemid=') === false)){
+					// If this is an internal Joomla link, ensure the Itemid is set.
+					$flink = $item->link . '&Itemid=' . $item->id;
+				}
+				break;
+
+			case 'alias':
+				// If this is an alias use the item id stored in the parameters to make the link.
+				$flink = 'index.php?Itemid=' . $item->params->get('aliasoptions');
+				break;
+
+			default:
+				$router = JSite::getRouter();
+				if ($router->getMode() == JROUTER_MODE_SEF){
+					$flink = 'index.php?Itemid=' . $item->id;
+				} else {
+					$flink .= '&Itemid=' . $item->id;
+				}
+				break;
+		}
+
+		if (strcasecmp(substr($flink, 0, 4), 'http') && (strpos($flink, 'index.php?') !== false)){
+			$flink = JRoute::_($flink, true, $item->params->get('secure'));
+		}
+		else {
+			$flink = JRoute::_($flink);
+		}
+
+		return '<a href="'.$flink.'" '.$attr.'><span>'.$item->title.'</span>'.$caret.'</a>';
 	}
 }

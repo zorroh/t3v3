@@ -55,7 +55,7 @@ class T3V3 {
 			} else {
 				// override core joomla class
 				// JViewLegacy
-				if (!class_exists('JViewLegacy', false)) t3v3import ('joomla25/view');
+				if (!class_exists('JView', false)) t3v3import ('joomla25/view');
 				// JModuleHelper
 				if (!class_exists('JModuleHelper', false)) t3v3import ('joomla25/modulehelper');
 				// JPagination

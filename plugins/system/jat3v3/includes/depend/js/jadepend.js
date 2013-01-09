@@ -213,7 +213,7 @@
 			}
 
 			ctrl.indicator.show();
-			$.get(info.url, { jvalue: form.valuesFrom(form.elmsFrom(name))[0] }, function(rsp){
+			$.get(info.url, { jvalue: form.valuesFrom(form.elmsFrom(name))[0], _: $.now() }, function(rsp){
 				ctrl.indicator.hide();
 
 				var parts = ctrl.info.func.split('.'),

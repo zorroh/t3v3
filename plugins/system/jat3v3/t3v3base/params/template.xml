@@ -98,7 +98,7 @@
 				hide_default="true"
 			/>
 
-			<field name="pos_section" type="jadepend" default="" label="T3V3_LAYOUT_POS_SECTION" description="T3V3_LAYOUT_POS_SECTION_DESC" function="@legend" />
+			
 			<field name="jat3v3_positions" type="hidden" default="" value="" />
 			<field name="jat3_all_pos" type="japositions" default="" 
 				multiple="0" 
@@ -106,6 +106,7 @@
 				description="" 
 				disabled="disabled"
 			/>
+			<field name="layout_panel" type="textarea" default="" label="T3V3_LAYOUT_POS_SECTION" description="T3V3_LAYOUT_POS_SECTION_DESC" />
 
 		</fieldset>
 

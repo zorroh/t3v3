@@ -20,25 +20,8 @@ defined('_JEXEC') or die;
   	  </button>
 
   	  <div class="nav-collapse collapse">
-        <?php 
-        if ($this->getParam ('mm_enable')) : 
-          t3v3import('menu/megamenu');
-          $menutype = $this->getParam ('mm_type', 'mainmenu');
-          $file = T3V3_TEMPLATE_PATH.'/etc/megamenu.ini';
-          $currentconfig = json_decode(@file_get_contents ($file), true);
-          $mmconfig = ($currentconfig && isset($currentconfig[$menutype])) ? $currentconfig[$menutype] : array();
-
-          $menu = new T3V3MenuMegamenu ($menutype, $mmconfig);
-          $menu->render();          
-
-          $this->addCss ('megamenu');
-        ?>
-
-        <?php else: ?>
-        <jdoc:include type="modules" name="<?php $this->_p('mainnav') ?>" style="raw" />
-        <?php endif ?>
+        <?php $this->mainnav() ?>
   		</div>
-      
     </div>
   </div>
 </nav>

@@ -54,7 +54,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 					jspls = jcontainer.find('[data-spotlight]'),
 					jsplblocks = jspls.find('.t3-layout-pos');
 
-				jblocks.not(jspls).not(jsplblocks).not('.block-message, .block-component').each(function(){
+				jblocks.not(jspls).not(jsplblocks).not('.t3-layout-uneditable').each(function(){
 					var name = $(this).attr('data-original'),
 						val = $(this).find('.t3-layout-posname').html(),
 						vis = $(this).closest('[data-vis]').data('data-vis'),
@@ -121,6 +121,8 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 		},
 
 		initLayoutPosition: function(){
+			$('#jform_params_layout_panel').hide();
+
 			$(window).load(function(){
 				setTimeout(function(){
 					$('#jform_params_mainlayout').trigger('change.less');
@@ -513,7 +515,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 				jspls = jcontainer.find('[data-spotlight]'),
 				jsplblocks = jspls.find('.t3-layout-pos');
 
-			jblocks.not(jspls).not(jsplblocks).not('.block-message, .block-component').each(function(){
+			jblocks.not(jspls).not(jsplblocks).not('.t3-layout-uneditable').each(function(){
 				var name = $(this).attr('data-original'),
 					vis = $(this).closest('[data-vis]').data('data-vis');
 
@@ -554,7 +556,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 				jspls = jcontainer.find('[data-spotlight]'),
 				jsplblocks = jspls.find('.t3-layout-pos');
 
-			jblocks.not(jspls).not(jsplblocks).not('.block-message, .block-component').each(function(){
+			jblocks.not(jspls).not(jsplblocks).not('.t3-layout-uneditable').each(function(){
 				if($(this).find('[data-original]').length){
 					return;
 				}
@@ -625,7 +627,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 				jspls = jcontainer.find('[data-spotlight]'),
 				jsplblocks = jspls.find('.t3-layout-pos');
 
-			jblocks.not(jspls).not(jsplblocks).not('.block-message, .block-component').each(function(){
+			jblocks.not(jspls).not(jsplblocks).not('.t3-layout-uneditable').each(function(){
 				//reset position
 				$(this).find('.t3-layout-posname')
 					.html(
@@ -716,15 +718,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 			if(rsp){
 				var bdhtml = rsp.match(/<body[^>]*>([\w|\W]*)<\/body>/im),
 					vname = ctrlelm.name.replace(/[\[\]]/g, ''),
-					jcontrol = $([
-							'<div class="control-group">',
-								'<div class="control-label">',
-									'<label class="hasTip" title=""></label>', 
-								'</div>',
-								'<div class="controls">',
-								'</div>',
-							'</div>'].join(''))
-							.insertAfter($('#jformparamsjat3_all_pos').closest('.control-group'));
+					jcontrol = $('#jform_params_layout_panel').hide().closest('.control-group');
 
 				//stripScripts
 				if(bdhtml){
@@ -732,6 +726,9 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 				}
 
 				if(bdhtml){
+					//clean those bootstrap fixed class
+					bdhtml = bdhtml.replace(/navbar-fixed-(top|bottom)/gi, '');
+
 					var jtabpane = $('#jform_params_mainlayout').closest('.tab-pane'),
 						active = jtabpane.hasClass('active');
 
@@ -917,7 +914,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 
 					jelms
 						.find('.t3-layout-pos')
-						.not('.block-message, .block-component')
+						.not('.t3-layout-uneditable')
 						.prepend('<span class="t3-layout-edit" title="' + T3V3Admin.langs.layoutEditPosition + '"><i class="icon-cog"></i></span>');
 
 					jelms

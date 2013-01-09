@@ -230,6 +230,25 @@ class T3v3Template extends ObjectExtendable
 		$this->loadBlock ('spotlight', $vars);
 	}
 
+	function mainnav(){
+		if ($this->getParam ('mm_enable')){
+			t3v3import('menu/megamenu');
+
+			$menutype = $this->getParam ('mm_type', 'mainmenu');
+			$file = T3V3_TEMPLATE_PATH.'/etc/megamenu.ini';
+			$currentconfig = json_decode(@file_get_contents ($file), true);
+			$mmconfig = ($currentconfig && isset($currentconfig[$menutype])) ? $currentconfig[$menutype] : array();
+
+			$menu = new T3V3MenuMegamenu ($menutype, $mmconfig);
+			$menu->render();          
+
+			$this->addCss ('megamenu');	
+		} else {
+			//normal
+			echo '<jdoc:include type="modules" name="mainnav" style="raw" />';
+		}
+	}
+
 	/**
 	* Get data property for layout - responsive layout
 	*
@@ -412,7 +431,7 @@ class T3v3Template extends ObjectExtendable
 
 		// BOOTSTRAP CSS
 		$this->addCss ('bootstrap'); 
-		// TEMPLATE CSS -->
+		// TEMPLATE CSS
 		$this->addCss ('template'); 
 
 		if ($responsive) {
@@ -423,9 +442,16 @@ class T3v3Template extends ObjectExtendable
 		}
 
 		// Add scripts
-		$this->addScript (T3V3_URL.'/bootstrap/js/jquery.js');
+		if(version_compare(JVERSION, '3.0', 'ge')){
+			JHtml::_('jquery.framework');
+		} else {
+			$this->addScript (T3V3_URL.'/bootstrap/js/jquery.js');
+		}
+		define('JQUERY_INCLUED', 1);
+
+		// As joomla 3.0 bootstrap is buggy, we will not use it
+		$this->addScript (T3V3_URL.'/bootstrap/js/bootstrap.js');	
 		$this->addScript (T3V3_URL.'/js/noconflict.js');
-		$this->addScript (T3V3_URL.'/bootstrap/js/bootstrap.js');
 		$this->addScript (T3V3_URL.'/js/touch.js');
 		$this->addScript (T3V3_URL.'/js/script.js');
 
