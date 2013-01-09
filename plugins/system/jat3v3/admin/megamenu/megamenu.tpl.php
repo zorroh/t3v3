@@ -23,7 +23,12 @@
 <div id="megamenu-admin" class="hidden">
   <div class="t3-inline-toolbox clearfix">
     <div class="t3-row t3-row-mega clearfix">
-
+    
+      <div id="megamenu-intro" class="pull-left">
+        <h3>Megamenu Toolbox</h3>
+        <p>Select the Positions that are going to be used in the above selected layout then configure the responsive layouts (enable, disable, change size module position in specific layouts)</p>
+      </div>
+    
       <div id="megamenu-toolbox">
         <div id="megamenu-toolitem" class="toolbox">
           <ul>

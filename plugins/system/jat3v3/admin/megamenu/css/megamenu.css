@@ -6,8 +6,17 @@
 
 #megamenu-admin {
   min-height: 800px;
-  background: url(grid-bg.jpg) top left;
+  background: url(images/grid-bg.jpg) top left;
   margin: 0 -20px;
+}
+
+/* Intro
+---------------------*/
+#megamenu-intro {
+  float: left;
+  padding: 10px 20px 20px;
+  min-width: 400px;
+  max-width: 700px;
 }
 
 /* Toolbox
