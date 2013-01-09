@@ -1,4 +1,4 @@
-<?php
+﻿<?php
   $db = JFactory::getDbo();
   $query = $db->getQuery(true);
   $query->select('id, title, module, position');
@@ -31,6 +31,7 @@
     
       <div id="megamenu-toolbox">
         <div id="megamenu-toolitem" class="toolbox">
+          <h3>Item Configuration</h3>
           <ul>
             <li>
               <label>Submenu</label>
@@ -72,6 +73,7 @@
           </ul>
         </div>
         <div id="megamenu-toolsub" class="toolbox">
+          <h3>Submenu Configuration</h3>
           <ul>
             <li>
               <label>Submenu Grid</label>
@@ -98,6 +100,7 @@
           </ul>
         </div>
         <div id="megamenu-toolcol" class="toolbox">
+          <h3>Column Configuration</h3>
           <ul>
             <li>
               <label>Submenu Grid</label>
