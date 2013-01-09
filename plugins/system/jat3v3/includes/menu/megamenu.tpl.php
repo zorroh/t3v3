@@ -15,21 +15,7 @@ class T3V3MenuMegamenuTpl {
 			// first nav
 			$cls = 'nav level0';
 		} else {
-			if ($item->mega) {
-				// mega nav
-				if ($item->group) {
-					$cls .= ' mega-dropdown-group';
-				} else {
-					$cls .= ' mega-dropdown-menu';
-				}
-			} else {
-				$cls .= ' nav-child';
-				if ($item->group) {
-					$cls .= ' dropdown-group';
-				} else {
-					$cls .= ' dropdown-menu';
-				}				
-			}
+			$cls .= ' mega-nav';
 			$cls .= ' level'.$item->level;
 		}
 		if ($cls) $cls = 'class="'.trim($cls).'"';
@@ -44,7 +30,7 @@ class T3V3MenuMegamenuTpl {
 		$item = $vars['item'];
 		$setting = $item->setting;
 		$sub = $setting['sub'];
-		$cls = 'nav-child '.($item->dropdown ? 'dropdown-menu mega-menu' : 'dropdown-group mega-group');
+		$cls = 'nav-child '.($item->dropdown ? 'dropdown-menu mega-menu' : 'mega-group');
 		$style = '';
 		$data = '';
 		if (isset($sub['width'])) {

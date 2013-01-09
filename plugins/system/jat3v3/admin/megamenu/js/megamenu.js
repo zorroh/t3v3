@@ -33,7 +33,6 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		$('body').click (function(event) {
 			hide_toobox ();
 			event.stopPropagation();                
-			return false;
 		});
 
 		// bind event for action
@@ -167,23 +166,15 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 			liitem.data('group', 0);
 			liitem.addClass('dropdown-submenu');
 			currentSelected.addClass ('dropdown-toggle').data('toggle', 'dropdown');
-			if (liitem.hasClass ('mega')) {
-				sub.removeClass ('dropdown-group mega-group').addClass ('dropdown-menu mega-menu');
-				sub.css('width', sub.data('width'));
-			} else {
-				sub.removeClass ('dropdown-group mega-group').addClass ('dropdown-menu');				
-			}
+			sub.removeClass ('mega-group').addClass ('dropdown-menu mega-menu');
+			sub.css('width', sub.data('width'));
 			rebindEvents(sub);
 		} else {
 			currentSelected.removeClass ('dropdown-toggle').data('toggle', '');
 			liitem.data('group', 1);
 			liitem.removeClass('dropdown-submenu');
-			if (liitem.hasClass ('mega')) {
-				sub.removeClass ('dropdown-menu mega-menu').addClass ('dropdown-group mega-group');
-				sub.css('width', '');
-			} else {
-				sub.removeClass ('dropdown-menu mega-menu').addClass ('dropdown-group');				
-			}
+			sub.removeClass ('dropdown-menu mega-menu').addClass ('mega-group');
+			sub.css('width', '');
 			unbindEvents(sub);
 		}
 		// update toolbox status
@@ -203,7 +194,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		$rows = $col.parent().parent().children ('[class*="row"]'),
 		$cols = $rows.children('[class*="span"]').filter (function(){return !$(this).data('position')}),
 		colidx = $cols.index ($col);
-		if (!$liparent.length || !$liparent.hasClass('mega')) return ; // need make this is mega first
+		if (!$liparent.length) return ; // need make this is mega first
 
 		if (colidx == 0) {
 			// add new col
@@ -231,7 +222,6 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 
 	actions.moveItemsRight = function () {
 		if (!currentSelected) return ;
-		if (!currentSelected.parent().parent().closest('li').hasClass('mega')) return ; // need make this is mega first
 		var $item = currentSelected.closest('li'),
 		$liparent = $item.parent().closest('li'),
 		level = $liparent.data('level'),
@@ -243,7 +233,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		$rows = $col.parent().parent().children ('[class*="row"]'),
 		$cols = $rows.children('[class*="span"]').filter (function(){return !$(this).data('position')}),
 		colidx = $cols.index ($col);
-		if (!$liparent.length || !$liparent.hasClass('mega')) return ; // need make this is mega first
+		if (!$liparent.length) return ; // need make this is mega first
 
 		if (colidx == $cols.length - 1) {
 			// add new col
