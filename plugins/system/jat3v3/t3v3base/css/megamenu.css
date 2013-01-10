@@ -16,11 +16,11 @@
   list-style: none;
   margin-left: 0;
 }
-#ja-mega-menu .nav .caret,
-#ja-mega-menu .dropdown-submenu .caret,
-#ja-mega-menu .mega-menu .caret {
+#ja-megamenu .nav .caret,
+#ja-megamenu .dropdown-submenu .caret,
+#ja-megamenu .mega-menu .caret {
   display: none;
 }
-#ja-mega-menu .nav > .dropdown > .dropdown-toggle .caret {
+#ja-megamenu .nav > .dropdown > .dropdown-toggle .caret {
   display: inline-block;
 }
