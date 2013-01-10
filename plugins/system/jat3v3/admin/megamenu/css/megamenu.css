@@ -92,17 +92,17 @@
   -o-box-sizing: border-box;
 }
 
-#ja-mega-menu > .nav {
+#ja-megamenu > .nav {
 }
 
-#ja-mega-menu .nav > li {
+#ja-megamenu .nav > li {
   margin-right: 20px;
 }
 
-#ja-mega-menu .nav > li:first-child {
+#ja-megamenu .nav > li:first-child {
 }
 
-#ja-mega-menu .nav > li > a  {
+#ja-megamenu .nav > li > a  {
   border: 1px solid #ddd;
   padding: 8px 20px;
   background: #f2f2f2;
@@ -113,37 +113,17 @@
   -moz-transition: all 0.1s ease 0s;
 }
 
-#ja-mega-menu .mega-inner {
+#ja-megamenu .mega-inner {
   padding: 10px;
 }
 
-/* The caret ---*/
-#ja-mega-menu .nav .caret,
-#ja-mega-menu .dropdown-submenu .caret,
-#ja-mega-menu .mega-menu .caret {
-  display: none;
-}
-
-#ja-mega-menu .nav > .dropdown > .dropdown-toggle .caret {
-  display: inline-block;
-}
-
-
-/* The nav ---*/
-#ja-mega-menu .mega-nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-
 /* Dropdown ---*/
-#ja-mega-menu .dropdown-menu::before,
-#ja-mega-menu .dropdown-menu::after {
+#ja-megamenu .dropdown-menu::before,
+#ja-megamenu .dropdown-menu::after {
   display: none; /* Hide the Arrow */
 }
 
-#ja-mega-menu .dropdown-menu {
+#ja-megamenu .dropdown-menu {
   border: 1px solid #ddd;
   padding: 10px;
   margin-top: 10px;
@@ -156,24 +136,24 @@
   box-shadow: 1px 2px 5px rgba(0,0,0,.2);
 }
 
-#ja-mega-menu .dropdown-menu .dropdown-menu {
+#ja-megamenu .dropdown-menu .dropdown-menu {
   margin-top: 0;
   margin-left: 11px;
 }
 
-#ja-mega-menu .dropdown-menu .dropdown-menu .dropdown-menu {
+#ja-megamenu .dropdown-menu .dropdown-menu .dropdown-menu {
   margin-left: 22px;
 }
 
-#ja-mega-menu .mega-nav li {
+#ja-megamenu .mega-nav li {
   margin-bottom: 5px;
 }
 
-#ja-mega-menu .mega-nav li:last-child {
+#ja-megamenu .mega-nav li:last-child {
   margin-bottom: 0;
 }
 
-#ja-mega-menu .mega-nav li a {
+#ja-megamenu .mega-nav li a {
   padding: 5px 20px 5px 10px;
   border: 1px dotted #ddd;
   border-radius: 3px;
@@ -186,7 +166,7 @@
 
 
 /* The group ---*/
-#ja-mega-menu .mega-group {
+#ja-megamenu .mega-group {
   border: 1px solid #ddd;
   padding: 10px;
   margin: 10px 0 10px 10px;
@@ -197,7 +177,7 @@
   background: #f2f2f2;
 }
 
-#ja-mega-menu .mega-group .mega-inner {
+#ja-megamenu .mega-group .mega-inner {
 }
 
 
@@ -247,17 +227,6 @@
   color: #fff;
 }
 
-/* Reset elements in Module */
-#megamenu-admin .ja-module ul {
-  list-style: disc;
-}
-
-#megamenu-admin .ja-module ul li a {
-  display: inline;
-  padding: 0;
-  margin: 0;
-}
-
 
 /* Grid Outline ---*/
 #megamenu-admin .mega-menu > .row-fluid {
@@ -304,8 +273,8 @@
   color: #333333 !important;
 }
 
-#ja-mega-menu .mega-nav li a.hover:after,
-#ja-mega-menu .mega-nav li a.selected:after {
+#ja-megamenu .mega-nav li a.hover:after,
+#ja-megamenu .mega-nav li a.selected:after {
   border-left-color: #333;
 }
 

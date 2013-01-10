@@ -1,10 +1,26 @@
-.mega-dropdown-menu,
-.mega-nav {
+.mega-inner .ja-module ul {
+  list-style: disc;
+  margin: 0 0 0 15px;
+}
+.mega-inner .ja-module ul li a {
+  display: inline;
+  padding: 0;
   margin: 0;
 }
-.mega-dropdown-menu > li,
-.mega-nav > li,
-.mega-group > li {
+.mega-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mega-nav > li {
   list-style: none;
   margin-left: 0;
+}
+#ja-mega-menu .nav .caret,
+#ja-mega-menu .dropdown-submenu .caret,
+#ja-mega-menu .mega-menu .caret {
+  display: none;
+}
+#ja-mega-menu .nav > .dropdown > .dropdown-toggle .caret {
+  display: inline-block;
 }
