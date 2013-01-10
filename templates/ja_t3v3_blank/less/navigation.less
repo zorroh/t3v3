@@ -73,7 +73,7 @@
   .box-shadow(0 5px 10px rgba(0,0,0,.2));
 
   // Links within the dropdown menu
-  a {
+  li > a {
     font-weight: normal;
     padding: 3px 20px;
     color: @dropdownLinkColor;
@@ -349,17 +349,19 @@
   .box-shadow(0 5px 10px rgba(0,0,0,.2));
 
   // Links within the dropdown menu
-  a {
+  li > a {
     border-top: 1px solid @hrBorder;
     padding: 5px 20px;
     text-shadow: none;
   }
+
+  // No border top on the first
+  li:first-child > a {
+    border-top: 0;
+  }
+
 }
 
-// No border top on the first
-.ja-mainnav .dropdown-menu li:first-child > a {
-  border-top: 0;
-}
 
 // Hide the Top arrow of the dropdown menu.
 // See bootstrap/navbar.less or comment these line if you want to show it again.
