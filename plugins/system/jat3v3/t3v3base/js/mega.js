@@ -88,7 +88,7 @@
 		constructor: MegaMenu,
 
 		detect: function(){
-			var jmega = $(this.menu).find('.mega-menu:first'),
+			var jmega = $(this.menu).find('.mega-dropdown-menu:first'),
 				rs = true;
 
 			if(jmega){
@@ -123,7 +123,7 @@
 				options = this.options,
 				jmenu = $(this.menu),
 				jpw = jmenu.parent(),
-				jchilds = jmenu.find('.mega-menu'),
+				jchilds = jmenu.find('.mega-dropdown-menu'),
 				odisplay = jchilds.eq(0).css('display');
 			
 			this.loaded = true;
@@ -143,7 +143,7 @@
 			this.jitems.each(function (idx, li) {
 				//link item
 				var link = $(li).children('a')[0],
-					child = $(li).children('.mega-menu')[0],
+					child = $(li).children('.mega-dropdown-menu')[0],
 					level0 = $(li).parent().hasClass('nav'),
 					parent = self.getParent(li),
 					item = { stimer: null, direction: ((level0 && options.direction == 'up') ? 0 : 1)},

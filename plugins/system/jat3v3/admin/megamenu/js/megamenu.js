@@ -108,7 +108,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 			if (liitem.data('group')) {
 				megamenu.addClass ('dropdown-group mega-group');
 			} else {
-				megamenu.addClass ('dropdown-menu mega-menu');
+				megamenu.addClass ('dropdown-menu mega-dropdown-menu');
 				megamenu.css ('width', '400');
 				megamenu.data('width', 400);
 			}
@@ -135,7 +135,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		if (sub.length == 0 || sub.css('display') == 'none') {
 			// add sub
 			if (sub.length == 0) {
-				sub = $('<div class="nav-child dropdown-menu mega-menu"><div class="row-fluid"><div class="span12" data-width="12"><div class="mega-inner"></div></div></div></div>').appendTo(liitem);
+				sub = $('<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="row-fluid"><div class="span12" data-width="12"><div class="mega-inner"></div></div></div></div>').appendTo(liitem);
 				sub.css ('width', '400');
 				sub.data('width', 400);
 				bindEvents (sub.find ('[class*="span"]'));
@@ -177,14 +177,14 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 			liitem.data('group', 0);
 			liitem.addClass('dropdown-submenu');
 			currentSelected.addClass ('dropdown-toggle').data('toggle', 'dropdown');
-			sub.removeClass ('mega-group').addClass ('dropdown-menu mega-menu');
+			sub.removeClass ('mega-group').addClass ('dropdown-menu mega-dropdown-menu');
 			sub.css('width', sub.data('width'));
 			rebindEvents(sub);
 		} else {
 			currentSelected.removeClass ('dropdown-toggle').data('toggle', '');
 			liitem.data('group', 1);
 			liitem.removeClass('dropdown-submenu');
-			sub.removeClass ('dropdown-menu mega-menu').addClass ('mega-group');
+			sub.removeClass ('dropdown-menu mega-dropdown-menu').addClass ('mega-group');
 			sub.css('width', '');
 			unbindEvents(sub);
 		}

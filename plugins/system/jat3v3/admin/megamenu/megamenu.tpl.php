@@ -34,7 +34,7 @@ $modules = $db->loadObjectList();
           <h3><?php echo JTexT::_('T3V3_NAVIGATION_MM_ITEM_CONF') ?></h3>
           <ul>
             <li>
-              <label title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMENU_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMENU') ?></label>
+              <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMENU'), '::', JTexT::_('T3V3_NAVIGATION_MM_SUBMENU_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMENU') ?></label>
               <fieldset class="radio btn-group toolitem-sub">
                 <input type="radio" id="toggleSub0" class="toolbox-toggle" data-action="toggleSub" name="toggleSub" value="0"/>
                 <label for="toggleSub0"><?php echo JTexT::_('JNO') ?></label>
@@ -45,7 +45,7 @@ $modules = $db->loadObjectList();
           </ul>
           <ul>
             <li>
-              <label title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_GROUP_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_GROUP') ?></label>
+              <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_GROUP'), '::', JTexT::_('T3V3_NAVIGATION_MM_GROUP_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_GROUP') ?></label>
               <fieldset class="radio btn-group toolitem-group">
                 <input type="radio" id="toggleGroup0" class="toolbox-toggle" data-action="toggleGroup" name="toggleGroup" value="0"/>
                 <label for="toggleGroup0"><?php echo JTexT::_('JNO') ?></label>
@@ -56,7 +56,7 @@ $modules = $db->loadObjectList();
           </ul>
           <ul>
             <li>
-              <label title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_POSITIONS_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_POSITIONS') ?></label>
+              <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_POSITIONS'), '::', JTexT::_('T3V3_NAVIGATION_MM_POSITIONS_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_POSITIONS') ?></label>
               <fieldset class="btn-group">
                 <a href="" class="btn toolitem-moveleft toolbox-action" data-action="moveItemsLeft"><i class="icon-arrow-left"></i><?php echo JTexT::_('T3V3_NAVIGATION_MM_MOVE_LEFT') ?></a>
                 <a href="" class="btn toolitem-moveright toolbox-action" data-action="moveItemsRight"><i class="icon-arrow-right"></i><?php echo JTexT::_('T3V3_NAVIGATION_MM_MOVE_RIGHT') ?></a>
@@ -65,7 +65,7 @@ $modules = $db->loadObjectList();
           </ul>
           <ul>
             <li>
-              <label title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS') ?></label>
+              <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS'), '::', JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS') ?></label>
               <fieldset class="">
                 <input type="text" class="toolitem-exclass toolbox-input" name="toolitem-exclass" data-name="class" value="" />
               </fieldset>
@@ -76,7 +76,7 @@ $modules = $db->loadObjectList();
           <h3><?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_CONF') ?></h3>
           <ul>
             <li>
-              <label title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_GRID_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_GRID') ?></label>
+              <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_GRID'), '::', JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_GRID_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_GRID') ?></label>
               <fieldset class="btn-group">
                 <a href="" class="btn toolsub-addrow toolbox-action" data-action="addRow">Add Row</a>
               </fieldset>
@@ -84,7 +84,7 @@ $modules = $db->loadObjectList();
           </ul>
           <ul>
             <li>
-              <label title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_WIDTH_PX_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_WIDTH_PX') ?></label>
+              <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_WIDTH_PX'), '::', JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_WIDTH_PX_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_WIDTH_PX') ?></label>
               <fieldset class="">
                 <input type="text" class="toolsub-width toolbox-input input-small" name="toolsub-width" data-name="width" value="" />
               </fieldset>
@@ -92,7 +92,7 @@ $modules = $db->loadObjectList();
           </ul>
           <ul>
             <li>
-              <label title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS') ?></label>
+              <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS'), '::', JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS') ?></label>
               <fieldset class="">
                 <input type="text" class="toolsub-exclass toolbox-input" name="toolsub-exclass" data-name="class" value="" />
               </fieldset>
@@ -103,7 +103,7 @@ $modules = $db->loadObjectList();
           <h3><?php echo JTexT::_('T3V3_NAVIGATION_MM_COLUMN_CONF') ?></h3>
           <ul>
             <li>
-              <label title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_GRID_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_GRID') ?></label>
+              <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_GRID'), '::', JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_GRID_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_GRID') ?></label>
               <fieldset class="btn-group">
                 <a href="" class="btn toolcol-addcol toolbox-action" data-action="addColumn">Add Column</a>
                 <a href="" class="btn toolcol-removecol toolbox-action" data-action="removeColumn">Remove Column</a>
@@ -112,7 +112,7 @@ $modules = $db->loadObjectList();
           </ul>
           <ul>
             <li>
-              <label title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_WIDTH_SPAN_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_WIDTH_SPAN') ?></label>
+              <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_WIDTH_SPAN'), '::', JTexT::_('T3V3_NAVIGATION_MM_WIDTH_SPAN_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_WIDTH_SPAN') ?></label>
               <fieldset class="">
                 <input type="text" class="toolcol-width toolbox-input input-small" name="toolcol-width" data-name="width" value="" />
               </fieldset>
@@ -120,7 +120,7 @@ $modules = $db->loadObjectList();
           </ul>
           <ul>
             <li>
-              <label title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_MODULE_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_MODULE') ?></label>
+              <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_MODULE'), '::', JTexT::_('T3V3_NAVIGATION_MM_MODULE_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_MODULE') ?></label>
               <fieldset class="">
                 <select type="select" class="toolcol-position toolbox-input toolbox-select" name="toolcol-position" data-name="position">
                   <option value=""><?php echo JTexT::_('T3V3_NAVIGATION_MM_SELECT_MODULE') ?></option>
@@ -135,7 +135,7 @@ $modules = $db->loadObjectList();
           </ul>
           <ul>
             <li>
-              <label title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS') ?></label>
+              <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS'), '::', JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS') ?></label>
               <fieldset class="">
                 <input type="text" class="toolcol-exclass toolbox-input" name="toolcol-exclass" data-name="class" value="" />
               </fieldset>

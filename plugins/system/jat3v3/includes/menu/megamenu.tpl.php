@@ -2,7 +2,7 @@
 
 class T3V3MenuMegamenuTpl {
 	static function beginmenu ($vars) {
-		return '<div id="ja-mega-menu">';
+		return '<div id="ja-megamenu">';
 	}
 	static function endmenu ($vars) {
 		return '</div>';
@@ -30,7 +30,7 @@ class T3V3MenuMegamenuTpl {
 		$item = $vars['item'];
 		$setting = $item->setting;
 		$sub = $setting['sub'];
-		$cls = 'nav-child '.($item->dropdown ? 'dropdown-menu mega-menu' : 'mega-group');
+		$cls = 'nav-child '.($item->dropdown ? 'dropdown-menu mega-dropdown-menu' : 'mega-group');
 		$style = '';
 		$data = '';
 		if (isset($sub['width'])) {
