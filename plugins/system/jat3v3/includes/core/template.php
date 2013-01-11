@@ -442,11 +442,11 @@ class T3v3Template extends ObjectExtendable
 		}
 
 		// Add scripts
-		if(version_compare(JVERSION, '3.0', 'ge')){
-			JHtml::_('jquery.framework');
-		} else {
-			$this->addScript (T3V3_URL.'/bootstrap/js/jquery.js');
-		}
+		//if(version_compare(JVERSION, '3.0', 'ge')){
+		//	JHtml::_('jquery.framework');
+		//} else {
+			$this->addScript (T3V3_URL.'/js/jquery-1.8.3' . ($this->getParam('devmode', 0) ? '' : '.min') . '.js');
+		//}
 		define('JQUERY_INCLUED', 1);
 
 		// As joomla 3.0 bootstrap is buggy, we will not use it
