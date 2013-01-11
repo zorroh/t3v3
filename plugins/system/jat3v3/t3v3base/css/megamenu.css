@@ -6,6 +6,12 @@
   display: inline;
   padding: 0;
   margin: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+.mega-inner .ja-module ul li a:hover {
+  background: none;
 }
 .mega-nav {
   margin: 0;
@@ -23,4 +29,9 @@
 }
 #ja-megamenu .nav > .dropdown > .dropdown-toggle .caret {
   display: inline-block;
+}
+/* The group ---*/
+
+#ja-megamenu .mega-group {
+  margin: 10px 0 10px 10px;
 }
