@@ -296,6 +296,7 @@
 /* Fix right spacing for chzn chosen in Megamenu Admin UI */
 #megamenu-admin ul.chzn-results {
   margin-right: 4px;
+  float: none;
 }
 
 /* Fix submenu auto open on hover */

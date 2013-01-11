@@ -114,7 +114,20 @@ $modules = $db->loadObjectList();
             <li>
               <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_WIDTH_SPAN'), '::', JTexT::_('T3V3_NAVIGATION_MM_WIDTH_SPAN_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_WIDTH_SPAN') ?></label>
               <fieldset class="">
-                <input type="text" class="toolcol-width toolbox-input input-small" name="toolcol-width" data-name="width" value="" />
+                <select class="toolcol-width toolbox-input toolbox-select input-mini" name="toolcol-width" data-name="width">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
               </fieldset>
             </li>
           </ul>
@@ -122,7 +135,7 @@ $modules = $db->loadObjectList();
             <li>
               <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_MODULE'), '::', JTexT::_('T3V3_NAVIGATION_MM_MODULE_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_MODULE') ?></label>
               <fieldset class="">
-                <select type="select" class="toolcol-position toolbox-input toolbox-select" name="toolcol-position" data-name="position">
+                <select class="toolcol-position toolbox-input toolbox-select" name="toolcol-position" data-name="position">
                   <option value=""><?php echo JTexT::_('T3V3_NAVIGATION_MM_SELECT_MODULE') ?></option>
                   <?php
                   foreach ($modules as $module) {

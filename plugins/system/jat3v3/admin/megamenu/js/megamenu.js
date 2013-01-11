@@ -33,7 +33,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		bindEvents (nav_all);
 
 		// unbind all events for toolbox actions & inputs
-		$('.toolbox-action, .toolbox-toggle, .toolbox-input').unbind ();
+		$('.toolbox-action, .toolbox-toggle, .toolbox-input').unbind ("focus blur click change keydown");
 
 		// stop popup event when click in toolbox area
 		$('.t3-row-mega').click (function(event) {
@@ -511,25 +511,19 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 
 			case 'col':
 				$('.toolcol-exclass').attr('value', currentSelected.data ('class') || '');
-				$('.toolcol-position').attr('value', currentSelected.data ('position') || '');
-				$('.toolcol-width').attr('value', currentSelected.data ('width') || '');
+				//$('.toolcol-position').attr('value', currentSelected.data ('position') || '');
+				//$('.toolcol-width').attr('value', currentSelected.data ('width') || '');
+				$('.toolcol-position').val (currentSelected.data ('position') || '').trigger("liszt:updated");
+				$('.toolcol-width').val (currentSelected.data ('width') || '').trigger("liszt:updated");
 				/* enable/disable module chosen */
 				if (currentSelected.find ('.mega-nav').length > 0) {
 					$('.toolcol-position').parent().addClass('disabled');
 				}
-/*
-				// build tool width
-				var toolwidth = $('select.toolcol-width'),
-					col = currentSelected,
-					cols = col.parent().children(),
-					count = cols.length;
-
-				// remove all current children
-				toolwidth.empty();
-				//
-				var min = 2,
-					max = 12 - 2*(count-1);
-*/					
+				// disable choose width if signle column
+				if (currentSelected.parent().children().length == 1) {
+					$('.toolcol-width').parent().addClass ('disabled');
+				}
+					
 				break;
 		}
 	}
