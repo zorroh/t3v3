@@ -1,16 +1,18 @@
-/* GENECRIC MODULE STYLE
---------------------------------------------------------- */
+//
+// GENECRIC MODULE STYLE
+// --------------------------------------------------
 .ja-module {
   background: @T3moduleBackground;
   color: @T3moduleColor;
   margin-bottom: @baseLineHeight * 2;
-  //Module padding
+  // Module padding
   .module-inner {
     padding: @T3modulePadding;
   }
 }
 
-/* Module Title ---*/
+// Module Title
+// ------------
 .module-title {
   background: @T3moduleTitleBackground;
   color: @T3moduleTitleColor;
@@ -19,14 +21,16 @@
   padding: @T3moduleTitlePadding;
 }
 
-/* Module Content ---*/
+// Module Content
+// --------------
 .module-ct {
   background: @T3moduleContentBackground;
   color: @T3moduleContentColor;
   padding: @T3moduleContentPadding;
 }
 
-/* Module List ---*/
+// Module List
+// -----------
 .ja-module ul,
 .ja-module ol {
   margin-left: 20px;
@@ -39,9 +43,44 @@
   margin-left: 0;
 }
 
+
+
 //
 // JOOMLA! MODULES
 // --------------------------------------------------
+
+// Menu
+// ----
+.module_menu .nav {
+  margin-bottom: @baseLineHeight;
+}
+
+.module_menu .nav > li {
+  border-top: 1px solid @hrBorder;
+}
+
+.module_menu .nav > li > a {
+  padding: 5px;
+}
+
+// No top border
+.module_menu .nav > li:first-child {
+  border-top: 0;
+}
+
+.module_menu .nav > li:first-child > a {
+  padding-top: 0;
+  border-top: 0;
+}
+
+// Hover state
+.module_menu .nav > li > a:hover {
+}
+
+// Active state
+.module_menu .nav > li.active > a {
+}
+
 
 // Advertisement
 // -------------
@@ -120,7 +159,7 @@ ul.latestusers {
 
 
 // Stats 
-// ------------
+// -----
 .stats-module {
   dt, dd {
     display: inline-block;
