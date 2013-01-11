@@ -6,12 +6,19 @@
 //-------
 
 // Modules
-.mega-inner .ja-module ul {
-  list-style: disc;
+#ja-megamenu .ja-module ul {
   margin: 0 0 0 15px;
 }
 
-.mega-inner .ja-module ul li a {
+#ja-megamenu .ja-module li {
+  list-style: disc;
+  display: list-item;
+  margin: 0;
+  paddinh: 0;
+  border: 0;
+}
+
+#ja-megamenu .ja-module ul li a {
   display: inline;
   padding: 0;
   margin: 0;
@@ -20,8 +27,13 @@
   font: inherit;
 }
 
-.mega-inner .ja-module ul li a:hover {
+#ja-megamenu .ja-module ul li a:hover,
+#ja-megamenu .ja-module ul li a:active,
+#ja-megamenu .ja-module ul li a:focus,
+#ja-megamenu .ja-module ul li a:visited {
   background: none;
+  color: inherit;
+  font: inherit;
 }
 
 
@@ -31,6 +43,7 @@
 // Global Menu Inner padding
 // -------------------------
 .mega-inner {
+  padding: 10px;
 }
 
 
