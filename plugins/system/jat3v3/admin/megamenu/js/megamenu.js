@@ -221,7 +221,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		var $tocol = $($cols[colidx-1]);
 		var $ul = $tocol.find('ul:first');
 		if (!$ul.length) {
-			$ul = $('<ul class="mega-dropdown-menu level'+level+'">').appendTo ($tocol.children('.mega-inner'));
+			$ul = $('<ul class="mega-nav level'+level+'">').appendTo ($tocol.children('.mega-inner'));
 		}
 		$moveitems.appendTo($ul);
 		if (itemleft == 0) {
@@ -248,23 +248,24 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 
 		if (colidx == $cols.length - 1) {
 			// add new col
+			var oldSelected = currentSelected;
 			currentSelected = $col;
 			actions.addColumn ();
 			$cols = $rows.children('[class*="span"]').filter (function(){return !$(this).data('position')});
-			currentSelected = $item;
+			currentSelected = oldSelected;
 		}
 		// move content to right col
 		var $tocol = $($cols[colidx+1]);
 		var $ul = $tocol.find('ul:first');
 		if (!$ul.length) {
-			$ul = $('<ul class="mega-dropdown-menu level'+level+'">').appendTo ($tocol.children('.mega-inner'));
+			$ul = $('<ul class="mega-nav level'+level+'">').appendTo ($tocol.children('.mega-inner'));
 		}
 		$moveitems.prependTo($ul);
 		if (itemleft == 0) {
 			$col.find('ul:first').remove();
 		}
 		// update toolbox status
-		update_toolbox ();
+		show_toolbox (currentSelected);
 	}
 
 	actions.addRow = function () {
@@ -512,6 +513,10 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 				$('.toolcol-exclass').attr('value', currentSelected.data ('class') || '');
 				$('.toolcol-position').attr('value', currentSelected.data ('position') || '');
 				$('.toolcol-width').attr('value', currentSelected.data ('width') || '');
+				/* enable/disable module chosen */
+				if (currentSelected.find ('.mega-nav').length > 0) {
+					$('.toolcol-position').parent().addClass('disabled');
+				}
 /*
 				// build tool width
 				var toolwidth = $('select.toolcol-width'),
