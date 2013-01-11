@@ -58,8 +58,8 @@ $modules = $db->loadObjectList();
             <li>
               <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_POSITIONS'), '::', JTexT::_('T3V3_NAVIGATION_MM_POSITIONS_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_POSITIONS') ?></label>
               <fieldset class="btn-group">
-                <a href="" class="btn toolitem-moveleft toolbox-action" data-action="moveItemsLeft"><i class="icon-arrow-left"></i><?php echo JTexT::_('T3V3_NAVIGATION_MM_MOVE_LEFT') ?></a>
-                <a href="" class="btn toolitem-moveright toolbox-action" data-action="moveItemsRight"><i class="icon-arrow-right"></i><?php echo JTexT::_('T3V3_NAVIGATION_MM_MOVE_RIGHT') ?></a>
+                <a href="" class="btn toolitem-moveleft toolbox-action" data-action="moveItemsLeft" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_MOVE_LEFT') ?>"><i class="icon-arrow-left"></i></a>
+                <a href="" class="btn toolitem-moveright toolbox-action" data-action="moveItemsRight" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_MOVE_RIGHT') ?>"><i class="icon-arrow-right"></i></a>
               </fieldset>
             </li>
           </ul>
@@ -72,6 +72,7 @@ $modules = $db->loadObjectList();
             </li>
           </ul>
         </div>
+
         <div id="megamenu-toolsub" class="toolbox">
           <h3><?php echo JTexT::_('T3V3_NAVIGATION_MM_SUBMNEU_CONF') ?></h3>
           <ul>
@@ -92,6 +93,18 @@ $modules = $db->loadObjectList();
           </ul>
           <ul>
             <li>
+              <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_ALIGN'), '::', JTexT::_('T3V3_NAVIGATION_MM_ALIGN_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_ALIGN') ?></label>
+              <fieldset class="toolsub-alignment">
+                <div class="btn-group">
+                <a class="btn toolsub-align-left toolbox-action" href="#" data-action="alignment" data-align="left" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_ALIGN_LEFT') ?>"><i class="icon-align-left"></i></a>
+                <a class="btn toolsub-align-center toolbox-action" href="#" data-action="alignment" data-align="center" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_ALIGN_CENTER') ?>"><i class="icon-align-center"></i></a>
+                <a class="btn toolsub-align-right toolbox-action" href="#" data-action="alignment" data-align="right" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_ALIGN_RIGHT') ?>"><i class="icon-align-right"></i></a>
+                </div>
+              </fieldset>
+            </li>
+          </ul>          
+          <ul>
+            <li>
               <label class="hasTip" title="<?php echo JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS'), '::', JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS_DESC') ?>"><?php echo JTexT::_('T3V3_NAVIGATION_MM_EX_CLASS') ?></label>
               <fieldset class="">
                 <input type="text" class="toolsub-exclass toolbox-input" name="toolsub-exclass" data-name="class" value="" />
@@ -99,6 +112,7 @@ $modules = $db->loadObjectList();
             </li>
           </ul>
         </div>
+
         <div id="megamenu-toolcol" class="toolbox">
           <h3><?php echo JTexT::_('T3V3_NAVIGATION_MM_COLUMN_CONF') ?></h3>
           <ul>

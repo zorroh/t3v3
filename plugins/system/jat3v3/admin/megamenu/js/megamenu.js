@@ -49,7 +49,9 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		// bind event for action
 		$('.toolbox-action').click (function(event) {
 			var action = $(this).data ('action');
+
 			if (action) {
+				actions.datas = $(this).data();
 				actions[action] ();
 			}
 			event.stopPropagation();
@@ -58,6 +60,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		$('.toolbox-toggle').change (function(event) {
 			var action = $(this).data ('action');
 			if (action) {
+				actions.datas = $(this).data();
 				actions[action] ();
 			}
 			event.stopPropagation();
@@ -85,6 +88,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 
 	// Actions
 	var actions = {};
+	actions.data = {};
 	actions.toggleMega = function () {
 		if (!currentSelected) return ;
 		// find current level
@@ -209,12 +213,13 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 
 		if (colidx == 0) {
 			// add new col
+			var oldSelected = currentSelected;
 			currentSelected = $col;
-			var selected = currentSelected;
 			// add column to first
-			actions.addColumn (true);
+			actions.datas.addfirst = true;
+			actions.addColumn ();
 			$cols = $rows.children('[class*="span"]').filter (function(){return !$(this).data('position')});
-			currentSelected = selected;
+			currentSelected = oldSelected;
 			colidx++;
 		}
 		// move content to right col
@@ -250,6 +255,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 			// add new col
 			var oldSelected = currentSelected;
 			currentSelected = $col;
+			actions.datas.addfirst = false;
 			actions.addColumn ();
 			$cols = $rows.children('[class*="span"]').filter (function(){return !$(this).data('position')});
 			currentSelected = oldSelected;
@@ -279,14 +285,21 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		show_toolbox ($col);
 	}
 
-	actions.addColumn = function (addfirst) {
+	actions.alignment = function () {
+		var liitem = currentSelected.closest ('li');
+		liitem.removeClass ('mega-align-left mega-align-center mega-align-right').addClass ('mega-align-'+actions.datas.align);
+		liitem.data('alignsub', actions.datas.align);
+		update_toolbox ();
+	}
+
+	actions.addColumn = function () {
 		if (!currentSelected) return ;
 		var $cols = currentSelected.parent().children('[class*="span"]'),
 		colcount = $cols.length + 1,
 		colwidths = defaultColumnsWidth (colcount);
 		// add new column  
 		var $col = $('<div><div class="mega-inner"></div></div>');
-		if (addfirst) 
+		if (actions.datas.addfirst) 
 			$col.prependTo (currentSelected.parent());
 		else {
 			$col.insertAfter (currentSelected);
@@ -395,6 +408,9 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 			if ($this.data('sub') == 'hide') {
 				item['hidesub'] = 1;
 			}
+			if ($this.data('alignsub')) {
+				item['alignsub'] = $this.data('alignsub');
+			}
 			if (Object.keys(item).length) config[id] = item;
 		});
 
@@ -425,7 +441,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 
 	show_toolbox = function (selected) {
 		hide_toolbox (false);
-		currentSelected = selected;
+		if (selected) currentSelected = selected;
 		// remove class open for other
 		megamenu.find ('ul[class*="level"] > li').each (function(){
 			if (!$(this).has (currentSelected).length > 0) $(this).removeClass ('open');
@@ -446,6 +462,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		if (!type) type = toolbox_type ();
 		// remove all disabled status
 		$('#megamenu-toolbox .disabled').removeClass('disabled');
+		$('#megamenu-toolbox .active').removeClass('active');
 		switch (type) {
 			case 'item':
 				$('.toolitem-exclass').attr('value', currentSelected.data ('class') || '');
@@ -466,7 +483,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 				} else {
 					// sub enabled
 					update_toggle (toggle, 1);
-				}
+				}				
 
 				// toggle Group
 				var toggle = $('.toolitem-group');
@@ -490,23 +507,26 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 				break;
 
 			case 'sub':
-				var liitem = currentSelected.closest('li'),
-					toggle = $('.toolitem-megasub');
+				var liitem = currentSelected.closest('li');
 				$('.toolsub-exclass').attr('value', currentSelected.data ('class') || '');
 
-				// toggle
-				if (liitem.hasClass ('mega')) {
-					update_toggle (toggle, 1);
+				if (liitem.data('group')) {
+					$('.toolsub-width').attr('value', '').addClass ('disabled');
+					// disable alignment
+					$('.toolitem-alignment').addClass ('disabled');
 				} else {
-					update_toggle (toggle, 0);
-					$('.toolsub-addrow').addClass ('disabled');
+					$('.toolsub-width').attr('value', currentSelected.data ('width') || '');
+					// if not top level, allow align-left & right only
+					if (liitem.data('level') > 1) {
+						$('.toolsub-align-center').addClass ('disabled');
+					}
+
+					// active align button
+					if (liitem.data('alignsub')) {
+						$('.toolsub-align-'+liitem.data('alignsub')).addClass ('active');
+					}					
 				}
 
-				if (liitem.hasClass ('mega') && !liitem.data('group')) {
-					$('.toolsub-width').attr('value', currentSelected.data ('width') || '');
-				} else {
-					$('.toolsub-width').attr('value', '').addClass ('disabled');
-				}
 				break;
 
 			case 'col':
@@ -537,21 +557,28 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 	apply_toolbox = function (input) {
 		var name = $(input).data ('name'), 
 		value = input.value,
-		type = currentSelected[0].tagName == 'A' ? 'item' : (currentSelected.hasClass ('dropdown-menu') ? 'sub' : 'col');
+		type = toolbox_type ();
 		switch (name) {
 			case 'width':
-			if (type == 'sub') {
-				currentSelected.width(value);
-			}
-			if (type == 'col') {
-				currentSelected.removeClass('span'+currentSelected.data(name)).addClass ('span'+value);
-			}
-			currentSelected.data (name, value);
-			break;
+				if (type == 'sub') {
+					currentSelected.width(value);
+				}
+				if (type == 'col') {
+					currentSelected.removeClass('span'+currentSelected.data(name)).addClass ('span'+value);
+				}
+				currentSelected.data (name, value);
+				break;
+
 			case 'class':
-			currentSelected.removeClass(currentSelected.data(name) || '').addClass (value);
-			currentSelected.data (name, value);
-			break;
+				if (type == 'item') {
+					var item = currentSelected.closest('li');
+				} else {
+					var item = currentSelected;
+				}
+				item.removeClass(item.data(name) || '').addClass (value);
+				item.data (name, value);
+				break;
+
 			case 'position':
 				// replace content if this is not menu-items type
 				if (currentSelected.find ('ul[class*="level"]').length == 0) {

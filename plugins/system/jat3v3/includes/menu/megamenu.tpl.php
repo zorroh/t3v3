@@ -76,12 +76,20 @@ class T3V3MenuMegamenuTpl {
 		}
 		if ($item->mega) $cls .= ' mega';
 		if ($item->group) $cls .= ' group';
-		if ($cls) $cls = 'class="'.trim($cls).'"';
 
 		$data = "data-id=\"{$item->id}\" data-level=\"{$item->level}\"";
 		if ($item->group) $data .= " data-group=\"1\"";
-		if (isset($setting['class'])) $data .= " data-class=\"{$setting['class']}\"";
+		if (isset($setting['class'])) {
+			$data .= " data-class=\"{$setting['class']}\"";
+			$cls .= " {$setting['class']}";
+		}
+		if (isset($setting['alignsub'])) {
+			$data .= " data-alignsub=\"{$setting['alignsub']}\"";
+			$cls .= " mega-align-{$setting['alignsub']}";
+		}
 		if (isset($setting['hidesub'])) $data .= " data-sub=\"hide\"";
+
+		if ($cls) $cls = 'class="'.trim($cls).'"';
 
 		return "<li $cls $data>";
 	}
