@@ -9,9 +9,6 @@
 
 
 
-// BASIC STYLE FOR MEGAMENU
-// -------------------------
-
 // RESET 
 //-------
 
@@ -47,6 +44,7 @@
 }
 
 
+
 // THE MEGAMENU
 //--------------------------------------------
 
@@ -54,6 +52,11 @@
 // -------------------------
 .mega-inner {
   padding: @baseLineHeight / 2;
+}
+
+// No padding for 1 column menu
+.row-fluid .span12 .mega-inner {
+  padding: 0;
 }
 
 
@@ -83,6 +86,7 @@
   display: none;
 }
 
+// Show the caret on level 0 only
 #ja-megamenu .nav > .dropdown > .dropdown-toggle .caret {
   display: inline-block;
 }
@@ -90,7 +94,6 @@
 
 // The Group
 // ---------
-
 #ja-megamenu .group {
   .clearfix();
 }

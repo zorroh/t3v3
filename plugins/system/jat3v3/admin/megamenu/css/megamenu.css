@@ -141,8 +141,9 @@
   margin-left: 11px;
 }
 
-#ja-megamenu .dropdown-menu .dropdown-menu .dropdown-menu {
-  margin-left: 22px;
+#ja-megamenu .dropdown-submenu.mega-align-right .dropdown-menu {
+  margin-left: 0;
+  margin-right: 11px;
 }
 
 #ja-megamenu .mega-nav li {
@@ -244,18 +245,19 @@
 }
 
 
-/* Selected Item ---*/
+/* Open Item ---*/
+#megamenu-admin .nav > li.open > a,
+#megamenu-admin .open > a {
+  background: #333;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,.5);
+}
+
+
+/* Hover Item ---*/
 #megamenu-admin .nav-child.hover,
 #megamenu-admin ul[class*="level"] > li > a.hover,
 #megamenu-admin .row-fluid [class*="span"].hover {
-  background: #fffbf0 !important;
-  color: #333333 !important;
-  border: 1px solid #666 !important;
-  box-shadow: 1px 2px 5px rgba(0,0,0,.5);
-  border-radius: 3px;
-}
-
-#megamenu-admin .selected  {
   background: #fffbf0 !important;
   color: #333333 !important;
   border: 1px solid #666 !important;
@@ -268,12 +270,26 @@
 #megamenu-admin ul[class*="level"] > li > a:active {
   background: #fffbf0 !important;
   color: #333333 !important;
+  text-shadow: 0 1px 1px #fff !important;
 }
 
+/* The caret */
 #ja-megamenu .mega-nav li a.hover:after,
 #ja-megamenu .mega-nav li a.selected:after {
   border-left-color: #333;
 }
+
+
+/* Selected Item ---*/
+#megamenu-admin .selected  {
+  background: #fffbf0 !important;
+  color: #333333 !important;
+  border: 1px solid #666 !important;
+  box-shadow: 1px 2px 5px rgba(0,0,0,.5);
+  border-radius: 3px;
+  text-shadow: 0 1px 1px #fff !important;
+}
+
 
 
 /* Fix for Joomla! Default Admin Template

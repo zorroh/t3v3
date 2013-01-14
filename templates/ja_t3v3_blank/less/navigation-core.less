@@ -102,7 +102,7 @@
   *border-bottom-width: 2px;
   padding: 0;
   margin: 0; // override default ul
-  .border-radius(0);
+  .border-radius(0 0 @baseBorderRadius @baseBorderRadius);
   .box-shadow(0 5px 10px rgba(0,0,0,.2));
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding;
@@ -253,7 +253,7 @@
   left: 100%;
   margin-top: -6px;
   margin-left: -1px;
-  .border-radius (0);
+  .border-radius (@baseBorderRadius);
 }
 
 .dropdown-submenu:hover > .dropdown-menu {
