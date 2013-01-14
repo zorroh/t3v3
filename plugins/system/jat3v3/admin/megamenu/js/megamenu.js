@@ -190,7 +190,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 			liitem.removeClass('dropdown-submenu');
 			sub.removeClass ('dropdown-menu mega-dropdown-menu').addClass ('mega-group');
 			sub.css('width', '');
-			unbindEvents(sub);
+			rebindEvents(sub);
 		}
 		// update toolbox status
 		update_toolbox ();
