@@ -152,7 +152,7 @@
 			var ajaxs = this.ajaxs;
 				
 			info = $.extend({
-				url: T3V3Admin.rooturl,
+				url: info.site == 'admin' ? T3V3Admin.adminurl : T3V3Admin.rooturl,
 				func: ''
 			}, info);
 

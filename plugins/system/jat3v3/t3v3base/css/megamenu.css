@@ -1,3 +1,30 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 #ja-megamenu .ja-module ul {
   margin: 0 0 0 15px;
 }
@@ -27,6 +54,9 @@
 .mega-inner {
   padding: 10px;
 }
+.row-fluid .span12 .mega-inner {
+  padding: 0;
+}
 .mega-nav {
   margin: 0;
   padding: 0;
@@ -36,6 +66,9 @@
   list-style: none;
   margin-left: 0;
 }
+.mega-nav > li a {
+  white-space: normal;
+}
 #ja-megamenu .nav .caret,
 #ja-megamenu .dropdown-submenu .caret,
 #ja-megamenu .mega-menu .caret {
@@ -44,13 +77,49 @@
 #ja-megamenu .nav > .dropdown > .dropdown-toggle .caret {
   display: inline-block;
 }
-/* The group ---*/
-
-#ja-megamenu .mega-group {
-  margin: 10px 0 10px 10px;
+#ja-megamenu .group {
+  *zoom: 1;
 }
-
-/* Menu alignment */
+#ja-megamenu .group:before,
+#ja-megamenu .group:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#ja-megamenu .group:after {
+  clear: both;
+}
+#ja-megamenu .group > a {
+  font-weight: bold;
+  padding-left: 5px;
+  border-bottom: 1px solid #eeeeee;
+}
+#ja-megamenu .mega-group {
+  margin: 0;
+  *zoom: 1;
+}
+#ja-megamenu .mega-group:before,
+#ja-megamenu .mega-group:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#ja-megamenu .mega-group:after {
+  clear: both;
+}
+#ja-megamenu .mega-group {
+  margin: 0;
+  *zoom: 1;
+}
+#ja-megamenu .mega-group:before,
+#ja-megamenu .mega-group:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#ja-megamenu .mega-group:after {
+  clear: both;
+}
 .mega-align-left > .dropdown-menu {
   left: 0;
 }
@@ -66,7 +135,6 @@
   -ms-transform: translate(-50%);
   -o-transform: translate(-50%);
 }
-
 .dropdown-submenu.mega-align-left > .dropdown-menu {
   left: 100%;
 }

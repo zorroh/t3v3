@@ -1,5 +1,12 @@
-// BASIC STYLE FOR MEGAMENU
-// -------------------------
+// VARIABLES & MIXINS
+// ------------------
+
+// Prevent Bootstrap Upgrading errors
+@import "../bootstrap/less/variables.less";
+
+// Bootstrap mixins
+@import "../bootstrap/less/mixins.less";
+
 
 
 // RESET 
@@ -37,13 +44,19 @@
 }
 
 
+
 // THE MEGAMENU
 //--------------------------------------------
 
 // Global Menu Inner padding
 // -------------------------
 .mega-inner {
-  padding: 10px;
+  padding: @baseLineHeight / 2;
+}
+
+// No padding for 1 column menu
+.row-fluid .span12 .mega-inner {
+  padding: 0;
 }
 
 
@@ -60,6 +73,10 @@
   margin-left: 0;
 }
 
+.mega-nav > li a {
+  white-space: normal;
+}
+
 
 // The caret
 // ---------
@@ -69,25 +86,48 @@
   display: none;
 }
 
+// Show the caret on level 0 only
 #ja-megamenu .nav > .dropdown > .dropdown-toggle .caret {
   display: inline-block;
 }
 
 
-/* The group ---*/
+// The Group
+// ---------
+#ja-megamenu .group {
+  .clearfix();
+}
+
+// Group Title
+#ja-megamenu .group > a {
+  font-weight: bold;
+  padding-left: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+// Group Content
 #ja-megamenu .mega-group {
-  margin: 10px 0 10px 10px;
+  margin: 0;
+  .clearfix();
+}
+
+#ja-megamenu .mega-group {
+  margin: 0;
+  .clearfix();
 }
 
 
-/* Menu alignment */
+// Menu alignment
+// --------------
 .mega-align-left > .dropdown-menu {
   left: 0;
 }
+
 .mega-align-right > .dropdown-menu {
   left: auto;
   right: 0;
 }
+
 .mega-align-center > .dropdown-menu {
   left: 50%;
   transform: translate(-50%);
@@ -100,6 +140,7 @@
 .dropdown-submenu.mega-align-left > .dropdown-menu {
   left: 100%;
 }
+
 .dropdown-submenu.mega-align-right > .dropdown-menu {
   left: auto;
   right: 100%;

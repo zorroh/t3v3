@@ -73,7 +73,11 @@
         margin-left: @fluidGridGutterWidth;
         *margin-left: @fluidGridGutterWidth - (.5 / @gridRowWidth * 100 * 1%);
       }
-      [class*="span"]:first-child {
+      [class*="span"]:first-child:not(.pull-right) {
+        margin-left: 0;
+      }
+
+      [class*="span"].pull-right:first-child + [class*="span"]:not(.pull-right) {
         margin-left: 0;
       }
       

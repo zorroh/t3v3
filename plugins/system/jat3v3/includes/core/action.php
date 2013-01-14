@@ -245,7 +245,7 @@ class T3V3Action extends JObject
 		$input = JFactory::getApplication()->input;
 
 		if(!empty($param) && $input->getWord($param, '') == ''){
-			$input->set($param, $input->getWord($from));
+			$input->set($param, $input->getCmd($from));
 		}
 	}
 
