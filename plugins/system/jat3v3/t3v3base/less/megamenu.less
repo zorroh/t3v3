@@ -1,6 +1,16 @@
+// VARIABLES & MIXINS
+// ------------------
+
+// Prevent Bootstrap Upgrading errors
+@import "../bootstrap/less/variables.less";
+
+// Bootstrap mixins
+@import "../bootstrap/less/mixins.less";
+
+
+
 // BASIC STYLE FOR MEGAMENU
 // -------------------------
-
 
 // RESET 
 //-------
@@ -43,7 +53,7 @@
 // Global Menu Inner padding
 // -------------------------
 .mega-inner {
-  padding: 10px;
+  padding: @baseLineHeight / 2;
 }
 
 
@@ -60,6 +70,10 @@
   margin-left: 0;
 }
 
+.mega-nav > li a {
+  white-space: normal;
+}
+
 
 // The caret
 // ---------
@@ -74,20 +88,43 @@
 }
 
 
-/* The group ---*/
+// The Group
+// ---------
+
+#ja-megamenu .group {
+  .clearfix();
+}
+
+// Group Title
+#ja-megamenu .group > a {
+  font-weight: bold;
+  padding-left: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+// Group Content
 #ja-megamenu .mega-group {
-  margin: 10px 0 10px 10px;
+  margin: 0;
+  .clearfix();
+}
+
+#ja-megamenu .mega-group {
+  margin: 0;
+  .clearfix();
 }
 
 
-/* Menu alignment */
+// Menu alignment
+// --------------
 .mega-align-left > .dropdown-menu {
   left: 0;
 }
+
 .mega-align-right > .dropdown-menu {
   left: auto;
   right: 0;
 }
+
 .mega-align-center > .dropdown-menu {
   left: 50%;
   transform: translate(-50%);
@@ -100,6 +137,7 @@
 .dropdown-submenu.mega-align-left > .dropdown-menu {
   left: 100%;
 }
+
 .dropdown-submenu.mega-align-right > .dropdown-menu {
   left: auto;
   right: 100%;
