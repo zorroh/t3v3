@@ -242,6 +242,9 @@ class T3v3Template extends ObjectExtendable
 			$menu = new T3V3MenuMegamenu ($menutype, $mmconfig);
 			$menu->render();          
 
+			// add core megamenu.css in plugin
+			$this->addStyleSheet(T3V3_URL.'/css/megamenu.css');
+			// megamenu.css override in template
 			$this->addCss ('megamenu');	
 		} else {
 			//normal
