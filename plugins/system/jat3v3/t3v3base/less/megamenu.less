@@ -24,9 +24,20 @@
     padding: @baseLineHeight / 2;
   }
 
-  // padding for 1 column menu
-  .row-fluid .span12 .mega-inner {
-    padding: 0;
+
+  // Menu Grids
+  // ----------
+  .row-fluid {
+  }
+
+  .row-fluid + .row-fluid,
+  .row-fluid + .row-fluid  {
+    margin-top: @baseLineHeight / 2;
+    padding-top: @baseLineHeight / 2;
+    boder-top: @hrBorder;
+  }
+
+  .row-fluid [class*="span"] {
   }
 
 
@@ -55,28 +66,63 @@
   }
 
   // Group Title
-  .mega-group > a {
+  .mega-nav .mega-group > a {
     font-weight: bold;
     padding-left: 5px;
-    border-bottom: 1px solid #eee;
+    margin: 0;
+  }
+
+  .mega-nav .mega-group > a:hover,
+  .mega-nav .mega-group > a:active,
+  .mega-nav .mega-group > a:focus {
+    background: inherit;
+    color: inherit;
   }
 
   // Group Content
   .mega-group-ct {
     margin: 0;
+    padding: 0;
     .clearfix();
   }
 
+  .mega-group-ct > .row-fluid > [class*="span"] > .mega-inner {
+    padding: (@baseLineHeight / 2) 0;
+  }
 
-  // RESET 
-  //-------
+  // Nav in Group
+  .mega-group > .mega-nav {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
 
-  // Modules
+  .mega-group > .mega-nav > li {
+  }
+
+  .mega-group .mega-nav > li a {
+  }
+
+
+  // Modules in Megamenu
+  // -------------------
+
+  // Module Title
+  .ja-module .module-title {
+    margin-bottom: 0;
+  }
+
+  // Module Content
+  .ja-module .module-ct {
+    margin: 0;
+    padding: (@baseLineHeight / 2) 5px;
+  }
+
+  // List in Module
   .ja-module ul {
     margin: 0 0 0 15px;
   }
 
-  ja-module li {
+  .ja-module li {
     list-style: disc;
     display: list-item;
     margin: 0;

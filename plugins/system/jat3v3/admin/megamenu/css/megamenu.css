@@ -97,9 +97,26 @@
   padding: 10px;
 }
 
-#ja-megamenu .row-fluid .span12 .mega-inner {
-  padding: 10px;
+
+/* Menu Grid ---*/
+#ja-megamenu .row-fluid {
 }
+
+#ja-megamenu .row-fluid + .row-fluid,
+#ja-megamenu .row-fluid + .row-fluid  {
+  margin-top: 0;
+  boder-top: 0;
+}
+
+#ja-megamenu .row-fluid [class*="span"] {
+  border: 1px dotted #ccc;
+  border-radius: 3px;
+  transition: all 0.1s ease 0s;
+  -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.1s ease 0s;
+  background: #fff;
+}
+
 
 /* The Nav ---*/
 #ja-megamenu > .nav {
@@ -177,12 +194,16 @@
 #ja-megamenu .mega-group-ct {
   border: 1px solid #ddd;
   padding: 10px;
-  margin: 10px 0 10px 10px;
+  margin: 10px 0 10px 0;
   transition: all 0.1s ease 0s;
   -webkit-transition: all 0.1s ease 0s;
   -moz-transition: all 0.1s ease 0s;
   border-radius: 3px;
   background: #f2f2f2;
+}
+
+#ja-megamenu .mega-group-ct > .row-fluid > [class*="span"] > .mega-inner {
+  padding: 10px;
 }
 
 
@@ -236,25 +257,6 @@
   border-color: #666;
   background: #fb0;
   color: #fff;
-}
-
-
-/* Grid Outline ---*/
-#ja-megamenu .mega-menu > .row-fluid {
-}
-
-#ja-megamenu .mega-menu > .row-fluid + .row-fluid,
-#ja-megamenu .mega-nav .row-fluid + .row-fluid  {
-  margin-top: 10px;
-}
-
-#ja-megamenu .row-fluid [class*="span"] {
-  border: 1px dotted #ccc;
-  border-radius: 3px;
-  transition: all 0.1s ease 0s;
-  -webkit-transition: all 0.1s ease 0s;
-  -moz-transition: all 0.1s ease 0s;
-  background: #fff;
 }
 
 

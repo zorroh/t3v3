@@ -1,8 +1,38 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 #ja-megamenu .mega-inner {
   padding: 10px;
 }
-#ja-megamenu .row-fluid .span12 .mega-inner {
-  padding: 0;
+#ja-megamenu .row-fluid + .row-fluid,
+#ja-megamenu .row-fluid + .row-fluid {
+  margin-top: 10px;
+  padding-top: 10px;
+  boder-top: #eeeeee;
 }
 #ja-megamenu .mega-nav {
   margin: 0;
@@ -28,13 +58,20 @@
 #ja-megamenu .mega-group:after {
   clear: both;
 }
-#ja-megamenu .mega-group > a {
+#ja-megamenu .mega-nav .mega-group > a {
   font-weight: bold;
   padding-left: 5px;
-  border-bottom: 1px solid #eeeeee;
+  margin: 0;
+}
+#ja-megamenu .mega-nav .mega-group > a:hover,
+#ja-megamenu .mega-nav .mega-group > a:active,
+#ja-megamenu .mega-nav .mega-group > a:focus {
+  background: inherit;
+  color: inherit;
 }
 #ja-megamenu .mega-group-ct {
   margin: 0;
+  padding: 0;
   *zoom: 1;
 }
 #ja-megamenu .mega-group-ct:before,
@@ -46,10 +83,24 @@
 #ja-megamenu .mega-group-ct:after {
   clear: both;
 }
+#ja-megamenu .mega-group-ct > .row-fluid > [class*="span"] > .mega-inner {
+  padding: 10px 0;
+}
+#ja-megamenu .mega-group > .mega-nav {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+#ja-megamenu .ja-module .module-title {
+  margin-bottom: 0;
+}
+#ja-megamenu .ja-module .module-ct {
+  margin: 0;
+  padding: 10px 5px;
+}
 #ja-megamenu .ja-module ul {
   margin: 0 0 0 15px;
 }
-#ja-megamenu ja-module li {
+#ja-megamenu .ja-module li {
   list-style: disc;
   display: list-item;
   margin: 0;

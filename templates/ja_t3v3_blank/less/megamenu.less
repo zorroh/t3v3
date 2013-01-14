@@ -17,9 +17,18 @@
     padding: @baseLineHeight / 2;
   }
 
-  // padding for 1 column menu
-  .row-fluid .span12 .mega-inner {
-    padding: @baseLineHeight / 2;
+
+  // Menu Grids
+  // ----------
+  .row-fluid {
+  }
+
+  .row-fluid + .row-fluid,
+  .row-fluid + .row-fluid  {
+    boder-top: @T3borderColor;
+  }
+
+  .row-fluid [class*="span"] {
   }
 
 
@@ -46,29 +55,44 @@
   .mega-nav > li a {
     white-space: normal;
     border: 0;
-    padding: 0 10px;
+    padding: 3px 10px;
+    margin: 2px 0;
+    border-radius: @LargeBorderRadius;
   }
 
+  // The caret
+  .mega-nav .dropdown-submenu > a::after {
+    margin-right: 0;
+  }
 
 
   // The Group
   // ---------
-  #ja-megamenu .mega-group {
+  .mega-group {
   }
 
   // Group Title
-  #ja-megamenu .mega-group > a {
+  .mega-nav .mega-group > a {
+    font-size: @T3biggerFontSize;
     font-weight: bold;
-    padding-left: 5px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid @T3borderColor;
+    padding: 3px 10px 5px 5px;
   }
+
+  .mega-nav .mega-group > a:hover,
+  .mega-nav .mega-group > a:active,
+  .mega-nav .mega-group > a:focus {
+    background: inherit;
+    color: @grayDarker;
+  }
+
 
   // Group Content
-  #ja-megamenu .mega-group-ct {
-    margin: 0;
-    .clearfix();
+  .mega-group-ct {
   }
 
+  .mega-group-ct > .row-fluid > [class*="span"] > .mega-inner {
+  }
 
   // Nav in Group
   .mega-group .mega-nav {
@@ -84,35 +108,23 @@
 
   // Modules in Megamenu
   // -------------------
-  .ja-module ul {
-    margin: 0 0 0 15px;
+
+  // Module Title
+  .ja-module .module-title {
+    font-size: @T3biggerFontSize;
+    color: @dropdownLinkColor;
+    display: block;
+    line-height: @baseLineHeight;
+    border-bottom: 1px solid @T3borderColor;
+    padding: 3px 10px 5px 5px;
   }
 
-  .ja-module li {
-    list-style: disc;
-    display: list-item;
-    margin: 0;
-    paddinh: 0;
-    border: 0;
+  // Module Content
+  .ja-module .module-ct {
   }
 
-  .ja-module ul li a {
-    display: inline;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-  }
+  // List in Module
 
-  .ja-module ul li a:hover,
-  .ja-module ul li a:active,
-  .ja-module ul li a:focus,
-  .ja-module ul li a:visited {
-    background: none;
-    color: inherit;
-    font: inherit;
-  }
 
   // End
 }
