@@ -30,7 +30,7 @@ class T3V3MenuMegamenuTpl {
 		$item = $vars['item'];
 		$setting = $item->setting;
 		$sub = $setting['sub'];
-		$cls = 'nav-child '.($item->dropdown ? 'dropdown-menu mega-dropdown-menu' : 'mega-group');
+		$cls = 'nav-child '.($item->dropdown ? 'dropdown-menu mega-dropdown-menu' : 'mega-group-ct');
 		$style = '';
 		$data = '';
 		if (isset($sub['width'])) {
@@ -75,7 +75,7 @@ class T3V3MenuMegamenuTpl {
 			$cls .= $item->level == 1 ? ' dropdown' : ' dropdown-submenu';
 		}
 		if ($item->mega) $cls .= ' mega';
-		if ($item->group) $cls .= ' group';
+		if ($item->group) $cls .= ' mega-group';
 
 		$data = "data-id=\"{$item->id}\" data-level=\"{$item->level}\"";
 		if ($item->group) $data .= " data-group=\"1\"";

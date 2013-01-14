@@ -89,47 +89,6 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 	// Actions
 	var actions = {};
 	actions.data = {};
-	actions.toggleMega = function () {
-		if (!currentSelected) return ;
-		// find current level
-		var liitem = currentSelected.closest ('li'),
-		level = liitem.data('level');
-		if (liitem.hasClass ('mega')) {
-			// mega to default sub
-			// find all ul with same level
-			var uls = currentSelected.find('ul.level'+level);
-			var sub = $('<ul class="nav-child"></ul>').appendTo (currentSelected.parent()).append (uls.children());
-			sub.addClass (liitem.data('group')?'dropdown-group':'dropdown-menu').addClass('level'+level);
-			currentSelected.remove();
-			currentSelected = sub;
-			bindEvents(currentSelected);
-			currentSelected.addClass('selected')
-			// remove mega class for li
-			liitem.removeClass ('mega');
-		} else {
-			// default sub => switch to mega
-			var megamenu = $('<div class="nav-child"><div class="row-fluid"><div class="span12" data-width="12"><div class="mega-inner"></div></div></div></div>');
-			if (liitem.data('group')) {
-				megamenu.addClass ('dropdown-group mega-group');
-			} else {
-				megamenu.addClass ('dropdown-menu mega-dropdown-menu');
-				megamenu.css ('width', '400');
-				megamenu.data('width', 400);
-			}
-			megamenu.appendTo (currentSelected.parent()).find('.mega-inner').append(currentSelected);
-			bindEvents(megamenu.find('.span12'));
-			// switch selected
-			currentSelected.addClass ('mega-dropdown-menu').removeClass ('nav-child dropdown-menu dropdown-group selected');
-			unbindEvents(currentSelected);
-			currentSelected = megamenu;
-			bindEvents(currentSelected);
-			currentSelected.addClass('selected');
-			// add mega class for li
-			liitem.addClass ('mega');
-		}
-		// update toolbox status
-		update_toolbox ();
-	}
 
 	actions.toggleSub = function () {
 		if (!currentSelected) return ;
@@ -179,16 +138,16 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		if (liitem.data('level') == 1) return; // ignore for top level
 		if (liitem.data('group')) {
 			liitem.data('group', 0);
-			liitem.addClass('dropdown-submenu');
+			liitem.removeClass('mega-group').addClass('dropdown-submenu');
 			currentSelected.addClass ('dropdown-toggle').data('toggle', 'dropdown');
-			sub.removeClass ('mega-group').addClass ('dropdown-menu mega-dropdown-menu');
+			sub.removeClass ('mega-group-ct').addClass ('dropdown-menu mega-dropdown-menu');
 			sub.css('width', sub.data('width'));
 			rebindEvents(sub);
 		} else {
 			currentSelected.removeClass ('dropdown-toggle').data('toggle', '');
 			liitem.data('group', 1);
-			liitem.removeClass('dropdown-submenu');
-			sub.removeClass ('dropdown-menu mega-dropdown-menu').addClass ('mega-group');
+			liitem.removeClass('dropdown-submenu').addClass('mega-group');
+			sub.removeClass ('dropdown-menu mega-dropdown-menu').addClass ('mega-group-ct');
 			sub.css('width', '');
 			rebindEvents(sub);
 		}
