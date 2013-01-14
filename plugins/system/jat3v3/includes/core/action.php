@@ -227,11 +227,16 @@ class T3V3Action extends JObject
 
 		if (!empty ($module)) {
 			$style = $input->getCmd ('style', 'jaxhtml');
-			$content = JModuleHelper::renderModule($module, array('style'=>$style));
+			$buffer = JModuleHelper::renderModule($module, array('style'=>$style));
 			// replace relative images url
+			$base   = JURI::base(true).'/';
+			$protocols = '[a-zA-Z0-9]+:'; //To check for all unknown protocals (a protocol must contain at least one alpahnumeric fillowed by :
+			$regex     = '#(src)="(?!/|' . $protocols . '|\#|\')([^"]*)"#m';
+			$buffer    = preg_replace($regex, "$1=\"$base\$2\"", $buffer);
+
 		}
 
-		echo $content;
+		echo $buffer;
 		exit ();
 	}
 

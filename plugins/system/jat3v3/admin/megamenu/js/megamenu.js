@@ -583,12 +583,16 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 				// replace content if this is not menu-items type
 				if (currentSelected.find ('ul[class*="level"]').length == 0) {
 					// get module content
-					$.ajax({
-						url: T3V3Admin.rooturl,
-						data:{'t3action':'module', 'mid': value}
-					}).done(function ( data ) {
-						currentSelected.find('.mega-inner').html(data);
-					});
+					if (value) {
+						$.ajax({
+							url: T3V3Admin.rooturl,
+							data:{'t3action':'module', 'mid': value}
+						}).done(function ( data ) {
+							currentSelected.find('.mega-inner').html(data);
+						});
+					} else {
+						currentSelected.find('.mega-inner').html('');
+					}
 					currentSelected.data (name, value);
 				}
 				break;

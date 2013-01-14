@@ -44,7 +44,7 @@ class T3V3MenuMegamenu {
 		}
 	}
 
-	function render () {
+	function render ($return = false) {
 		$this->menu = '';
 
 		$this->_('beginmenu');
@@ -52,7 +52,11 @@ class T3V3MenuMegamenu {
 		$this->nav(null, $keys[0]);
 		$this->_('endmenu');
 
-		echo $this->menu;
+		if ($return) {
+			return $this->menu;
+		} else {
+			echo $this->menu;			
+		}
 	}
 
 	function nav ($pitem, $start = 0, $end = 0) {

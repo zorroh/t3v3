@@ -10,7 +10,14 @@ class T3v3AdminMegamenu {
 		$mmconfig = ($currentconfig && isset($currentconfig[$menutype])) ? $currentconfig[$menutype] : array();
 		$mmconfig['editmode'] = true;
 		$menu = new T3V3MenuMegamenu ($menutype, $mmconfig);
-		$menu->render();
+		$buffer = $menu->render(true);
+		// replace image path
+		$base   = JURI::base(true).'/administrator/';
+		$protocols = '[a-zA-Z0-9]+:'; //To check for all unknown protocals (a protocol must contain at least one alpahnumeric fillowed by :
+		$regex     = '#(src)="(?!/|' . $protocols . '|\#|\')([^"]*)"#m';
+		$buffer    = preg_replace($regex, "$1=\"$base\$2\"", $buffer);
+		
+		echo $buffer;
 	}
 
 	public static function save () {
