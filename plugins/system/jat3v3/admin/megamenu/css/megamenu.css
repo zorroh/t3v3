@@ -92,6 +92,16 @@
   -o-box-sizing: border-box;
 }
 
+/* Global Menu Inner padding ---*/
+#ja-megamenu .mega-inner {
+  padding: 10px;
+}
+
+#ja-megamenu .row-fluid .span12 .mega-inner {
+  padding: 10px;
+}
+
+/* The Nav ---*/
 #ja-megamenu > .nav {
 }
 
@@ -113,9 +123,6 @@
   -moz-transition: all 0.1s ease 0s;
 }
 
-#ja-megamenu .mega-inner {
-  padding: 10px;
-}
 
 /* Dropdown ---*/
 #ja-megamenu .dropdown-menu::before,
@@ -167,7 +174,7 @@
 
 
 /* The group ---*/
-#ja-megamenu .mega-group {
+#ja-megamenu .mega-group-ct {
   border: 1px solid #ddd;
   padding: 10px;
   margin: 10px 0 10px 10px;
@@ -180,7 +187,7 @@
 
 
 /* Module in Menu ---*/
-#megamenu-admin .ja-module {
+#ja-megamenu .ja-module {
   pointer-events: none;
   cursor: default;
   position: relative;
@@ -189,7 +196,7 @@
   -moz-transition: all 0.1s ease 0s;
 }
 
-#megamenu-admin .ja-module:after {
+#ja-megamenu .ja-module:after {
   display: block;
   position: absolute;
   background: #eee;
@@ -207,18 +214,24 @@
   border-width: 1px 0 0 1px;
 }
 
-#megamenu-admin .ja-module .module-inner {
+#ja-megamenu .ja-module .module-inner {
   opacity: .3;
   font-size: 12px;
 }
 
-#megamenu-admin .ja-module .module-title {
+#ja-megamenu .ja-module .module-title {
   margin-top: 0;
   font-size: 14px;
 }
 
-#megamenu-admin [class*="span"].hover .ja-module:after,
-#megamenu-admin [class*="span"].selected .ja-module:after {
+#ja-megamenu .ja-module .module-ct {
+  overflow: hidden;
+  zoom: 1;
+}
+
+
+#ja-megamenu [class*="span"].hover .ja-module:after,
+#ja-megamenu [class*="span"].selected .ja-module:after {
   border-style: solid;
   border-color: #666;
   background: #fb0;
@@ -227,15 +240,15 @@
 
 
 /* Grid Outline ---*/
-#megamenu-admin .mega-menu > .row-fluid {
+#ja-megamenu .mega-menu > .row-fluid {
 }
 
-#megamenu-admin .mega-menu > .row-fluid + .row-fluid,
-#megamenu-admin .mega-nav .row-fluid + .row-fluid  {
+#ja-megamenu .mega-menu > .row-fluid + .row-fluid,
+#ja-megamenu .mega-nav .row-fluid + .row-fluid  {
   margin-top: 10px;
 }
 
-#megamenu-admin .row-fluid [class*="span"] {
+#ja-megamenu .row-fluid [class*="span"] {
   border: 1px dotted #ccc;
   border-radius: 3px;
   transition: all 0.1s ease 0s;
@@ -246,8 +259,8 @@
 
 
 /* Open Item ---*/
-#megamenu-admin .nav > li.open > a,
-#megamenu-admin .open > a {
+#ja-megamenu .nav > li.open > a,
+#ja-megamenu .open > a {
   background: #333;
   color: #fff;
   text-shadow: 0 1px 1px rgba(0,0,0,.5);
@@ -255,9 +268,9 @@
 
 
 /* Hover Item ---*/
-#megamenu-admin .nav-child.hover,
-#megamenu-admin ul[class*="level"] > li > a.hover,
-#megamenu-admin .row-fluid [class*="span"].hover {
+#ja-megamenu .nav-child.hover,
+#ja-megamenu ul[class*="level"] > li > a.hover,
+#ja-megamenu .row-fluid [class*="span"].hover {
   background: #fffbf0 !important;
   color: #333333 !important;
   border: 1px solid #666 !important;
@@ -265,9 +278,9 @@
   border-radius: 3px;
 }
 
-#megamenu-admin ul[class*="level"] > li > a:hover,
-#megamenu-admin ul[class*="level"] > li > a:focus,
-#megamenu-admin ul[class*="level"] > li > a:active {
+#ja-megamenu ul[class*="level"] > li > a:hover,
+#ja-megamenu ul[class*="level"] > li > a:focus,
+#ja-megamenu ul[class*="level"] > li > a:active {
   background: #fffbf0 !important;
   color: #333333 !important;
   text-shadow: 0 1px 1px #fff !important;
@@ -281,7 +294,7 @@
 
 
 /* Selected Item ---*/
-#megamenu-admin .selected  {
+#ja-megamenu .selected  {
   background: #fffbf0 !important;
   color: #333333 !important;
   border: 1px solid #666 !important;
