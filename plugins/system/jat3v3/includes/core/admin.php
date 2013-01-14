@@ -121,6 +121,19 @@ class T3v3Admin {
 
 			'layoutCanNotLoad' => JText::_('T3V3_LAYOUT_LOAD_ERROR'),
 
+			'askCloneLayout' => JText::_('T3V3_LAYOUT_ASK_ADD_LAYOUT'),
+			'correctLayoutName' => JText::_('T3V3_LAYOUT_ASK_CORRECT_NAME'),
+			'askDeleteLayout' => JText::_('T3V3_LAYOUT_ASK_DEL_THEME'),
+
+			'lblLayoutName' => JText::_('T3V3_LAYOUT_LAYOUT_NAME'),
+			'layoutSave' => JText::_('T3V3_LAYOUT_LABEL_SAVE'),
+			'layoutSaveAsCopy' => JText::_('T3V3_LAYOUT_LABEL_SAVE_AS_COPY'),
+			'layoutDelete' => JText::_('T3V3_LAYOUT_LABEL_DELETE'),
+			'lblCancel' => JText::_('JCANCEL'),
+			'lblOk'	=> JText::_('T3V3_LAYOUT_LABEL_OK'),
+			'lblNo' => JText::_('JNO'),
+			'lblYes' => JText::_('JYES'),
+
 			'layoutEditPosition' => JText::_('T3V3_LAYOUT_EDIT_POSITION'),
 			'layoutShowPosition' => JText::_('T3V3_LAYOUT_SHOW_POSITION'),
 			'layoutHidePosition' => JText::_('T3V3_LAYOUT_HIDE_POSITION'),
@@ -136,7 +149,6 @@ class T3v3Admin {
 			'updateCompare' => JText::_('T3V3_OVERVIEW_TPL_COMPARE')
 		);
 		
-
 		$japp = JFactory::getApplication();
 		$jdoc = JFactory::getDocument();
 

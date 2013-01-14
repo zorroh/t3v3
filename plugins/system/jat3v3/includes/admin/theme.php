@@ -70,7 +70,7 @@ class T3v3AdminTheme
 		if (!$return) {
 			return self::error(JText::_('T3V3_TM_OPERATION_FAILED'));
 		} else {
-			$result['success'] = sprintf(JText::_('T3V3_TM_SAVE_SUCCESSFULLY'), $theme);
+			$result['success'] = JText::sprintf('T3V3_TM_SAVE_SUCCESSFULLY', $theme);
 			$result['theme'] = $theme;
 			$result['type'] = $type;
 		}
@@ -97,12 +97,12 @@ class T3v3AdminTheme
 
 		$source = $path . '/less/themes/' . $from;
 		if (!JFolder::exists($source)) {
-			return self::error(JText::_(sprintf('T3V3_TM_NOT_FOUND', $from)));
+			return self::error(JText::sprintf('T3V3_TM_NOT_FOUND', $from));
 		}
 		
 		$dest = $path . '/less/themes/' . $theme;
 		if (JFolder::exists($dest)) {
-			return self::error(sprintf(JText::_('T3V3_TM_EXISTED'), $theme));
+			return self::error(JText::sprintf('T3V3_TM_EXISTED', $theme));
 		}
 
 		$result = array();
@@ -138,17 +138,17 @@ class T3v3AdminTheme
 		$file = $path . '/less/themes/' . $theme;
 		$return = false;
 		if (!JFolder::exists($file)) {
-			return self::error(JText::_(sprintf('T3V3_TM_NOT_FOUND', $theme)));
+			return self::error(JText::sprintf('T3V3_TM_NOT_FOUND', $theme));
 		}
 		
 		$return = @JFolder::delete($file);
 		
 		if (!$return) {
-			return self::error(sprintf(JText::_('T3V3_TM_DELETE_FAIL'), $file));
+			return self::error(JText::sprintf('T3V3_TM_DELETE_FAIL', $file));
 		} else {
 			
 			$result['template'] = '0';
-			$result['success'] = sprintf(JText::_('T3V3_TM_DELETE_SUCCESSFULLY'), $theme);
+			$result['success'] = JText::sprintf('T3V3_TM_DELETE_SUCCESSFULLY', $theme);
 			$result['theme'] = $theme;
 			$result['type'] = 'delete';
 		}

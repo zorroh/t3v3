@@ -97,9 +97,90 @@ class T3v3AdminLayout
 		}
 
 		return self::response(array(
-			'successful' => sprintf(JText::_('SAVE_PROFILE_SUCCESSFULLY'), $layout),
+			'successful' => JText::sprintf('SAVE_PROFILE_SUCCESSFULLY', $layout),
 			'layout' => $layout,
 			'type' => 'new'
 			));
+	}
+
+	public static function copy()
+	{
+		// Initialize some variables
+		$input = JFactory::getApplication()->input;
+		$template = $input->getCmd('template');
+		$original = $input->getCmd('original');
+		$clone = $input->getCmd('clone');
+
+		//safe name
+		$clone = JApplication::stringURLSafe($clone);
+
+		if (!$template || !$original || !$clone) {
+			return self::error(JText::_('T3V3_LAYOUT_INVALID_DATA_TO_SAVE'));
+		}
+
+		$path = JPATH_ROOT . '/templates/' . $template . '/tpls/';
+		$source = $path . $original . '.php';
+		$dest = $path . $clone . '.php';
+
+		// Check if original file exists
+		if (JFile::exists($source)) {
+			// Check if the desired file already exists
+			if (!JFile::exists($dest)) {
+				if (!JFile::copy($source, $dest)) {
+					return self::error(JText::_('T3V3_LAYOUT_OPERATION_FAILED'));
+				} else {
+					//clone configuration
+					if(JFile::exists($path . $original . '.ini')){
+						JFile::copy($path . $original . '.ini', $path . $clone . '.init');
+					}
+				}
+			}
+			else {
+				return self::error(JText::_('T3V3_LAYOUT_EXISTED'));
+			}
+		}
+		else {
+			return self::error(JText::_('T3V3_LAYOUT_NOT_FOUND'));
+		}
+
+		return self::response(array(
+			'successful' => JText::_('T3V3_LAYOUT_SAVE_SUCCESSFULLY'),
+			'original' => $original,
+			'clone' => $clone,
+			'type' => 'clone'
+			));
+	}
+
+	public static function delete(){
+		// Initialize some variables
+		$input = JFactory::getApplication()->input;
+		$layout = $input->getCmd('layout');
+		$template = $input->getCmd('template');
+
+		if (!$layout) {
+			return self::error(JText::_('T3V3_LAYOUT_UNKNOW_ACTION'));
+		}
+
+		$layoutfile = JPATH_ROOT . '/templates/' . $template . '/tpls/' . $layout . '.php';
+		$initfile = JPATH_ROOT . '/templates/' . $template . '/etc/layout/' . $layout . '.ini';
+
+		$return = false;
+		if (!JFile::exists($layoutfile)) {
+			return self::error(JText::sprintf('T3V3_LAYOUT_NOT_FOUND', $layout));
+		}
+		
+		$return = @JFile::delete($layoutfile);
+		
+		if (!$return) {
+			return self::error(JText::_('T3V3_LAYOUT_DELETE_FAIL'));
+		} else {
+			@JFile::delete($initfile);
+			
+			return self::response(array(
+				'successful' => JText::_('T3V3_LAYOUT_DELETE_SUCCESSFULLY'),
+				'layout' => $layout,
+				'type' => 'delete'
+			));
+		}
 	}
 }
