@@ -14,7 +14,7 @@
   // Global Menu Inner padding
   // -------------------------
   .mega-inner {
-    padding: @baseLineHeight / 2;
+    padding: @baseLineHeight;
   }
 
 
@@ -23,9 +23,8 @@
   .row-fluid {
   }
 
-  .row-fluid + .row-fluid,
   .row-fluid + .row-fluid  {
-    boder-top: @T3borderColor;
+    border-top: 1px solid @T3borderColor;
   }
 
   .row-fluid [class*="span"] {
@@ -108,6 +107,10 @@
 
   // Modules in Megamenu
   // -------------------
+
+  .ja-module {
+    margin-bottom: (@baseLineHeight / 2);
+  }
 
   // Module Title
   .ja-module .module-title {

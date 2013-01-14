@@ -28,11 +28,10 @@
 #ja-megamenu .mega-inner {
   padding: 10px;
 }
-#ja-megamenu .row-fluid + .row-fluid,
 #ja-megamenu .row-fluid + .row-fluid {
   margin-top: 10px;
   padding-top: 10px;
-  boder-top: #eeeeee;
+  border-top: 1px solid #eeeeee;
 }
 #ja-megamenu .mega-nav {
   margin: 0;
@@ -89,6 +88,9 @@
 #ja-megamenu .mega-group > .mega-nav {
   margin-left: -5px;
   margin-right: -5px;
+}
+#ja-megamenu .ja-module {
+  margin-bottom: 10px;
 }
 #ja-megamenu .ja-module .module-title {
   margin-bottom: 0;
