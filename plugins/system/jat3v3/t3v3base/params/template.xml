@@ -83,6 +83,7 @@
 			<field name="layout_ajax_default" type="jadepend" function="@ajax">
 				<option 
 					for="mainlayout" 
+					site="admin"
 					query="t3action=layout&amp;t3task=display&amp;t3tp=layout"
 					func="T3V3AdminLayout.t3layout">
 				</option>
@@ -97,7 +98,6 @@
 				hide_none="false"
 				hide_default="true"
 			/>
-
 			
 			<field name="jat3v3_positions" type="hidden" default="" value="" />
 			<field name="jat3_all_pos" type="japositions" default="" 

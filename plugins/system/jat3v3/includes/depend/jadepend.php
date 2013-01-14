@@ -302,6 +302,10 @@ class JFormFieldJaDepend extends JFormField
 				$fparams['url'] = (string)$option['url'];
 			}
 
+			if (!empty($option['site'])){
+				$fparams['site'] = (string)$option['site'];
+			}
+
 			if (!empty($option['query'])){
 				$fparams['query'] = (string)$option['query'];
 			}

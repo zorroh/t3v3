@@ -718,11 +718,11 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 			if(rsp){
 				var bdhtml = rsp.match(/<body[^>]*>([\w|\W]*)<\/body>/im),
 					vname = ctrlelm.name.replace(/[\[\]]/g, ''),
-					jcontrol = $('#jform_params_layout_panel').hide().closest('.control-group');
+					jcontrol = $('#jform_params_layout_panel').hide().siblings().remove().end().closest('.control-group');
 
 				//stripScripts
 				if(bdhtml){
-					bdhtml = bdhtml[0].replace(new RegExp('<script[^>]*>([\\S\\s]*?)<\/script\\s*>', 'img'), '');
+					bdhtml = bdhtml[1].replace(new RegExp('<script[^>]*>([\\S\\s]*?)<\/script\\s*>', 'img'), '');
 				}
 
 				if(bdhtml){
@@ -1116,8 +1116,6 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 				} else {
 					jcontrol.find('.controls').html('<p class="t3-layout-error">' + T3V3Admin.langs.layoutCanNotLoad + '</p>');
 				}
-
-				ctrl.elms.push(jcontrol[0]);
 			}
 		}
 	});
