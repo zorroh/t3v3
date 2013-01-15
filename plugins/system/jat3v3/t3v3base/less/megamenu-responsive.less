@@ -1,0 +1,45 @@
+//
+// MOBILE
+// -------------------------------------------------------------
+@media (max-width: 767px) {
+
+  #ja-megamenu {
+
+    // THE MEGAMENU
+    //--------------------------------------------
+
+    // Global Menu Inner padding
+    // -------------------------
+    .mega-inner {
+      padding: @baseLineHeight / 2;
+    }
+
+
+    // Menu Grids
+    // ----------
+    .row-fluid,
+    .mega-dropdown-menu,
+    .row-fluid [class*="span"] {
+      width: 100% !important;
+      min-width: 100% !important;
+      left: 0 !important;
+      transform: none !important;
+      -webkit-transform: none !important;
+      -moz-transform: none !important;
+      -ms-transform: none !important;
+      -o-transform: none !important;
+    }
+
+    .row-fluid + .row-fluid  {
+      margin-top: @baseLineHeight / 2;
+      padding-top: @baseLineHeight / 2;
+      border-top: 1px solid @hrBorder;
+    }
+
+    .row-fluid [class*="span"] {
+    }
+
+  }
+
+
+}

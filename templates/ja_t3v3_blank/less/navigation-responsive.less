@@ -86,7 +86,15 @@
     border-top: 1px solid darken(@navbarBackground, 5%);
     border-bottom: 0;
     font-weight: normal;
-    padding: (@baseLineHeight / 2) (@baseLineHeight * 2);
+    padding: (@baseLineHeight / 2) @baseLineHeight;
+  }
+
+  .ja-mainnav .nav-collapse .dropdown-menu .dropdown-menu a {
+    padding-left: @baseLineHeight + 10px;
+  }
+
+  .ja-mainnav .nav-collapse .dropdown-menu .dropdown-menu .dropdown-menu a {
+    padding-left: @baseLineHeight + 20px;
   }
 
   // Hover state
