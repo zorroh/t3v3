@@ -58,10 +58,17 @@ class T3V3MenuMegamenuTpl {
 		$setting = isset($vars['setting']) ? $vars['setting'] : array();
 		$width = isset($setting['width']) ? $setting['width'] : '12';
 		$data = "data-width=\"$width\"";
-		if (isset($setting['class'])) $data .= " data-class=\"{$setting['class']}\"";
-		if (isset($setting['position'])) $data .= " data-position=\"{$setting['position']}\"";
+		$cls = "span$width";
+		if (isset($setting['position'])) {
+			$cls .= " mega-col-module";
+			$data .= " data-position=\"{$setting['position']}\"";
+		}
+		if (isset($setting['class'])) {
+			$cls .= " {$setting['class']}";
+			$data .= " data-class=\"{$setting['class']}\"";
+		}
 
-		return "<div class=\"span$width\" $data><div class=\"mega-inner\">";
+		return "<div class=\"$cls\" $data><div class=\"mega-inner\">";
 	}
 	static function endcol ($vars) {
 		return '</div></div>';
