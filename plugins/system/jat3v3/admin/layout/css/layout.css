@@ -419,3 +419,14 @@
   display: block;
   visibility: visible;
 }
+
+/* Layout Clone
+---------------------------------------------------*/
+#t3-layout-clone-btns {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#t3-layout-clone-btns .btn {
+  margin-left: 5px;
+}

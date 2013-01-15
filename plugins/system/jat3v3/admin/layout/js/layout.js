@@ -99,18 +99,14 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 				$('#t3-layout-cloned-name').focus();
 			});
 
-			$(['<div id="t3-layout-clone-btngroup" class="btn-group pull-right">',
-					'<button id="t3-layout-clone-save" class="btn btn-success"><i class="icon-save"></i>' + T3V3Admin.langs.layoutSave + '</button>',
-					'<button class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>&nbsp;</button>',
-					'<ul class="dropdown-menu">',
-						'<li id="t3-layout-clone-close"><a href="#">' + T3V3Admin.langs.layoutSaveAsCopy + '</a></li>',
-						'<li id="t3-layout-clone-delete"><a href="#">' + T3V3Admin.langs.layoutDelete + '</a></li>',
-					'</ul>',
-				'</div>'].join(''))
+			$([
+				'<div id="t3-layout-clone-btns">',
+					'<button id="t3-layout-clone-copy" class="btn btn-success"><i class="icon-save"></i>' + T3V3Admin.langs.layoutSaveAsCopy + '</button>',
+					'<button id="t3-layout-clone-delete" class="btn btn-danger"><i class="icon-remove"></i>' + T3V3Admin.langs.layoutDelete + '</button>',
+				'</div>'
+			].join(''))
 			.insertAfter('#jform_params_mainlayout')
-			.find('#t3-layout-clone-save')
-			.on('click', T3V3AdminLayout.t3savelayout)
-			.parent().find('#t3-layout-clone-close').on('click', function(){
+			.find('#t3-layout-clone-copy').on('click', function(){
 				T3V3AdminLayout.prompt(T3V3Admin.langs.askCloneLayout, T3V3AdminLayout.t3clonelayout);
 				return false;
 			}).next().on('click', function(){
@@ -1370,6 +1366,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 		T3V3AdminLayout.initLayoutPosition();
 		T3V3AdminLayout.initLayoutClone();
 		T3V3AdminLayout.initModalDialog();
+		T3V3AdminLayout.initPreSubmit();
 	});
 	
 }(window.$ja || window.jQuery);

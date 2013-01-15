@@ -102,10 +102,9 @@
 #ja-megamenu .row-fluid {
 }
 
-#ja-megamenu .row-fluid + .row-fluid,
-#ja-megamenu .row-fluid + .row-fluid  {
+#ja-megamenu .row-fluid + .row-fluid {
   margin-top: 0;
-  boder-top: 0;
+  border-top: 0;
 }
 
 #ja-megamenu .row-fluid [class*="span"] {
