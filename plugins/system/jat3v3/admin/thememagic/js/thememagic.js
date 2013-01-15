@@ -345,7 +345,21 @@ var T3V3Theme = window.T3V3Theme || {};
 			$.each(els, function(){
 				var values = T3V3Theme.valuesFrom(this);
 				if(values.length && values[0] != '' && (!optimize || (optimize && !this._disabled))){
-					json[T3V3Theme.getName(this)] = this.name.substr(-2) == '[]' ? values : values[0];
+					var name = T3V3Theme.getName(this),
+						val = this.name.substr(-2) == '[]' ? values : values[0],
+						adjust = null,
+						filter = this.className.match(/t3tm-(\w*)\s?/);
+
+					if(filter && $.isFunction(T3V3Theme['filter' + filter[1]])){
+						adjust = T3V3Theme['filter' + filter[1]](val);
+					}
+
+					if(adjust != null && adjust != val){
+						val = adjust;
+						T3V3Theme.setValues(this, $.makeArray(val));
+					}
+
+					json[name] = val;
 				}
 			});
 
@@ -356,6 +370,46 @@ var T3V3Theme = window.T3V3Theme || {};
 			}
 			
 			return json;
+		},
+
+		filtercolor: function(hex){
+			if(hex.charAt(0) === '@'){
+				return hex;
+			}
+
+			if(!/^#(?:[0-9a-fA-F]{3}){1,2}$/.test(hex)){
+				hex = hex.replace(/[^A-F0-9]/ig, '');
+				hex = hex.substr(0, 6);
+
+				if(hex.length !== 3 && hex.length !== 6){
+					hex = T3V3Theme.padding(hex, hex.length < 3 ? 3 : 6);
+				}
+
+				hex = '#' + hex;
+			}
+
+			return hex;
+		},
+
+		filterdimension: function(val){
+			val = /^(-?\d*\.?\d+)(px|%|em|rem|pc|ex|in|deg|s|ms|pt|cm|mm|rad|grad|turn)?/.exec(val);
+			if(val && val[1]){
+				val = val[1] + (val[2] || 'px');
+			} else {
+				val = '0px';
+			}
+
+			return val;
+		},
+
+		padding: function(str, limit, pad){
+			pad = pad || '0';
+
+			while(str.length < limit){
+				str = pad + str;
+			}
+
+			return str;
 		},
 		
 		getName: function(el){
