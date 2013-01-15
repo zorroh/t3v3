@@ -70,21 +70,20 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		$('.toolbox-input').bind ('focus blur click', function(event) {
 			event.stopPropagation();
 			return false;
-		});        
+		});
 		$('.toolbox-input').bind ('keydown', function(event) {
 			if (event.keyCode == '13') {
 				apply_toolbox (this);
 				event.preventDefault();
-			}            
-		});        
+			}
+		});
 
 		$('.toolbox-input').change (function(event) {
 			apply_toolbox (this);
 			event.stopPropagation();
 			return false;
 		});
-
-	}
+	};
 
 	// Actions
 	var actions = {};
@@ -317,7 +316,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		show_toolbox ($(nextActiveCol));
 	}
 
-	actions.saveConfig = function () {
+	actions.saveConfig = function (e) {
 		var config = {},
 		items = megamenu.find('ul[class*="level"] > li');
 		items.each (function(){
@@ -376,7 +375,8 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		$.ajax({
 			url: T3V3Admin.adminurl,
 			data:{'t3action':'megamenu', 't3task':'save', 'config': JSON.stringify(config)},
-			type: 'POST'
+			type: 'POST',
+			async: e && e.isTrigger
 		}).done(function ( data ) {
 			alert ('config saved');
 		});
@@ -632,11 +632,30 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 
 		t3megamenu: function(form, ctrlelm, ctrl, rsp){
 			$('#megamenu-container').html(rsp).megamenuAdmin();
-		}
+		},
+
+		initPreSubmit: function(){
+
+			var form = document.adminForm;
+			if(!form){
+				return false;
+			}
+
+			var onsubmit = form.onsubmit;
+
+			form.onsubmit = function(e){
+				$('.toolbox-saveConfig').trigger('click');
+			};
+
+			//clean the json code - the value is no need
+			$('#jform_params_jat3v3_positions').val('');
+		},
 	});
 
 	$(window).load(function(){
 		T3V3AdminMegamenu.prepare();
+		T3V3AdminMegamenu.initPreSubmit();
+
 	});
 
 }(window.$ja || window.jQuery);

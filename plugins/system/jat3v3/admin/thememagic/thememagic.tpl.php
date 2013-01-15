@@ -164,9 +164,9 @@ defined('_JEXEC') or die;
 			<div class="modal-body">
 				<form id="prompt-form" name="prompt-form" class="form-horizontal prompt-block">
 					<span class="help-block"><?php echo JText::_('T3V3_THEME_ASK_ADD_THEME') ?></span>
-          <p>
-            <input type="text" id="theme-name" placeholder="Theme name" style="width: 90%; margin-top: 10px;">
-          </p>
+					<p>
+						<input type="text" id="theme-name" placeholder="Theme name" style="width: 90%; margin-top: 10px;">
+					</p>
 				</form>
 				<div class="message-block">
 					<p></p>
