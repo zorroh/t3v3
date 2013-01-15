@@ -80,7 +80,7 @@ class T3v3AdminLayout
 		$template = $input->getCmd('template');
 		$layout = $input->getCmd('layout');
 		if (!$template || !$layout) {
-			return self::error(JText::_('INVALID_DATA_TO_SAVE'));
+			return self::error(JText::_('T3V3_LAYOUT_INVALID_DATA_TO_SAVE'));
 		}
 		
 		$file = JPATH_ROOT . '/templates/' . $template . '/etc/layout/' . $layout . '.ini';
@@ -93,11 +93,11 @@ class T3v3AdminLayout
 
 		$data = $params->toString('INI');
 		if (!@JFile::write($file, $data)) {
-			return self::error(JText::_('OPERATION_FAILED'));
+			return self::error(JText::_('T3V3_LAYOUT_OPERATION_FAILED'));
 		}
 
 		return self::response(array(
-			'successful' => JText::sprintf('SAVE_PROFILE_SUCCESSFULLY', $layout),
+			'successful' => JText::sprintf('T3V3_LAYOUT_SAVE_SUCCESSFULLY', $layout),
 			'layout' => $layout,
 			'type' => 'new'
 			));
@@ -109,18 +109,32 @@ class T3v3AdminLayout
 		$input = JFactory::getApplication()->input;
 		$template = $input->getCmd('template');
 		$original = $input->getCmd('original');
-		$clone = $input->getCmd('clone');
+		$layout = $input->getCmd('layout');
 
 		//safe name
-		$clone = JApplication::stringURLSafe($clone);
+		$layout = JApplication::stringURLSafe($layout);
 
-		if (!$template || !$original || !$clone) {
+		if (!$template || !$original || !$layout) {
 			return self::error(JText::_('T3V3_LAYOUT_INVALID_DATA_TO_SAVE'));
 		}
 
-		$path = JPATH_ROOT . '/templates/' . $template . '/tpls/';
-		$source = $path . $original . '.php';
-		$dest = $path . $clone . '.php';
+		$srcpath = JPATH_ROOT . '/templates/' . $template . '/tpls/';
+		$source = $srcpath . $original . '.php';
+		$dest = $srcpath . $layout . '.php';
+
+		$confpath = JPATH_ROOT . '/templates/' . $template . '/etc/layout/';
+		$confdest = $confpath . $layout . '.ini';
+		if (JFile::exists($confdest)) {
+			@chmod($confdest, 0777);
+		}
+
+		$params = new JRegistry();
+		$params->loadObject($_POST);
+
+		$data = $params->toString('INI');
+		if ($data && !@JFile::write($confdest, $data)) {
+			return self::error(JText::_('T3V3_LAYOUT_OPERATION_FAILED'));
+		}
 
 		// Check if original file exists
 		if (JFile::exists($source)) {
@@ -129,9 +143,9 @@ class T3v3AdminLayout
 				if (!JFile::copy($source, $dest)) {
 					return self::error(JText::_('T3V3_LAYOUT_OPERATION_FAILED'));
 				} else {
-					//clone configuration
-					if(JFile::exists($path . $original . '.ini')){
-						JFile::copy($path . $original . '.ini', $path . $clone . '.init');
+					//clone configuration file, we only copy if the target file does not exist
+					if(!JFile::exists($confdest) && JFile::exists($confpath . $original . '.ini')){
+						JFile::copy($confpath . $original . '.ini', $confdest);
 					}
 				}
 			}
@@ -146,7 +160,7 @@ class T3v3AdminLayout
 		return self::response(array(
 			'successful' => JText::_('T3V3_LAYOUT_SAVE_SUCCESSFULLY'),
 			'original' => $original,
-			'clone' => $clone,
+			'layout' => $layout,
 			'type' => 'clone'
 			));
 	}

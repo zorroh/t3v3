@@ -198,8 +198,8 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 				t3task: 'copy',
 				template: T3V3Admin.template,
 				original: $('#jform_params_mainlayout').val(),
-				clone: nname
-			}, function(json){
+				layout: nname
+			}, T3V3AdminLayout.t3getlayoutdata(), function(json){
 				if(typeof json == 'object'){
 					if(json && (json.error || json.successful)){
 						T3V3Admin.systemMessage(json.error || json.successful);
@@ -207,7 +207,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 
 					if(json.successful){
 						var mainlayout = document.getElementById('jform_params_mainlayout');
-						mainlayout.options[mainlayout.options.length] = new Option(json.clone, json.clone);
+						mainlayout.options[mainlayout.options.length] = new Option(json.layout, json.layout);
 						mainlayout.options[mainlayout.options.length - 1].selected = true;
 						$(mainlayout).trigger('change.less').trigger('liszt:updated');
 					}
@@ -253,8 +253,31 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 		},
 
 		t3savelayout: function(callback){
+			$.ajax({
+				async: false,
+				url: T3V3AdminLayout.mergeurl(
+					$.param({
+						t3action: 'layout',
+						t3task: 'save',
+						template: T3V3Admin.template,
+						layout: $('#jform_params_mainlayout').val()
+					})
+				),
+				type: 'post',
+				data: T3V3AdminLayout.t3getlayoutdata(),
+				complete: function(){
+					if($.isFunction(callback)){
+						callback();
+					}
+				}
+			});
+
+			return false;
+		},
+
+		t3getlayoutdata: function(){
 			var json = {},
-				jcontainer = $(this).find('.t3-layout-cont'),
+				jcontainer = $(document.adminForm).find('.t3-layout-cont'),
 				jblocks = jcontainer.find('.t3-layout-pos'),
 				jspls = jcontainer.find('[data-spotlight]'),
 				jsplblocks = jspls.find('.t3-layout-pos');
@@ -308,33 +331,20 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 				});
 			});
 
-			$.ajax({
-				async: false,
-				url: T3V3AdminLayout.mergeurl(
-					$.param({
-						t3action: 'layout',
-						t3task: 'save',
-						template: T3V3Admin.template,
-						layout: $('#jform_params_mainlayout').val()
-					})
-				),
-				type: 'post',
-				data: json,
-				complete: function(){
-					if($.isFunction(callback)){
-						callback();
-					}
-				}
-			});
-
-			return false;
+			return json;
 		},
 
-		submit: function(params, callback){
+		submit: function(params, data, callback){
+			if(!callback){
+				callback = data;
+				data = null;
+			}
+
 			$.ajax({
 				async: false,
 				url: T3V3AdminLayout.mergeurl($.param(params)),
-				type: 'get',
+				type: data ? 'post' : 'get',
+				data: data,
 				success: function(rsp){
 					
 					rsp = $.trim(rsp);
