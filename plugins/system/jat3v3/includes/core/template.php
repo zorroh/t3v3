@@ -250,6 +250,25 @@ class T3v3Template extends ObjectExtendable
 			//normal
 			echo '<jdoc:include type="modules" name="mainnav" style="raw" />';
 		}
+
+		if ($this->getParam ('navigation_trigger') == 'hover') {
+			?>
+			<script type="text/javascript">
+				jQuery(document).ready(function($){
+					$('.nav li').hover(function(event) {
+					    var $this = $(this);
+					    clearTimeout ($this.data('hoverTimeout'));
+					    $this.addClass ('open');
+					},
+					function(event) {
+					    var $this = $(this);
+					    $this.data('hoverTimeout', 
+					        setTimeout(function(){$this.removeClass ('open')}, 100));
+					});
+				});
+			</script>
+			<?php
+		}
 	}
 
 	/**

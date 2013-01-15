@@ -125,8 +125,15 @@
 				</option>
 			</field>
 
-			<field name="mm_enable" type="radio" class="btn-group" default="0"
+			<field name="navigation_trigger" type="list" default="hover"
 				global="1"
+				label="T3V3_NAVIGATION_TRIGGER_LABEL"
+				description="T3V3_NAVIGATION_TRIGGER_DESC">
+				<option value="hover">Mouse Hover</option>
+				<option value="click">Mouse Click</option>
+			</field>
+
+			<field name="mm_enable" type="radio" class="btn-group" default="0"
 				label="T3V3_NAVIGATION_MM_ENABLE_LABEL"
 				description="T3V3_NAVIGATION_MM_ENABLE_DESC">
 				<option value="0">JNO</option>
