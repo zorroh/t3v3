@@ -93,7 +93,14 @@ $iswritable = is_writable('jat3test.txt');
 		</div>
 		<div class="t3-admin-tabcontent tab-content clearfix">
 			<div class="tab-pane tab-overview clearfix<?php echo $t3lock == 'overview_params' ? ' active' : ''?>" id="overview_params">
-				<?php include T3V3_ADMIN_PATH . '/admin/tpls/default_overview.php'; ?>
+				<?php
+				$default_overview_override = T3V3_TEMPLATE_PATH . '/admin/default_overview.php';
+				if(file_exists($default_overview_override)) {
+					include $default_overview_override;
+				} else {
+					include T3V3_ADMIN_PATH . '/admin/tpls/default_overview.php';
+				}
+				?>
 			</div>
 			<?php
 			foreach ($fieldSets as $name => $fieldSet) :
