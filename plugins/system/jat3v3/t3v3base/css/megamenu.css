@@ -174,7 +174,7 @@
 }
 @media (max-width: 767px) {
   #ja-megamenu .mega-inner {
-    padding: 10px;
+    padding: 10px 20px;
   }
   #ja-megamenu .row-fluid,
   #ja-megamenu .mega-dropdown-menu,
@@ -189,7 +189,6 @@
     -o-transform: none !important;
   }
   #ja-megamenu .row-fluid + .row-fluid {
-    margin-top: 10px;
     padding-top: 10px;
     border-top: 1px solid #eeeeee;
   }
