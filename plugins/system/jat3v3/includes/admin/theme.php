@@ -253,6 +253,11 @@ class T3v3AdminTheme
 		$backurl->delVar('t3action');
 		$backurl->delVar('t3task');
 
+		if(!$isadmin){
+			$backurl->delVar('tm');
+			$backurl->delVar('themer');
+		}
+
 		$form = new JForm('thememagic.themer', array('control' => 'jaform'));
 		$form->load(JFile::read(T3V3_PATH . DIRECTORY_SEPARATOR . 'params' . DIRECTORY_SEPARATOR . 'thememagic.xml'));
 		$form->loadFile(T3V3_TEMPLATE_PATH . DIRECTORY_SEPARATOR . 'templateDetails.xml', false, '//config');

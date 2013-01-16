@@ -26,7 +26,7 @@ defined('_JEXEC') or die;
 			<?php if($tplparams->get('themermode', 0)): ?>
 			<div id="thememagic">
 				<a href="<?php echo JURI::base(true); ?>" class="themer-minimize"><i class="icon-remove-sign"></i><i class="icon-magic"></i>  <span><?php echo JText::_('T3V3_TM_MINIMIZE') ; ?></span></a>
-				<a href="<?php echo $backurl; ?>" class="themer-close" title="<?php echo JText::_('T3V3_TM_CLOSE'); ?>"><i class="icon-arrow-left"></i><?php echo JText::_($isadmin ? 'T3V3_TM_BACK_TO_ADMIN' : 'T3V3_TM_EXIT'); ?></a>
+				<a href="<?php echo $backurl; ?>" class="themer-close" title="<?php echo JText::_($isadmin ? 'T3V3_TM_BACK_TO_ADMIN' : 'T3V3_TM_EXIT'); ?>"><i class="icon-arrow-left"></i><?php echo JText::_($isadmin ? 'T3V3_TM_BACK_TO_ADMIN' : 'T3V3_TM_EXIT'); ?></a>
 
 				<div class="header">
 				  <h2><strong><?php echo JText::_('T3V3_TM_CUSTOMIZING'); ?></strong> <span><?php echo $tplparams->get('sitename'); ?></span></h2>
