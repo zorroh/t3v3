@@ -27,23 +27,21 @@
 }
 #ja-megamenu .mega-inner {
   padding: 10px;
+  *zoom: 1;
+}
+#ja-megamenu .mega-inner:before,
+#ja-megamenu .mega-inner:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#ja-megamenu .mega-inner:after {
+  clear: both;
 }
 #ja-megamenu .row-fluid + .row-fluid {
   margin-top: 10px;
   padding-top: 10px;
   border-top: 1px solid #eeeeee;
-}
-#ja-megamenu .mega-nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-#ja-megamenu .mega-nav > li {
-  list-style: none;
-  margin-left: 0;
-}
-#ja-megamenu .mega-nav > li a {
-  white-space: normal;
 }
 #ja-megamenu .mega-group {
   *zoom: 1;
@@ -83,11 +81,32 @@
   clear: both;
 }
 #ja-megamenu .mega-group-ct > .row-fluid > [class*="span"] > .mega-inner {
-  padding: 10px 0;
+  padding: 5px 0;
+}
+#ja-megamenu .span12.mega-col-nav .mega-inner {
+  padding: 5px;
+}
+#ja-megamenu .mega-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#ja-megamenu .mega-nav > li {
+  list-style: none;
+  margin-left: 0;
+}
+#ja-megamenu .mega-nav > li a {
+  white-space: normal;
 }
 #ja-megamenu .mega-group > .mega-nav {
   margin-left: -5px;
   margin-right: -5px;
+}
+#ja-megamenu .mega-nav .dropdown-submenu > a::after {
+  margin-right: 5px;
+}
+#ja-megamenu .mega-col-module .mega-inner {
+  padding-bottom: 0;
 }
 #ja-megamenu .ja-module {
   margin-bottom: 10px;
@@ -117,7 +136,7 @@
   font-size: 100%;
   background: none;
   font: inherit;
-  white-space: no-wrap;
+  white-space: normal;
 }
 #ja-megamenu .ja-module ul li a:hover,
 #ja-megamenu .ja-module ul li a:active,
