@@ -107,7 +107,7 @@ class T3V3MenuMegamenuTpl {
 		$setting = $item->setting;
 		return '</li>';
 	}
-	function item ($vars) {
+	static function item ($vars) {
 		$item = $vars['item'];
 		$setting = $item->setting;
 		$attr = '';
@@ -124,39 +124,120 @@ class T3V3MenuMegamenuTpl {
 		switch ($item->type)
 		{
 			case 'separator':
-			case 'heading':
-				// No further action needed.
+				return self::item_separator ($vars);
 				break;
-
+			case 'component':
+				return self::item_component ($vars);
+				break;
 			case 'url':
-				if ((strpos($item->link, 'index.php?') === 0) && (strpos($item->link, 'Itemid=') === false)){
-					// If this is an internal Joomla link, ensure the Itemid is set.
-					$flink = $item->link . '&Itemid=' . $item->id;
-				}
-				break;
-
-			case 'alias':
-				// If this is an alias use the item id stored in the parameters to make the link.
-				$flink = 'index.php?Itemid=' . $item->params->get('aliasoptions');
-				break;
-
 			default:
-				$router = JSite::getRouter();
-				if ($router->getMode() == JROUTER_MODE_SEF){
-					$flink = 'index.php?Itemid=' . $item->id;
-				} else {
-					$flink .= '&Itemid=' . $item->id;
-				}
+				return self::item_url ($vars);
+		}
+	}
+	static function item_url ($vars) {
+		$item = $vars['item'];
+		// Note. It is important to remove spaces between elements.
+		$class = $item->anchor_css ? $item->anchor_css : '';
+		$title = $item->anchor_title ? 'title="'.$item->anchor_title.'" ' : '';
+		$dropdown = '';
+		$caret = '';
+
+		if($item->dropdown && $item->level < 2){
+			$class .= ' dropdown-toggle';
+			$dropdown = ' data-toggle="dropdown"';
+			$caret = '<b class="caret"></b>';
+		}
+
+		if(!empty($class)){
+			$class = 'class="'. trim($class) .'" ';
+		}
+
+		if ($item->menu_image) {
+			$item->params->get('menu_text', 1 ) ?
+			$linktype = '<img src="'.$item->menu_image.'" alt="'.$item->title.'" /><span class="image-title">'.$item->title.'</span> ' :
+			$linktype = '<img src="'.$item->menu_image.'" alt="'.$item->title.'" />';
+		} else { 
+			$linktype = $item->title;
+		}
+		$flink = $item->flink;
+		$flink = JFilterOutput::ampReplace(htmlspecialchars($flink));
+
+		$link = "";
+		switch ($item->browserNav) :
+			default:
+			case 0:
+				$link = "<a $class href=\"$flink\" $title $dropdown>$linktype \n$caret</a>";
 				break;
+			case 1:
+				// _blank
+				$link = "<a $class href=\"$flink\" target=\"_blank\" $title $dropdown>$linktype $caret</a>";
+				break;
+			case 2:
+				// window.open
+				$options = 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,'.$params->get('window_open');
+				$link = "<a $class href=\"$flink\" onclick=\"window.open(this.href,'targetWindow','$options');return false;\" $title $dropdown>$linktype $caret</a>";
+				break;
+		endswitch;
+
+		return $link;
+	}
+	static function item_separator ($vars) {
+		$item = $vars['item'];
+		// Note. It is important to remove spaces between elements.
+		$title = $item->anchor_title ? 'title="'.$item->anchor_title.'" ' : '';
+		if ($item->menu_image) {
+			$item->params->get('menu_text', 1 ) ?
+			$linktype = '<img src="'.$item->menu_image.'" alt="'.$item->title.'" /><span class="image-title">'.$item->title.'</span> ' :
+			$linktype = '<img src="'.$item->menu_image.'" alt="'.$item->title.'" />';
+		}
+		else { 
+			$linktype = $item->title;
 		}
 
-		if (strcasecmp(substr($flink, 0, 4), 'http') && (strpos($flink, 'index.php?') !== false)){
-			$flink = JRoute::_($flink, true, $item->params->get('secure'));
-		}
-		else {
-			$flink = JRoute::_($flink);
+		return "<span class=\"separator\">$title $linktype</span>";
+	}
+	static function item_component ($vars) {
+		$item = $vars['item'];
+		// Note. It is important to remove spaces between elements.
+		$class = $item->anchor_css ? $item->anchor_css : '';
+		$title = $item->anchor_title ? 'title="'.$item->anchor_title.'" ' : '';
+		$dropdown = '';
+		$caret = '';
+
+		if($item->dropdown && $item->level < 2){
+			$class .= ' dropdown-toggle';
+			$dropdown = ' data-toggle="dropdown"';
+			$caret = '<b class="caret"></b>';
 		}
 
-		return '<a href="'.$flink.'" '.$attr.'><span>'.$item->title.'</span>'.$caret.'</a>';
+		if(!empty($class)){
+			$class = 'class="'. trim($class) .'" ';
+		}
+
+		if ($item->menu_image) {
+			$item->params->get('menu_text', 1 ) ?
+			$linktype = '<img src="'.$item->menu_image.'" alt="'.$item->title.'" /><span class="image-title">'.$item->title.'</span> ' :
+			$linktype = '<img src="'.$item->menu_image.'" alt="'.$item->title.'" />';
+		} else { 
+			$linktype = $item->title;
+		}
+
+		$link = "";
+		switch ($item->browserNav) :
+			default:
+			case 0:
+				$link = "<a $class href=\"{$item->flink}\" $title $dropdown>$linktype $caret</a>";
+				break;
+			case 1:
+				// _blank
+				$link = "<a $class href=\"{$item->flink}\" target=\"_blank\" $title $dropdown>$linktype $caret</a>";
+				break;
+			case 2:
+			// window.open
+				$link = "<a $class href=\"{$item->flink}\" onclick=\"window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes');return false;\" $title $dropdown>$linktype $caret</a>";
+				break;
+		endswitch;
+
+		return $link;
 	}
 }
