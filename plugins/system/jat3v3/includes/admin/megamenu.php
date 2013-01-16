@@ -17,6 +17,9 @@ class T3v3AdminMegamenu {
 		$regex     = '#(src)="(?!/|' . $protocols . '|\#|\')([^"]*)"#m';
 		$buffer    = preg_replace($regex, "$1=\"$base\$2\"", $buffer);
 		
+		//remove invisibile content	
+		$buffer = preg_replace(array( '@<style[^>]*?>.*?</style>@siu', '@<script[^>]*?.*?</script>@siu'), array('', ''), $buffer);
+
 		echo $buffer;
 	}
 
