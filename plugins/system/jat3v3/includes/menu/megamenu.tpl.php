@@ -62,6 +62,8 @@ class T3V3MenuMegamenuTpl {
 		if (isset($setting['position'])) {
 			$cls .= " mega-col-module";
 			$data .= " data-position=\"{$setting['position']}\"";
+		} else {
+			$cls .= " mega-col-nav";
 		}
 		if (isset($setting['class'])) {
 			$cls .= " {$setting['class']}";

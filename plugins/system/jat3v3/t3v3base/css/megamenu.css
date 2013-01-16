@@ -117,6 +117,7 @@
   font-size: 100%;
   background: none;
   font: inherit;
+  white-space: no-wrap;
 }
 #ja-megamenu .ja-module ul li a:hover,
 #ja-megamenu .ja-module ul li a:active,
@@ -155,4 +156,26 @@
 }
 #ja-megamenu .nav > .dropdown > .dropdown-toggle .caret {
   display: inline-block;
+}
+@media (max-width: 767px) {
+  #ja-megamenu .mega-inner {
+    padding: 10px;
+  }
+  #ja-megamenu .row-fluid,
+  #ja-megamenu .mega-dropdown-menu,
+  #ja-megamenu .row-fluid [class*="span"] {
+    width: 100% !important;
+    min-width: 100% !important;
+    left: 0 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+  }
+  #ja-megamenu .row-fluid + .row-fluid {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eeeeee;
+  }
 }
