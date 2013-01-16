@@ -1046,7 +1046,9 @@
   }
   .ja-mainnav .nav-collapse .nav > li > a:hover,
   .ja-mainnav .nav-collapse .dropdown-menu a:hover {
-    background-color: #e6e6e6;
+    background-color: #666;
+    background-image: none;
+    filter: none;
   }
   .ja-mainnav .nav-collapse .dropdown-menu a {
     border-top: 1px solid #d9d9d9;
@@ -1061,7 +1063,9 @@
     padding-left: 40px;
   }
   .ja-mainnav .nav-collapse .dropdown-menu a:hover {
-    background-color: #e6e6e6;
+    background-color: #666;
+    background-image: none;
+    filter: none;
   }
   .ja-mainnav .nav-collapse .dropdown-menu {
     margin: 0;

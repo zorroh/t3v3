@@ -139,6 +139,11 @@
   -moz-transition: all 0.1s ease 0s;
 }
 
+  /* The caret */
+  #ja-megamenu .mega-nav .dropdown-submenu > a::after {
+    margin-right: -10px;
+  }
+
 
 /* Dropdown ---*/
 #ja-megamenu .dropdown-menu::before,
@@ -222,7 +227,7 @@
   position: absolute;
   background: #eee;
   right: -10px;
-  bottom: -10px;
+  bottom: 0;
   content: "Module";
   width: 70px;
   padding: 2px 0;

@@ -17,6 +17,11 @@
     padding: @baseLineHeight;
   }
 
+  // Inner Padding for 1 column
+  .span12 .mega-inner {
+  }
+
+
 
   // Menu Grids
   // ----------
@@ -38,33 +43,6 @@
   }
 
 
-  // The Nav
-  // -------
-  .mega-nav {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .mega-nav > li {
-    list-style: none;
-    margin-left: 0;
-  }
-
-  .mega-nav > li a {
-    white-space: normal;
-    border: 0;
-    padding: 3px 10px;
-    margin: 2px 0;
-    border-radius: @LargeBorderRadius;
-  }
-
-  // The caret
-  .mega-nav .dropdown-submenu > a::after {
-    margin-right: 0;
-  }
-
-
   // The Group
   // ---------
   .mega-group {
@@ -74,7 +52,6 @@
   .mega-nav .mega-group > a {
     font-size: @T3biggerFontSize;
     font-weight: bold;
-    border-bottom: 1px solid @T3borderColor;
     padding: 3px 10px 5px 5px;
   }
 
@@ -93,23 +70,58 @@
   .mega-group-ct > .row-fluid > [class*="span"] > .mega-inner {
   }
 
-  // Nav in Group
-  .mega-group .mega-nav {
+
+  // Nav in Megamenu
+  // ---------------
+  .mega-col-nav {
   }
 
-  .mega-group .mega-nav > li {
+  // Inner padding
+  .mega-col-nav .mega-inner {
+  }
+
+  // Inner padding for nav in 1 column
+  .span12.mega-col-nav .mega-inner {
+  }
+
+  // The Nav
+  .mega-nav {
+  }
+
+  .mega-nav > li {
+  }
+
+  .mega-nav > li a {
+    padding: 5px 10px;
+  }
+
+  // Nav in Group
+  .mega-group > .mega-nav {
+  }
+
+  .mega-group > .mega-nav > li {
   }
 
   .mega-group .mega-nav > li a {
   }
 
+  // The caret
+  .mega-nav .dropdown-submenu > a::after {
+    margin-right: 0;
+  }
 
 
   // Modules in Megamenu
   // -------------------
+  .mega-col-module {
+  }
 
-  .ja-module {
-    margin-bottom: (@baseLineHeight / 2);
+  // Inner padding
+  .mega-col-module .mega-inner {
+  }
+
+  // Inner padding for module in 1 column
+  .span12.mega-col-nav .mega-inner {
   }
 
   // Module Title

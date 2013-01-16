@@ -841,6 +841,7 @@ label.invalid {
 .dropdown-submenu:hover > a {
   color: #eee;
   text-decoration: none;
+  background-color: #666;
   background-color: #757575;
   background-image: -moz-linear-gradient(top,#808080,#666);
   background-image: -webkit-gradient(linear,0 0,0 100%,from(#808080),to(#666));
@@ -855,6 +856,7 @@ label.invalid {
   color: #eee;
   text-decoration: none;
   outline: 0;
+  background-color: #c00;
   background-color: #eb0000;
   background-image: -moz-linear-gradient(top,#ff0000,#c00);
   background-image: -webkit-gradient(linear,0 0,0 100%,from(#ff0000),to(#c00));
@@ -1252,6 +1254,16 @@ label.invalid {
   background: inherit;
   color: inherit;
   padding: 0;
+  *zoom: 1;
+}
+.module-ct:before,
+.module-ct:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.module-ct:after {
+  clear: both;
 }
 .ja-module ul,
 .ja-module ol {
@@ -1282,9 +1294,6 @@ label.invalid {
 .banneritem {
   padding: 10px 0;
   border-top: 1px solid #ddd;
-}
-.banneritem:first-child {
-  margin-top: 10px;
 }
 .banneritem a {
   font-weight: bold;
