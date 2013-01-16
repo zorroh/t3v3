@@ -376,7 +376,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 			url: T3V3Admin.adminurl,
 			data:{'t3action':'megamenu', 't3task':'save', 'config': JSON.stringify(config)},
 			type: 'POST',
-			async: e && e.isTrigger
+			async: !e || e.isTrigger
 		}).done(function ( data ) {
 			alert ('config saved');
 		});
