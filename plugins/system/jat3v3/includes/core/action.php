@@ -236,6 +236,9 @@ class T3V3Action extends JObject
 
 		}
 
+		//remove invisibile content, there are more ... but ...
+		$buffer = preg_replace(array( '@<style[^>]*?>.*?</style>@siu', '@<script[^>]*?.*?</script>@siu'), array('', ''), $buffer);
+
 		echo $buffer;
 		exit ();
 	}
