@@ -4,7 +4,8 @@
 	if(isTouch){
 		$.fn.jatouchMenu = function(){
 			return this.each(function(){	
-				var	jitems = $(this).find('li.parent'),
+				var	itemsel = $(this).has('.mega') ? 'li.mega' : 'li.parent',
+					jitems = $(this).find(itemsel),
 					onTouch = function(e){
 						$(document.body).addClass('hoverable');
 						e.stopPropagation();
@@ -15,7 +16,7 @@
 						$(this).data('noclick', val);
 						
 						if($(this).data('noclick')){
-							$(this).addClass('open').parentsUntil('.nav').filter('li.parent').addClass('open');
+							$(this).addClass('open').parentsUntil('.nav').filter(itemsel).addClass('open');
 						}
 						
 						this.focus();
@@ -26,7 +27,7 @@
 						if($(this).data('noclick')){
 							e.preventDefault();
 							jitems.removeClass('open');
-							$(this).addClass('open').parentsUntil('.nav').filter('li.parent').addClass('open');
+							$(this).addClass('open').parentsUntil('.nav').filter(itemsel).addClass('open');
 						} else {
 							var href = $(this).children('a').attr('href');
 							if(href){

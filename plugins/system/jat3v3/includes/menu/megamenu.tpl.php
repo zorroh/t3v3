@@ -204,7 +204,7 @@ class T3V3MenuMegamenuTpl {
 		$dropdown = '';
 		$caret = '';
 
-		if($item->dropdown && $item->level < 2){
+		if($item->dropdown && $item->level){
 			$class .= ' dropdown-toggle';
 			$dropdown = ' data-toggle="dropdown"';
 			$caret = '<b class="caret"></b>';
