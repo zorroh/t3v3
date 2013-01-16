@@ -7,29 +7,9 @@
 #ja-megamenu .mega-dropdown-menu {
   min-width: 200px;
 }
-#ja-megamenu .mega-nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-#ja-megamenu .mega-nav > li {
-  list-style: none;
-  margin-left: 0;
-}
-#ja-megamenu .mega-nav > li a {
-  white-space: normal;
-  border: 0;
-  padding: 3px 10px;
-  margin: 2px 0;
-  border-radius: 6px;
-}
-#ja-megamenu .mega-nav .dropdown-submenu > a::after {
-  margin-right: 0;
-}
 #ja-megamenu .mega-nav .mega-group > a {
   font-size: 16px;
   font-weight: bold;
-  border-bottom: 1px solid #ddd;
   padding: 3px 10px 5px 5px;
 }
 #ja-megamenu .mega-nav .mega-group > a:hover,
@@ -38,14 +18,16 @@
   background: inherit;
   color: #222;
 }
-#ja-megamenu .ja-module {
-  margin-bottom: 10px;
+#ja-megamenu .mega-nav > li a {
+  padding: 5px 10px;
+}
+#ja-megamenu .mega-nav .dropdown-submenu > a::after {
+  margin-right: 0;
 }
 #ja-megamenu .ja-module .module-title {
   font-size: 16px;
   color: #444;
   display: block;
   line-height: 20px;
-  border-bottom: 1px solid #ddd;
   padding: 3px 10px 5px 5px;
 }
