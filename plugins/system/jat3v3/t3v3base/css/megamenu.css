@@ -39,7 +39,6 @@
   clear: both;
 }
 #ja-megamenu .row-fluid + .row-fluid {
-  margin-top: 10px;
   padding-top: 10px;
   border-top: 1px solid #eeeeee;
 }
@@ -57,7 +56,7 @@
 }
 #ja-megamenu .mega-nav .mega-group > a {
   font-weight: bold;
-  padding-left: 5px;
+  padding: 0;
   margin: 0;
 }
 #ja-megamenu .mega-nav .mega-group > a:hover,
@@ -81,7 +80,7 @@
   clear: both;
 }
 #ja-megamenu .mega-group-ct > .row-fluid > [class*="span"] > .mega-inner {
-  padding: 5px 0;
+  padding: 0;
 }
 #ja-megamenu .span12.mega-col-nav .mega-inner {
   padding: 5px;
@@ -105,9 +104,6 @@
 #ja-megamenu .mega-nav .dropdown-submenu > a::after {
   margin-right: 5px;
 }
-#ja-megamenu .mega-col-module .mega-inner {
-  padding-bottom: 0;
-}
 #ja-megamenu .ja-module {
   margin-bottom: 10px;
 }
@@ -116,7 +112,7 @@
 }
 #ja-megamenu .ja-module .module-ct {
   margin: 0;
-  padding: 10px 5px;
+  padding: 0;
 }
 #ja-megamenu .ja-module ul {
   margin: 0 0 0 15px;
@@ -178,7 +174,7 @@
 }
 @media (max-width: 767px) {
   #ja-megamenu .mega-inner {
-    padding: 10px;
+    padding: 10px 20px;
   }
   #ja-megamenu .row-fluid,
   #ja-megamenu .mega-dropdown-menu,
@@ -193,7 +189,6 @@
     -o-transform: none !important;
   }
   #ja-megamenu .row-fluid + .row-fluid {
-    margin-top: 10px;
     padding-top: 10px;
     border-top: 1px solid #eeeeee;
   }

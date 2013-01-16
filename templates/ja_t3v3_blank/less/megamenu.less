@@ -52,7 +52,8 @@
   .mega-nav .mega-group > a {
     font-size: @T3biggerFontSize;
     font-weight: bold;
-    padding: 3px 10px 5px 5px;
+    margin-bottom: 5px;
+    color: @grayDarker;
   }
 
   .mega-nav .mega-group > a:hover,
@@ -124,13 +125,17 @@
   .span12.mega-col-nav .mega-inner {
   }
 
+  // The module
+  .ja-module {
+  }
+
   // Module Title
   .ja-module .module-title {
     font-size: @T3biggerFontSize;
-    color: @dropdownLinkColor;
+    color: @grayDarker;
     display: block;
     line-height: @baseLineHeight;
-    padding: 3px 10px 5px 5px;
+    margin-bottom: 5px;
   }
 
   // Module Content
@@ -138,9 +143,27 @@
   }
 
   // List in Module
+  .ja-module ul {
+    margin: 0 0 0 @baseLineHeight;
+  }
 
+  .ja-module li {
+  }
+
+  .ja-module ul li a {
+  }
+
+  .ja-module ul li a:hover,
+  .ja-module ul li a:active,
+  .ja-module ul li a:focus,
+  .ja-module ul li a:visited {
+  }
 
   // End
 }
 
+
+// RESPONSIVE FOR MEGAMENU
+// -------------------------
+@import "megamenu-responsive.less";
 

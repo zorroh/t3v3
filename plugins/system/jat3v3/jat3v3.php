@@ -43,6 +43,11 @@ class plgSystemJaT3v3 extends JPlugin
 				throw new Exception(JText::_('T3V3_MSG_PACKAGE_DAMAGED'));
 			}
 			
+			// capture for tm=1 => show theme magic
+			if ($input->getCmd('tm') == 1) {
+				$input->set('t3action', 'theme');
+				$input->set('t3task', 'thememagic');
+			}
 			// excute action by T3v3
 			if ($action = $input->getCmd ('t3action')) {
 				t3v3import ('core/action');

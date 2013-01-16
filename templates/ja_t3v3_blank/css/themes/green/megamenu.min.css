@@ -1,7 +1,5 @@
-#ja-megamenu .mega-inner{padding:20px}#ja-megamenu .row-fluid+.row-fluid{border-top:1px solid #ddd}#ja-megamenu .mega-dropdown-menu{min-width:200px}#ja-megamenu .mega-nav .mega-group>a{font-size:16px;font-weight:bold;padding:3px
-10px 5px 5px}#ja-megamenu .mega-nav .mega-group > a:hover,
+#ja-megamenu .mega-inner{padding:20px}#ja-megamenu .row-fluid+.row-fluid{border-top:1px solid #ddd}#ja-megamenu .mega-dropdown-menu{min-width:200px}#ja-megamenu .mega-nav .mega-group>a{font-size:16px;font-weight:bold;margin-bottom:5px}#ja-megamenu .mega-nav .mega-group > a:hover,
 #ja-megamenu .mega-nav .mega-group > a:active,
 #ja-megamenu .mega-nav .mega-group>a:focus{background:inherit;color:#222}#ja-megamenu .mega-nav > li
 a{padding:5px
-10px}#ja-megamenu .mega-nav .dropdown-submenu>a::after{margin-right:0}#ja-megamenu .ja-module .module-title{font-size:16px;color:#444;display:block;line-height:20px;padding:3px
-10px 5px 5px}
+10px}#ja-megamenu .mega-nav .dropdown-submenu>a::after{margin-right:0}#ja-megamenu .ja-module .module-title{font-size:16px;color:#444;display:block;line-height:20px;margin-bottom:5px}

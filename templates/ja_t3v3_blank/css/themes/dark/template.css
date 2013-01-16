@@ -1291,10 +1291,6 @@ label.invalid {
   padding-top: 0;
   border-top: 0;
 }
-.banneritem {
-  padding: 10px 0;
-  border-top: 1px solid #444;
-}
 .banneritem a {
   font-weight: bold;
 }
