@@ -255,7 +255,7 @@ class T3v3Template extends ObjectExtendable
 			?>
 			<script type="text/javascript">
 				jQuery(document).ready(function($){
-					$('.nav li').hover(function(event) {
+					$('.nav > li').hover(function(event) {
 					    var $this = $(this);
 					    clearTimeout ($this.data('hoverTimeout'));
 					    $this.addClass ('open');
