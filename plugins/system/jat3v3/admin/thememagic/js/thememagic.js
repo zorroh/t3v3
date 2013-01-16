@@ -373,7 +373,7 @@ var T3V3Theme = window.T3V3Theme || {};
 		},
 
 		filtercolor: function(hex){
-			if(hex.charAt(0) === '@'){
+			if(hex.charAt(0) === '@' || T3V3Theme.colors[hex.toLowerCase()]){
 				return hex;
 			}
 
