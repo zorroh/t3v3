@@ -377,8 +377,6 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 			data:{'t3action':'megamenu', 't3task':'save', 'config': JSON.stringify(config)},
 			type: 'POST',
 			async: !e || e.isTrigger
-		}).done(function ( data ) {
-			alert ('config saved');
 		});
 	}
 
@@ -593,7 +591,6 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 			event.stopPropagation();                
 			return false;
 		});
-
 	}
 
 	unbindEvents = function (els) {
@@ -645,6 +642,9 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 
 			form.onsubmit = function(e){
 				$('.toolbox-saveConfig').trigger('click');
+				if($.isFunction(onsubmit)){
+					onsubmit();
+				}
 			};
 
 			//clean the json code - the value is no need
