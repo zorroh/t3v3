@@ -24,7 +24,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 				// check if have menu-items in sub
 				sub.css('display','none');
 				a.removeClass ('dropdown-toggle').data('toggle', '');
-				liitem.removeClass('dropdown dropdown-submenu mega');				
+				liitem.removeClass('dropdown dropdown-submenu mega');
 			}
 		});
 		// hide toolbox
@@ -37,13 +37,13 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 
 		// stop popup event when click in toolbox area
 		$('.t3-row-mega').click (function(event) {
-			event.stopPropagation();                
+			event.stopPropagation();
 			return false;
 		});
 		// deselect when click outside menu
-		$('body').click (function(event) {
+		$(document.body).click (function(event) {
 			hide_toolbox (true);
-			event.stopPropagation();                
+			//event.stopPropagation();
 		});
 
 		// bind event for action
@@ -609,7 +609,6 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		// put megamenu admin panel into right place
 		prepare: function(){
 			var panel = $('#jform_params_mm_panel-lbl').closest ('.control-group').find('.controls');
-			panel.children().hide();
 			panel.append ($('#megamenu-admin').removeClass('hidden'));
 
 			// first load
@@ -629,6 +628,10 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 
 		t3megamenu: function(form, ctrlelm, ctrl, rsp){
 			$('#megamenu-container').html(rsp).megamenuAdmin();
+		},
+
+		initPanel: function(){
+			$('#jform_params_mm_panel').hide();
 		},
 
 		initPreSubmit: function(){
@@ -654,8 +657,11 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 
 	$(window).load(function(){
 		T3V3AdminMegamenu.prepare();
-		T3V3AdminMegamenu.initPreSubmit();
+	});
 
+	$(document).ready(function(){
+		T3V3AdminMegamenu.initPanel();
+		T3V3AdminMegamenu.initPreSubmit();
 	});
 
 }(window.$ja || window.jQuery);
