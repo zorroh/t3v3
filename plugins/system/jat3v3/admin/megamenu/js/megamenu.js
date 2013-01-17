@@ -346,8 +346,10 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 						col = {};
 						if (li.length) {
 							col['item'] = li.data('id');
+						} else if ($(this).data('position')) {
+							col['position'] = $(this).data('position');
 						} else {
-							if ($(this).data('position'))  col['position'] = $(this).data('position');
+							col['item'] = 0;
 						}
 						if ($(this).data('width')) col['width'] = $(this).data('width');
 						if ($(this).data('class')) col['class'] = $(this).data('class');
