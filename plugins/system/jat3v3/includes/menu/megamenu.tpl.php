@@ -79,7 +79,8 @@ class T3V3MenuMegamenuTpl {
 	static function beginitem ($vars) {
 		$item = $vars['item'];
 		$setting = $item->setting;
-		$cls = '';
+		$cls = $item->class;
+
 		if ($item->dropdown) {
 			$cls .= $item->level == 1 ? ' dropdown' : ' dropdown-submenu';
 		}
