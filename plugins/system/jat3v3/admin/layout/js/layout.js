@@ -1393,7 +1393,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 
 			$(curelm).parent().children().each(function(idx){
 				if(memvisible[idx] == 0 || memvisible[idx] == undefined){
-					if(needfirst || ((sum + parseInt(memwidth[idx]) > T3V3Admin.layout.maxgrid) || (rzindex + 1 == idx && sum + parseInt(memwidth[idx]) == T3V3Admin.layout.maxgrid && (rwidth > owidth)))){
+					if(needfirst || ((sum + parseInt(memwidth[idx]) > T3V3AdminLayout.layout.maxgrid) || (rzindex + 1 == idx && sum + parseInt(memwidth[idx]) == T3V3AdminLayout.layout.maxgrid && (rwidth > owidth)))){
 						$(this).addClass('spanfirst');
 						memfirst[idx] = 1;
 						sum = parseInt(memwidth[idx]);
@@ -1454,7 +1454,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 			}
 
 			curelm.className = curelm.className.replace(/(\s*)span(\d+)(\s*)/g, ' ');
-			$(curelm).css('width', '').addClass('span' + T3V3Admin.t3widthconvert((rzminspan * ((width + opts.gap) / opts.grid) >> 0)));
+			$(curelm).css('width', '').addClass('span' + T3V3AdminLayout.t3widthconvert((rzminspan * ((width + opts.gap) / opts.grid) >> 0)));
 
 			spanfirst(width);
 		},
@@ -1468,8 +1468,8 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 			var jdata = $(this).closest('.t3-layout-xresize');
 			
 			opts = jdata.data('rzdata');
-			rzlayout = T3V3Admin.layout.clayout;
-			rzminspan = T3V3Admin.layout.unitspan[rzlayout];
+			rzlayout = T3V3AdminLayout.layout.clayout;
+			rzminspan = T3V3AdminLayout.layout.unitspan[rzlayout];
 			rzindex = $(this).parent().index();
 			memwidth = jdata.data('data-widths')[rzlayout];
 			memfirst = jdata.data('data-firsts')[rzlayout];
