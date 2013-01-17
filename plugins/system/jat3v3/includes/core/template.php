@@ -534,7 +534,8 @@ class T3v3Template extends ObjectExtendable
 				}
 
 				if (!preg_match('#\.min\.css#i', $url)) { //if this link does has minify marker
-					$turl = $trurl = preg_replace('#\.css(\?.*?)?$#', '.min.css$1' , $url);
+					$trurl = preg_replace('#\.css(\?.*?)?$#', '.min.css$1' , $url);
+					$turl = preg_replace('#(\?.*|\#.*)#', '', $trurl);
 					$tfile = '';
 
 					if(substr($turl, 0, 2) === '//'){ //check and append if url is omit http

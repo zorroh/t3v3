@@ -212,6 +212,10 @@
 				ctrl.indicator.insertAfter(ctrl.indicator.next('.chzn-container'));
 			}
 
+			if(ctrl.indicator.next('#t3-layout-clone-btns').length){
+				ctrl.indicator.insertAfter($('#t3-layout-clone-btns'));	
+			}
+
 			ctrl.indicator.show();
 			$.get(info.url, { jvalue: form.valuesFrom(form.elmsFrom(name))[0], _: $.now() }, function(rsp){
 				ctrl.indicator.hide();

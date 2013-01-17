@@ -6,10 +6,14 @@
  */
 
 defined('_JEXEC') or die;
+
+if(!defined('T3V3_TPL_COMPONENT')){
+  define('T3V3_TPL_COMPONENT', 1);
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 
   <head>
     <jdoc:include type="head" />

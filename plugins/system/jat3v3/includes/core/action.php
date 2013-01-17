@@ -14,6 +14,20 @@ class T3V3Action extends JObject
 {
 	public static function run ($action) {
 		if (method_exists('T3V3Action', $action)) {
+			$option = preg_replace('/[^A-Z0-9_\.-]/i', '', JFactory::getApplication()->input->getCmd('view'));
+
+			if(!defined('JPATH_COMPONENT')){
+				define('JPATH_COMPONENT', JPATH_BASE . '/components/' . $option);
+			}
+
+			if(!defined('JPATH_COMPONENT_SITE')){
+				define('JPATH_COMPONENT_SITE', JPATH_SITE . '/components/' . $option);
+			}
+
+			if(!defined('JPATH_COMPONENT_ADMINISTRATOR')){
+				define('JPATH_COMPONENT_ADMINISTRATOR', JPATH_ADMINISTRATOR . '/components/' . $option);
+			}
+
 			T3V3Action::$action();
 		}
 	}

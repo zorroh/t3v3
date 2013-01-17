@@ -8,3 +8,5 @@
 defined('_JEXEC') or die;
 
 include dirname(__FILE__).DIRECTORY_SEPARATOR.'component.php';
+
+?>
