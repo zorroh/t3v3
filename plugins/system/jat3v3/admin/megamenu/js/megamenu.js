@@ -374,9 +374,10 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 			if (Object.keys(item).length) config[id] = item;
 		});
 
+		var menutype = $('#jform_params_mm_type').val();
 		$.ajax({
 			url: T3V3Admin.adminurl,
-			data:{'t3action':'megamenu', 't3task':'save', 'config': JSON.stringify(config)},
+			data:{'t3action':'megamenu', 't3task':'save', 'menutype': menutype, 'config': JSON.stringify(config)},
 			type: 'POST',
 			async: !e || e.isTrigger
 		});
