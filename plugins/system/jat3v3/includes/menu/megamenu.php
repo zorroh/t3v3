@@ -41,7 +41,7 @@ class T3V3MenuMegamenu {
 			}
 			elseif ($item->type == 'alias') {
 				$aliasToId = $item->params->get('aliasoptions');
-				if (count($this->active_tree) > 0 && $aliasToId == $this->active_tree[count($path)-1]) {
+				if (count($this->active_tree) > 0 && $aliasToId == $this->active_tree[count($this->active_tree)-1]) {
 					$class .= ' active';
 				}
 				elseif (in_array($aliasToId, $this->active_tree)) {
