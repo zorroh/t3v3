@@ -2,7 +2,7 @@
 
 class T3V3MenuMegamenuTpl {
 	static function beginmenu ($vars) {
-		return '<div id="ja-megamenu">';
+		return '<div class="ja-megamenu">';
 	}
 	static function endmenu ($vars) {
 		return '</div>';
