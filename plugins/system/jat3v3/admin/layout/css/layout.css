@@ -425,6 +425,7 @@
 #t3-layout-clone-btns {
   display: inline-block;
   margin-left: 10px;
+  vertical-align: top;
 }
 
 #t3-layout-clone-btns .btn {
