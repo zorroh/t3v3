@@ -102,7 +102,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 			$([
 				'<div id="t3-layout-clone-btns">',
 					'<button id="t3-layout-clone-copy" class="btn btn-success"><i class="icon-save"></i>' + T3V3Admin.langs.layoutSaveAsCopy + '</button>',
-					'<button id="t3-layout-clone-delete" class="btn btn-danger"><i class="icon-remove"></i>' + T3V3Admin.langs.layoutDelete + '</button>',
+					'<button id="t3-layout-clone-delete" class="btn"><i class="icon-remove"></i>' + T3V3Admin.langs.layoutDelete + '</button>',
 				'</div>'
 			].join(''))
 			.insertAfter('#jform_params_mainlayout')
@@ -1046,21 +1046,21 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 								return false;
 							}),
 						
-						jresetall = $('<button class="btn btn-danger t3-reset-all pull-right"><i class="icon-undo"></i>' + T3V3Admin.langs.layoutResetAll + '</button>')
+						jresetall = $('<button class="btn t3-reset-all pull-right"><i class="icon-undo"></i>' + T3V3Admin.langs.layoutResetAll + '</button>')
 							.insertAfter(jmodes)
 							.on('click', function(){
 								T3V3AdminLayout.t3resetall(jelms);
 								return false;
 							}),
 
-						jresetposition = $('<button class="btn btn-danger t3-reset-position pull-right">' + T3V3Admin.langs.layoutResetPosition + '</button>')
+						jresetposition = $('<button class="btn t3-reset-position pull-right">' + T3V3Admin.langs.layoutResetPosition + '</button>')
 							.insertAfter(jdevices)
 							.on('click', function(){
 								T3V3AdminLayout.t3resetposition(jelms);
 								return false;
 							}),
 
-						jresetdevice = $('<button class="btn btn-danger t3-reset-device pull-right hide">' + T3V3Admin.langs.layoutResetDevice + '</button>')
+						jresetdevice = $('<button class="btn t3-reset-device pull-right hide">' + T3V3Admin.langs.layoutResetDevice + '</button>')
 							.insertAfter(jdevices)
 							.on('click', function(){
 								T3V3AdminLayout.t3resetdevice(jelms);
