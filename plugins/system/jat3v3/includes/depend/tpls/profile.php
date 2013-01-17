@@ -4,19 +4,22 @@
  */
 // no direct access
 defined ( '_JEXEC' ) or die ( 'Restricted access' );
+
+$javersion = new JVersion;
+
 ?>
 	<script type="text/javascript">
 		!function($){
 			var JAFileConfig = window.JAFileConfig || {};
 
 			JAFileConfig.profiles = <?php echo json_encode($jsonData)?>;
-			JAFileConfig.mod_url = '<?php echo JURI::base(true); ?>/modules/<?php echo $module; ?>/helper.php';
-			JAFileConfig.template = '<?php echo $template?>';
+			JAFileConfig.mod_url = '<?php echo JURI::base(true) ?>/modules/<?php echo $module; ?>/helper.php';
+			JAFileConfig.template = '<?php echo $template ?>';
 			JAFileConfig.langs = <?php json_encode(array(
-					confirmCancel: JText::_('ARE_YOUR_SURE_TO_CANCEL'),
-					enterName: JText::_('ENTER_PROFILE_NAME'),
-					correctName: JText::_('PROFILE_NAME_NOT_EMPTY'),
-					confirmDelete: JText::_('CONFIRM_DELETE_PROFILE')
+					'confirmCancel' => JText::_('ARE_YOUR_SURE_TO_CANCEL'),
+					'enterName' => JText::_('ENTER_PROFILE_NAME'),
+					'correctName' => JText::_('PROFILE_NAME_NOT_EMPTY'),
+					'confirmDelete' => JText::_('CONFIRM_DELETE_PROFILE')
 				)); ?>;
 			
 			$(window).on('load', function(){
@@ -40,7 +43,13 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 			</span>	
 		</div>
 	</div>
+
+<?php if($javersion->isCompatible('3.0')) : ?>
+	</div>
 </div>
+<?php else : ?>
+</li>
+<?php endif; ?>
 
 <?php		
 $fieldSets = $jaform->getFieldsets('params');
@@ -52,16 +61,26 @@ foreach ($fieldSets as $name => $fieldSet) :
 	
 	$hidden_fields = '';
 	foreach ($jaform->getFieldset($name) as $field) :
-		if (!$field->hidden) : ?>
-		<div class="control-group">
-			<div class="control-label">
-				<?php echo $jaform->getLabel($field->fieldname,$field->group); ?>
+		if (!$field->hidden) :
+			if($javersion->isCompatible('3.0')) : ?>
+		<div class="control-group t3-control-group">
+			<div class="control-label t3-control-label">
+			<?php else: ?> 
+		<li>
+			<?php endif;
+				echo $jaform->getLabel($field->fieldname,$field->group);
+			
+				if($javersion->isCompatible('3.0')) : ?>
 			</div>
-			<div class="controls">
-				<?php echo $jaform->getInput($field->fieldname,$field->group); ?>
+			<div class="controls t3-controls">
+				<?php endif;
+				echo $jaform->getInput($field->fieldname,$field->group);
+				if($javersion->isCompatible('3.0')) : ?>
 			</div>
 		</div>
-		<?php 
+			<?php else: ?> 
+		</li>
+			<?php endif;
 		else : 
 			$hidden_fields .= $jaform->getInput($field->fieldname,$field->group);	
 		endif;
@@ -70,9 +89,14 @@ foreach ($fieldSets as $name => $fieldSet) :
 endforeach; 
 ?>	
 	
-<div class="control-group hide">
-	<div class="control-label"></div>
-	<div class="controls">
+<?php 
+	if($javersion->isCompatible('3.0')) : ?>
+		<div class="control-group t3-control-group hide">
+			<div class="control-label t3-control-label"></div>
+				<div class="controls t3-controls">
+	<?php else: ?> 
+		<li>
+	<?php endif; ?>
 		<script type="text/javascript">
 			// <![CDATA[ 
 			window.addEvent('load', function(){
@@ -93,9 +117,3 @@ endforeach;
 			});
 			// ]]> 
 		</script>
-	</div>
-</div>
-
-<div class="control-group hide">
-	<div class="control-label"></div>
-	<div class="controls">

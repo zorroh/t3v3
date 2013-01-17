@@ -109,13 +109,13 @@ defined('_JEXEC') or die;
 											$textinput = str_replace ('/>', ' placeholder="' . $form->getFieldAttribute($field->fieldname, 'default', '', $field->group).'"/>', $field->input);
 										}
 									?>
-										<div class="control-group<?php echo $hide ? ' hide' : ''?>">
+										<div class="control-group t3-control-group<?php echo $hide ? ' hide' : ''?>">
 										<?php if (!$field->hidden) : ?>
-											<div class="control-label">
+											<div class="control-label t3-control-label">
 												<?php echo preg_replace('/(\s*)for="(.*?)"(\s*)/i', ' ', $field->label); ?>
 											</div>
 										<?php endif; ?>
-											<div class="controls">
+											<div class="controls t3-controls">
 												<?php echo $field->type == 'Text'? $textinput : str_replace('value="#000000"', 'value=""', $field->input); ?>
 											</div>
 										</div>

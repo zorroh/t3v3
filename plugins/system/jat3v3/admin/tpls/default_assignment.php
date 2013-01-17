@@ -21,13 +21,13 @@ $user = JFactory::getUser();
   <?php echo JText::_('T3V3_MENUS_ASSIGNMENT_DESC'); ?>
 </div>
 
-<div class="control-group">
+<div class="control-group t3-control-group">
 
-  <div class="control-label">
+  <div class="control-label t3-control-label">
     <label id="jform_menuselect-lbl" for="jform_menuselect"><?php echo JText::_('JGLOBAL_MENU_SELECTION'); ?></label>
   </div>
 
-  <div class="controls">
+  <div class="controls t3-controls">
     <div class="btn-toolbar">
       <button type="button" class="btn" onclick="$$('.chk-menulink').each(function(el) { el.checked = !el.checked; });">
         <i class="icon-checkbox-partial"></i> <?php echo JText::_('JGLOBAL_SELECTION_INVERT'); ?>

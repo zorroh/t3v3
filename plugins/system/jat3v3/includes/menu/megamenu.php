@@ -128,7 +128,9 @@ class T3V3MenuMegamenu {
 
 		$this->_('beginmenu');
 		$keys = array_keys($this->_items);
-		$this->nav(null, $keys[0]);
+		if(count($keys)){	//in case the keys is empty array
+			$this->nav(null, $keys[0]);
+		}
 		$this->_('endmenu');
 
 		if ($return) {
@@ -224,7 +226,7 @@ class T3V3MenuMegamenu {
 			// load module
 		$id = intval($module);
 		$db = JFactory::getDbo();
-    $query = $db->getQuery(true);
+		$query = $db->getQuery(true);
 		$query->select('m.id, m.title, m.module, m.position, m.content, m.showtitle, m.params');
 		$query->from('#__modules AS m');
 		$query->where('m.id = '.$id);
@@ -232,10 +234,13 @@ class T3V3MenuMegamenu {
 		$db->setQuery($query);
 		$module = $db->loadObject ();
 
-		$style = 'jaxhtml';
-		$content = JModuleHelper::renderModule($module, array('style'=>$style));
+		//check in case the module is unpublish or deleted
+		if($module && $module->id){
+			$style = 'jaxhtml';
+			$content = JModuleHelper::renderModule($module, array('style'=>$style));
 
-		$this->menu .= $content."\n";
+			$this->menu .= $content."\n";
+		}
 	}
 
 	function _ ($tmpl, $vars = array()) {

@@ -27,44 +27,44 @@ $iswritable = is_writable('jat3test.txt');
 <form action="<?php echo JRoute::_('index.php?option=com_templates&layout=edit&id='.$input->getInt('id')); ?>" method="post" name="adminForm" id="style-form" class="form-validate form-horizontal">
 	<div class="t3-header clearfix">
 		<div class="controls-row">
-			<div class="control-group">
-				<div class="control-label">
+			<div class="control-group t3-control-group">
+				<div class="control-label t3-control-label">
 					<label id="t3-styles-list-lbl" for="t3-styles-list" class="hasTip" title="<?php echo JText::_('T3V3_SELECT_STYLE_DESC'); ?>"><?php echo JText::_('T3V3_SELECT_STYLE_LABEL'); ?></label>
 				</div>
-				<div class="controls">
+				<div class="controls t3-controls">
 					<?php echo JHTML::_('select.genericlist', $styles, 't3-styles-list', 'autocomplete="off"', 'id', 'title', $input->get('id')); ?>
 				</div>
 			</div>
-			<div class="control-group">
-				<div class="control-label">
+			<div class="control-group t3-control-group">
+				<div class="control-label t3-control-label">
 					<?php echo $form->getLabel('title'); ?>
 				</div>
-				<div class="controls">
+				<div class="controls t3-controls">
 					<?php echo $form->getInput('title'); ?>
 				</div>
 			</div>
-			<div class="control-group hide">
-				<div class="control-label">
+			<div class="control-group t3-control-group hide">
+				<div class="control-label t3-control-label">
 					<?php echo $form->getLabel('template'); ?>
 				</div>
-				<div class="controls">
+				<div class="controls t3-controls">
 					<?php echo $form->getInput('template'); ?>
 				</div>
 			</div>
-			<div class="control-group hide">
-				<div class="control-label">
+			<div class="control-group t3-control-group hide">
+				<div class="control-label t3-control-label">
 					<?php echo $form->getLabel('client_id'); ?>
 				</div>
-				<div class="controls">
+				<div class="controls t3-controls">
 					<?php echo $form->getInput('client_id'); ?>
 					<input type="text" size="35" value="<?php echo $form->getValue('client_id') == 0 ? JText::_('JSITE') : JText::_('JADMINISTRATOR'); ?>	" class="inputbox readonly" readonly="readonly" />
 				</div>
 			</div>
-			<div class="control-group">
-				<div class="control-label">
+			<div class="control-group t3-control-group">
+				<div class="control-label t3-control-label">
 					<?php echo $form->getLabel('home'); ?>
 				</div>
-				<div class="controls">
+				<div class="controls t3-controls">
 					<?php echo $form->getInput('home'); ?>
 				</div>
 			</div>
@@ -123,11 +123,11 @@ $iswritable = is_writable('jat3test.txt');
 					<?php if ($field->hidden || ($field->type == 'JaDepend' && !$field->label)) : ?>
 						<?php echo $field->input; ?>
 					<?php else : ?>
-					<div class="control-group<?php echo $hide ? ' hide' : ''?>">
-						<div class="control-label">
+					<div class="control-group t3-control-group<?php echo $hide ? ' hide' : ''?>">
+						<div class="control-label t3-control-label">
 							<?php echo $field->label; ?>
 						</div>
-						<div class="controls">
+						<div class="controls t3-controls">
 							<?php echo $field->type=='Text'?$textinput:$field->input ?>
 						</div>
 					</div>
