@@ -6,11 +6,18 @@ class T3V3MenuMegamenu {
 	protected $_items = array();
 	protected $settings = null;
 	protected $menu = '';
+	protected $active_id = 0;
+	protected $active_tree = array();
 
 	function __construct ($menutype='mainmenu', $settings=array()) {
 		$app = JFactory::getApplication();
 		$menu = $app->getMenu('site');
 		$items = $menu->getItems('menutype', $menutype);
+
+		$active = ($menu->getActive()) ? $menu->getActive() : $menu->getDefault();
+		$this->active_id = $active ? $active->id : 0;
+		$this->active_tree = $active->tree;
+
 		$this->settings = $settings;
 		$this->editmode = isset ($settings['editmode']);
 		foreach ($items as &$item) {
@@ -24,6 +31,25 @@ class T3V3MenuMegamenu {
 			$key = 'item-'.$item->id;
 			$setting = isset($this->settings[$key]) ? $this->settings[$key] : array();
 
+			// active - current
+			$class = '';
+			if ($item->id == $this->active_id) {
+				$class .= ' current';
+			}
+			if (in_array($item->id, $this->active_tree)) {
+				$class .= ' active';
+			}
+			elseif ($item->type == 'alias') {
+				$aliasToId = $item->params->get('aliasoptions');
+				if (count($this->active_tree) > 0 && $aliasToId == $this->active_tree[count($path)-1]) {
+					$class .= ' active';
+				}
+				elseif (in_array($aliasToId, $this->active_tree)) {
+					$class .= ' alias-parent-active';
+				}
+			}
+
+			$item->class = $class;
 			$item->mega = 0;
 			$item->group = 0;
 			$item->dropdown = 0;

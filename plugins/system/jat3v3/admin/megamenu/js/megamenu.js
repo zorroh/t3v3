@@ -346,8 +346,10 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 						col = {};
 						if (li.length) {
 							col['item'] = li.data('id');
+						} else if ($(this).data('position')) {
+							col['position'] = $(this).data('position');
 						} else {
-							if ($(this).data('position'))  col['position'] = $(this).data('position');
+							col['item'] = 0;
 						}
 						if ($(this).data('width')) col['width'] = $(this).data('width');
 						if ($(this).data('class')) col['class'] = $(this).data('class');
@@ -372,9 +374,10 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 			if (Object.keys(item).length) config[id] = item;
 		});
 
+		var menutype = $('#jform_params_mm_type').val();
 		$.ajax({
 			url: T3V3Admin.adminurl,
-			data:{'t3action':'megamenu', 't3task':'save', 'config': JSON.stringify(config)},
+			data:{'t3action':'megamenu', 't3task':'save', 'menutype': menutype, 'config': JSON.stringify(config)},
 			type: 'POST',
 			async: !e || e.isTrigger
 		});
