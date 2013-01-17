@@ -6,24 +6,34 @@
 			return this.each(function(){	
 				var	itemsel = $(this).has('.mega').length ? 'li.mega' : 'li.parent',
 					jitems = $(this).find(itemsel),
+					reset = function(){
+						$(this).data('noclick', 0);
+					},
 					onTouch = function(e){
 						$(document.body).addClass('hoverable');
+
 						e.stopPropagation();
 						
 						var val = !$(this).data('noclick');
 						// reset all
 						jitems.data('noclick', 0);
 						$(this).data('noclick', val);
+
+						var that =  this;
 						
-						if($(this).data('noclick')){
-							$(this).addClass('open').parentsUntil('.nav').filter(itemsel).addClass('open');
+						if(val){
+							$(this)
+								.data('rsid', setTimeout($.proxy(reset, this), 500))
+								.parent().parentsUntil('.nav').filter(itemsel).addClass('open');
 						}
-						
+
 						this.focus();
 					},
 					onClick = function(e){
 						e.stopPropagation();
-						
+
+						clearTimeout($(this).data('rsid'));
+
 						if($(this).data('noclick')){
 							e.preventDefault();
 							jitems.removeClass('open');
@@ -48,11 +58,9 @@
 		$(document).ready(function(){
 			$('ul.nav').has('.dropdown-menu').jatouchMenu();
 		});
+
 	}
-	
-	//$(window).resize(function(){
-	//	var jbtncollapse = $('#ja-mainnav').find('.navbar .btn-navbar');
-	//	$(document.body)[jbtncollapse.length && jbtncollapse.css('display') != 'none' ? 'removeClass' : 'addClass']('hoverable');
-	//});
+
+	$('html').addClass(isTouch ? 'touch' : 'no-touch');
 	
 }(window.$ja || window.jQuery);
