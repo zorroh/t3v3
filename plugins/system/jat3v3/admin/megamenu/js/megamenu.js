@@ -611,19 +611,20 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 	$.extend(T3V3AdminMegamenu, {
 		// put megamenu admin panel into right place
 		prepare: function(){
-			var panel = $('#jform_params_mm_panel-lbl').closest ('.control-group').find('.controls');
+			// var panel = $('#jform_params_mm_panel-lbl').closest ('.control-group').find('.controls');
+			var panel = $('#jform_params_mm_type').closest ('.controls');
 			panel.append ($('#megamenu-admin').removeClass('hidden'));
 
 			// first load
-			if ($('#jform_params_mm_enable1').prop('checked')) {
+			if ($('#jform_params_navigation_type').val() == 'megamenu') {
 				setTimeout(function(){ //wait for page ready
 					$('#jform_params_mm_type').trigger('change.less');
 				}, 500);
 			}
 
 			// handle event for enable megamenu
-			$('#jform_params_mm_enable1').on('click', function() {
-				if (this.checked){
+			$('#jform_params_navigation_type').on('change', function() {
+				if ($(this).val() == 'megamenu'){
 					$('#jform_params_mm_type').trigger('change.less');
 				}
 			});

@@ -112,7 +112,7 @@
 
 		<fieldset name="navigation_params" label="T3V3_NAVIGATION_LABEL" description="T3V3_NAVIGATION_DESC">
 			<field name="navigation_group_default" type="jadepend" function="@group">
-				<option for="mm_enable" value="1">
+				<option for="navigation_type" value="megamenu">
 					mm_type,
 					mm_panel
 				</option>
@@ -133,19 +133,16 @@
 				<option value="click">Mouse Click</option>
 			</field>
 
-			<field name="mm_enable" type="radio" class="btn-group" default="0"
-				label="T3V3_NAVIGATION_MM_ENABLE_LABEL"
-				description="T3V3_NAVIGATION_MM_ENABLE_DESC">
-				<option value="0">JNO</option>
-				<option value="1">JYES</option>
+			<field name="navigation_type" type="list" class="btn-group" default="0"
+				label="T3V3_NAVIGATION_TYPE_LABEL"
+				description="T3V3_NAVIGATION_TYPE_DESC">
+				<option value="joomla">Joomla Module</option>
+				<option value="megamenu">Megamenu</option>
 			</field>
 			<field name="mm_type" type="menu"
 				label="T3V3_NAVIGATION_MM_TYPE_LABEL"
 				description="T3V3_NAVIGATION_MM_TYPE_DESC"
 				 />
-			<field name="mm_panel" type="textarea"
-				label="T3V3_NAVIGATION_MM_PANEL_LABEL"
-				description="T3V3_NAVIGATION_MM_PANEL_DESC" />
 
 		</fieldset>	
 	</fields>

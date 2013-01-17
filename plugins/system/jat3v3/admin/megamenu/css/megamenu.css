@@ -7,7 +7,7 @@
 #megamenu-admin {
   min-height: 800px;
   background: url(../images/grid-bg.jpg) top left;
-  margin: 0 -20px;
+  margin: 20px -20px;
 }
 
 #megamenu-admin .t3-inline-toolbox {
