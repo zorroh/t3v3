@@ -4,7 +4,7 @@
 	if(isTouch){
 		$.fn.jatouchMenu = function(){
 			return this.each(function(){	
-				var	itemsel = $(this).has('.mega') ? 'li.mega' : 'li.parent',
+				var	itemsel = $(this).has('.mega').length ? 'li.mega' : 'li.parent',
 					jitems = $(this).find(itemsel),
 					onTouch = function(e){
 						$(document.body).addClass('hoverable');
