@@ -83,6 +83,8 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 			event.stopPropagation();
 			return false;
 		});
+
+		return this;
 	};
 
 	// Actions
@@ -548,7 +550,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 							url: T3V3Admin.rooturl,
 							data:{'t3action':'module', 'mid': value}
 						}).done(function ( data ) {
-							currentSelected.find('.mega-inner').html(data);
+							currentSelected.find('.mega-inner').html(data).find(':input').removeAttr('name');
 						});
 					} else {
 						currentSelected.find('.mega-inner').html('');
@@ -631,7 +633,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		},
 
 		t3megamenu: function(form, ctrlelm, ctrl, rsp){
-			$('#megamenu-container').html(rsp).megamenuAdmin();
+			$('#megamenu-container').html(rsp).megamenuAdmin().find(':input').removeAttr('name');
 		},
 
 		initPanel: function(){
