@@ -114,17 +114,21 @@
   margin: 0;
   padding: 0;
 }
-.ja-megamenu .ja-module ul {
+.ja-megamenu .ja-module ul,
+.ja-megamenu .ja-module .nav {
   margin: 0 0 0 15px;
 }
-.ja-megamenu .ja-module li {
+.ja-megamenu .ja-module ul li,
+.ja-megamenu .ja-module .nav li {
   list-style: disc;
   display: list-item;
+  float: none;
   margin: 0;
-  paddinh: 0;
+  padding: 0;
   border: 0;
 }
-.ja-megamenu .ja-module ul li a {
+.ja-megamenu .ja-module ul li a,
+.ja-megamenu .ja-module .nav li a {
   display: inline;
   padding: 0;
   margin: 0;
@@ -137,7 +141,11 @@
 .ja-megamenu .ja-module ul li a:hover,
 .ja-megamenu .ja-module ul li a:active,
 .ja-megamenu .ja-module ul li a:focus,
-.ja-megamenu .ja-module ul li a:visited {
+.ja-megamenu .ja-module ul li a:visited,
+.ja-megamenu .ja-module .nav li a:hover,
+.ja-megamenu .ja-module .nav li a:active,
+.ja-megamenu .ja-module .nav li a:focus,
+.ja-megamenu .ja-module .nav li a:visited {
   background: none;
   color: inherit;
   font: inherit;

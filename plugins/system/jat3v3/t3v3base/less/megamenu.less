@@ -154,19 +154,23 @@
   }
 
   // List in Module
-  .ja-module ul {
+  .ja-module ul,
+  .ja-module .nav {
     margin: 0 0 0 15px;
   }
 
-  .ja-module li {
+  .ja-module ul li,
+  .ja-module .nav li {
     list-style: disc;
     display: list-item;
+    float: none;
     margin: 0;
-    paddinh: 0;
+    padding: 0;
     border: 0;
   }
 
-  .ja-module ul li a {
+  .ja-module ul li a,
+  .ja-module .nav li a {
     display: inline;
     padding: 0;
     margin: 0;
@@ -180,7 +184,11 @@
   .ja-module ul li a:hover,
   .ja-module ul li a:active,
   .ja-module ul li a:focus,
-  .ja-module ul li a:visited {
+  .ja-module ul li a:visited,
+  .ja-module .nav li a:hover,
+  .ja-module .nav li a:active,
+  .ja-module .nav li a:focus,
+  .ja-module .nav li a:visited {
     background: none;
     color: inherit;
     font: inherit;

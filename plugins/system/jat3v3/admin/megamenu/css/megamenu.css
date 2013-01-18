@@ -1,5 +1,4 @@
 /* -------------------------------------------------*/
-
 /* T3 MEGAMENU ADMIN UI
 /* JoomlArt.com
 ---------------------------------------------------*/
@@ -7,10 +6,7 @@
 #megamenu-admin {
   min-height: 800px;
   background: url(../images/grid-bg.jpg) top left;
-  margin: 20px -20px;
-}
-#megamenu-admin .t3-inline-toolbox {
-  height: 119px;
+  margin: 30px -20px;
 }
 
 .controlbox-fixed {
@@ -21,30 +17,42 @@
   padding: 20px !important;
   margin: 0 !important;
 }
+
+
+
 /* Intro
 ---------------------*/
-
 #megamenu-intro {
   float: left;
   padding: 20px 200px 20px 20px;
   text-shadow: 0 1px 1px white;
 }
+
 #megamenu-intro h3 {
   margin-top: 0;
 }
+
 #megamenu-intro p {
   display: block;
   color: #999999;
   max-height: 50px;
   overflow: hidden;
 }
+
+
+
 /* Toolbox
 ---------------------*/
-
 #megamenu-toolbox {
   float: left;
   text-shadow: 0 1px 1px white;
 }
+
+#megamenu-admin .t3-inline-toolbox {
+  height: 119px;
+  border-top: 1px solid #eee;
+}
+
 #megamenu-toolbox .toolbox {
   height: 119px;
   padding: 20px;
@@ -54,47 +62,57 @@
   -webkit-box-sizing: border-box;
   -o-box-sizing: border-box;
 }
+
 #megamenu-toolbox .toolbox h3 {
   margin-top: 0;
 }
+
 #megamenu-toolbox .toolbox ul {
   float: left;
   margin-right: 20px;
 }
+
 #megamenu-toolbox .toolbox li > label {
   font-size: 11px;
   color: #999999;
 }
-/* Toolbox Actions ---- */
 
+
+/* Toolbox Actions ---- */
 .t3-row-mega .toolbox-actions-group {
   height: 100px;
   position: absolute;
   right: 30px;
 }
+
 .t3-row-mega .toolbox-actions-group .btn {
   margin-top: 40px;
 }
+
+
+
 /* The Menu
 ---------------------*/
-
 #megamenu-container {
   float: left;
   margin-left: 20px;
 }
+
 #megamenu-container * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -o-box-sizing: border-box;
 }
-/* Global Menu Inner padding ---*/
 
+
+/* Global Menu Inner padding ---*/
 .ja-megamenu .mega-inner {
   padding: 10px;
 }
-/* Menu Grid ---*/
 
+
+/* Menu Grid ---*/
 .ja-megamenu .row-fluid + .row-fluid {
   margin-top: 0;
   border-top: 0;
@@ -107,11 +125,13 @@
   -moz-transition: all 0.1s ease 0s;
   background: white;
 }
-/* The Nav ---*/
 
+
+/* The Nav ---*/
 .ja-megamenu .nav > li {
   margin-right: 20px;
 }
+
 .ja-megamenu .nav > li > a {
   border: 1px solid #dddddd;
   padding: 8px 20px;
@@ -122,19 +142,19 @@
   -webkit-transition: all 0.1s ease 0s;
   -moz-transition: all 0.1s ease 0s;
 }
-/* The caret */
 
+/* The caret */
 .ja-megamenu .mega-nav .dropdown-submenu > a::after {
   margin-right: -10px;
 }
-/* Dropdown ---*/
 
+
+/* Dropdown ---*/
 .ja-megamenu .dropdown-menu::before,
 .ja-megamenu .dropdown-menu::after {
-  display: none;
-  /* Hide the Arrow */
-
+  display: none !important; /* Hide the Arrow */
 }
+
 .ja-megamenu .dropdown-menu {
   border: 1px solid #dddddd;
   padding: 10px;
@@ -148,22 +168,26 @@
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 99;
   /* Fixed overlap with the Joomla Toolbar */
-
 }
+
 .ja-megamenu .dropdown-menu .dropdown-menu {
   margin-top: 0;
   margin-left: 11px;
 }
+
 .ja-megamenu .dropdown-submenu.mega-align-right .dropdown-menu {
   margin-left: 0;
   margin-right: 11px;
 }
+
 .ja-megamenu .mega-nav li {
   margin-bottom: 5px;
 }
+
 .ja-megamenu .mega-nav li:last-child {
   margin-bottom: 0;
 }
+
 .ja-megamenu .mega-nav li a {
   padding: 5px 20px 5px 10px;
   border: 1px dotted #dddddd;
@@ -174,11 +198,13 @@
   -webkit-transition: all 0.1s ease 0s;
   -moz-transition: all 0.1s ease 0s;
 }
-/* The group ---*/
 
+
+/* The group ---*/
 .ja-megamenu .mega-nav .mega-group > a {
   padding: 5px 20px 5px 10px;
 }
+
 .ja-megamenu .mega-group-ct {
   border: 1px solid #dddddd;
   padding: 10px;
@@ -189,11 +215,13 @@
   border-radius: 3px;
   background: #f2f2f2;
 }
+
 .ja-megamenu .mega-group-ct > .row-fluid > [class*="span"] > .mega-inner {
   padding: 10px;
 }
-/* Module in Menu ---*/
 
+
+/* Module in Menu ---*/
 .ja-megamenu .ja-module {
   pointer-events: none;
   cursor: default;
@@ -203,6 +231,7 @@
   -webkit-transition: all 0.1s ease 0s;
   -moz-transition: all 0.1s ease 0s;
 }
+
 .ja-megamenu .ja-module:after {
   display: block;
   position: absolute;
@@ -220,18 +249,22 @@
   border: 1px dotted #dddddd;
   border-width: 1px 0 0 1px;
 }
+
 .ja-megamenu .ja-module .module-inner {
   opacity: .3;
   font-size: 12px;
 }
+
 .ja-megamenu .ja-module .module-title {
   margin-top: 0;
   font-size: 14px;
 }
+
 .ja-megamenu .ja-module .module-ct {
   overflow: hidden;
   zoom: 1;
 }
+
 .ja-megamenu [class*="span"].hover .ja-module:after,
 .ja-megamenu [class*="span"].selected .ja-module:after {
   border-style: solid;
@@ -239,16 +272,18 @@
   background: #ffbb00;
   color: white;
 }
-/* Open Item ---*/
 
+
+/* Open Item ---*/
 .ja-megamenu .nav > li.open > a,
 .ja-megamenu .open > a {
-  background: #333333;
-  color: white;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  background: #333333 !important;
+  color: #fff !important;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5) !important;
 }
-/* Hover Item ---*/
 
+
+/* Hover Item ---*/
 .ja-megamenu .nav-child.hover,
 .ja-megamenu ul[class*="level"] > li > a.hover,
 .ja-megamenu .row-fluid [class*="span"].hover {
@@ -258,6 +293,7 @@
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
   border-radius: 3px;
 }
+
 .ja-megamenu ul[class*="level"] > li > a:hover,
 .ja-megamenu ul[class*="level"] > li > a:focus,
 .ja-megamenu ul[class*="level"] > li > a:active {
@@ -265,14 +301,15 @@
   color: #333333 !important;
   text-shadow: 0 1px 1px white !important;
 }
-/* The caret */
 
+/* The caret */
 .ja-megamenu .mega-nav li a.hover:after,
 .ja-megamenu .mega-nav li a.selected:after {
   border-left-color: #333333;
 }
-/* Selected Item ---*/
 
+
+/* Selected Item ---*/
 .ja-megamenu .selected {
   background: #fffbf0 !important;
   color: #333333 !important;
@@ -281,9 +318,11 @@
   border-radius: 3px;
   text-shadow: 0 1px 1px white !important;
 }
+
+
+
 /* Fix for Joomla! Default Admin Template
 --------------------------------------------------*/
-
 #megamenu-admin .dropdown-menu a {
   white-space: normal;
 }
@@ -293,17 +332,18 @@
 #megamenu-admin .row-fluid [class*="span"]:first-child {
   margin-left: 0;
 }
-/* Fix right spacing for chzn chosen in Megamenu Admin UI */
 
+/* Fix right spacing for chzn chosen in Megamenu Admin UI */
 #megamenu-admin ul.chzn-results {
   margin-right: 4px;
   float: none;
 }
-/* Fix submenu auto open on hover */
 
+/* Fix submenu auto open on hover */
 #megamenu-admin .dropdown-submenu:hover .dropdown-menu {
   display: none;
 }
+
 #megamenu-admin .dropdown-submenu:hover > .dropdown-menu {
   display: block;
 }
