@@ -934,6 +934,12 @@ label.invalid {
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
 }
+.touch .dropdown-submenu:hover > .dropdown-menu {
+  display: none;
+}
+.touch .dropdown-submenu.open > .dropdown-menu {
+  display: block;
+}
 .dropup .dropdown-submenu > .dropdown-menu {
   top: auto;
   bottom: 0;

@@ -132,6 +132,14 @@
 }
 
 
+/* Fullscreen Toggle */
+#layout_params .t3-tog-fullscreen {
+  position: absolute;
+  right: 30px;
+  top: -50px;
+}
+
+
 /* User Interation Elements
 --------------------------*/
 /* Edit Button ---*/

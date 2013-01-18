@@ -6,7 +6,7 @@
 #megamenu-admin {
   min-height: 800px;
   background: url(../images/grid-bg.jpg) top left;
-  margin: 30px -20px;
+  margin: 0 -20px;
 }
 
 .controlbox-fixed {
@@ -50,7 +50,6 @@
 
 #megamenu-admin .t3-inline-toolbox {
   height: 119px;
-  border-top: 1px solid #e6e6e6;
 }
 
 #megamenu-toolbox .toolbox {
@@ -86,10 +85,14 @@
 }
 
 .t3-row-mega .toolbox-actions-group button {
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  background: #e6e6e6;
-  padding: 5px 10px;
+}
+
+
+/* Fullscreen Toggle */
+#navigation_params .t3-tog-fullscreen {
+  position: absolute;
+  right: 0;
+  top: -50px;
 }
 
 

@@ -1056,12 +1056,6 @@
     font-weight: normal;
     padding: 10px 20px;
   }
-  .ja-mainnav .nav-collapse .dropdown-menu .dropdown-menu a {
-    padding-left: 30px;
-  }
-  .ja-mainnav .nav-collapse .dropdown-menu .dropdown-menu .dropdown-menu a {
-    padding-left: 40px;
-  }
   .ja-mainnav .nav-collapse .dropdown-menu a:hover {
     background-color: #666;
     background-image: none;
