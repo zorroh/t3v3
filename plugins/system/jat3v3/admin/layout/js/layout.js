@@ -52,16 +52,6 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 			};
 		},
 
-		initLayoutPosition: function(){
-			$('#jform_params_layout_panel').hide();
-
-			$(window).load(function(){
-				setTimeout(function(){
-					$('#jform_params_mainlayout').trigger('change.less');
-				}, 500);
-			});
-		},
-
 		initPrepareLayout: function(){
 			var jlayout = $('#t3-layout-admin').appendTo($('#jform_params_mainlayout').closest('.controls')),
 				jelms = $('#t3-layout-cont'),
@@ -122,6 +112,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 			T3V3AdminLayout.jresetposition = jresetposition.on('click', T3V3AdminLayout.t3resetposition);
 			T3V3AdminLayout.jresetdevice = jresetdevice.on('click', T3V3AdminLayout.t3resetdevice);
 			T3V3AdminLayout.jselect = jselect.appendTo(document.body).on('click', function(e){ return false; });
+			T3V3AdminLayout.jallpos = jselect.find('select');
 
 			jselect.find('select').on('change', function(){
 				var curspan = T3V3AdminLayout.curspan;
@@ -154,7 +145,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 
 					if(curspan && !$(this).hasClass('disabled')){
 						var vdef = $(this).hasClass('t3-chzn-default') ? $(curspan).closest('[data-original]').attr('data-original') : '';
-						jallpos.val(vdef).trigger('change');
+						T3V3AdminLayout.jallpos.val(vdef).trigger('change');
 					}
 
 					return false;
@@ -169,6 +160,30 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 
 				jselect.hide();
 			});
+
+			$(window).load(function(){
+				setTimeout(function(){
+					$('#jform_params_mainlayout').trigger('change.less');
+				}, 500);
+			});
+		},
+
+		initMarkChange: function(){
+			clearTimeout(T3V3AdminLayout.chsid);
+
+			var jcontrol = $('#t3-layout-admin'),
+				jpane = jcontrol.closest('.tab-pane'),
+				jtab = $('.t3-admin-nav .nav li').eq(jpane.index()),
+
+			check = function(){
+				jcontrol[JSON.stringify(T3V3AdminLayout.t3getlayoutdata()) == T3V3AdminLayout.curconfig ? 'removeClass' : 'addClass']('t3-changed');
+				jtab[jpane.find('.t3-changed').length ? 'addClass' : 'removeClass']('t3-changed');
+
+				T3V3AdminLayout.chsid = setTimeout(check, 1500);
+			};
+
+			T3V3AdminLayout.curconfig = JSON.stringify(T3V3AdminLayout.t3getlayoutdata());
+			T3V3AdminLayout.chsid = setTimeout(check, 1500);
 		},
 
 		initLayoutClone: function(){
@@ -880,6 +895,8 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 
 			jspls.each(T3V3AdminLayout.t3updatespl);
 			jcontainer.find('.t3-layout-vis').each(T3V3AdminLayout.t3updatevisible);
+
+			return false;
 		},
 
 		t3resetall: function(){
@@ -951,6 +968,8 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 
 			//change to default view
 			jcontainer.prev().find('.mode-structure').trigger('click');
+
+			return false;
 		},
 
 		t3resetposition: function(){
@@ -986,6 +1005,8 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 					}
 				});
 			});
+
+			return false;
 		},
 
 		t3onvisible: function(){
@@ -1083,6 +1104,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 							}
 						}),
 						jselect = T3V3AdminLayout.jselect,
+						jallpos = T3V3AdminLayout.jallpos,
 						jspls = T3V3AdminLayout.jspls = jelms.find('[data-spotlight]');
 
 					jelms
@@ -1292,6 +1314,9 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 					}
 
 					$('#t3-layout-admin').removeClass('hide');
+
+					T3V3AdminLayout.initMarkChange();
+
 				} else {
 					jcontrol.find('.controls').html('<p class="t3-layout-error">' + T3V3Admin.langs.layoutCanNotLoad + '</p>');
 				}
@@ -1301,7 +1326,6 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 	
 	$(document).ready(function(){
 		T3V3AdminLayout.initPrepareLayout();
-		T3V3AdminLayout.initLayoutPosition();
 		T3V3AdminLayout.initLayoutClone();
 		T3V3AdminLayout.initModalDialog();
 		T3V3AdminLayout.initPreSubmit();

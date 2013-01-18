@@ -237,7 +237,7 @@ class T3v3AdminLayout
 			$options[] = JHTML::_('select.option', $position, $text);
 		}
 		
-		$lists = JHTML::_('select.genericlist', $options, '', '', 'value', 'text', '');
+		$lists = JHTML::_('select.genericlist', $options, '', 'multiple="multiple" size="10"', 'value', 'text', '');
 		
 		return $lists;
 	}
