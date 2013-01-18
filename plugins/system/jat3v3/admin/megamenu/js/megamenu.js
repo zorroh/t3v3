@@ -668,9 +668,6 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 					onsubmit();
 				}
 			};
-
-			//clean the json code - the value is no need
-			$('#jform_params_jat3v3_positions').val('');
 		},
 	});
 

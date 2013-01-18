@@ -153,12 +153,14 @@ $iswritable = is_writable('jat3test.txt');
 
 <?php
 	if (is_file(T3V3_ADMIN_PATH . '/admin/tour/tour.tpl.php')){
-		include T3V3_ADMIN_PATH . '/admin/tour/tour.tpl.php';
+		include_once T3V3_ADMIN_PATH . '/admin/tour/tour.tpl.php';
 	}
-?>
 
-<?php
 	if (is_file(T3V3_ADMIN_PATH . '/admin/megamenu/megamenu.tpl.php')){
-		include T3V3_ADMIN_PATH . '/admin/megamenu/megamenu.tpl.php';
+		include_once T3V3_ADMIN_PATH . '/admin/megamenu/megamenu.tpl.php';
+	}
+
+	if (is_file(T3V3_ADMIN_PATH . '/admin/layout/layout.tpl.php')){
+		include_once T3V3_ADMIN_PATH . '/admin/layout/layout.tpl.php';
 	}
 ?>

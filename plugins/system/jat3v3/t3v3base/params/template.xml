@@ -91,22 +91,13 @@
 
 			<field name="mainlayout" type="jafilelist" default="default"
 				label="T3V3_LAYOUT_LAYOUT_LABEL"
-				descripotion="T3V3_LAYOUT_LAYOUT_DESC"
+				description="T3V3_LAYOUT_LAYOUT_DESC"
 				filter=".*\.php"
 				directory="tpls"
 				stripext="true"
 				hide_none="false"
 				hide_default="true"
 			/>
-			
-			<field name="jat3v3_positions" type="hidden" default="" value="" />
-			<field name="jat3_all_pos" type="japositions" default="" 
-				multiple="0" 
-				label="" 
-				description="" 
-				disabled="disabled"
-			/>
-			<field name="layout_panel" type="textarea" default="" label="T3V3_LAYOUT_POS_SECTION" description="T3V3_LAYOUT_POS_SECTION_DESC" />
 
 		</fieldset>
 
