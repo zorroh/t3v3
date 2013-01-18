@@ -159,6 +159,47 @@ var T3V3Admin = window.T3V3Admin || {};
 			});
 		},
 
+		initMarkChange: function(){
+			$(document.adminForm).on('change', ':input', function(){
+				var jinput = $(this),
+					oval = jinput.data('org-val'),
+					nval = jinput.val(),
+					mthd = 'removeClass',
+					cmp = true;
+
+				if(oval != nval){
+					if($.isArray(oval) && $.isArray(nval)){
+						if(oval.length != nval.length){
+							cmp = false;
+						} else {
+							for(var i = 0; i < oval.length; i++){
+								if(oval[i] != nval[i]){
+									cmp = false;
+									break;
+								}
+							}
+						}
+					} else {
+						cmp = false;
+					}
+				}
+
+				if(!cmp) {
+					mthd = 'addClass';
+				}
+
+				jinput
+					.add(jinput.next('.chzn-container'))
+					[mthd]('t3-changed');
+
+				var jpane = jinput.closest('.tab-pane');
+				$('.t3-admin-nav .nav li').eq(jpane.index())[(!cmp || jpane.find('.t3-changed').length) ? 'addClass' : 'removeClass']('t3-changed');
+
+			}).find(':input').each(function(){
+				$(this).data('org-val', $(this).val());
+			});
+		},
+
 		initCheckupdate: function(){
 			
 			var tinfo = $('#tpl-info dd'),
@@ -327,6 +368,7 @@ var T3V3Admin = window.T3V3Admin || {};
 	$(document).ready(function(){
 		T3V3Admin.initSystemMessage();
 		T3V3Admin.initT3Title();
+		T3V3Admin.initMarkChange();
 		T3V3Admin.initBuildLessBtn();
 		T3V3Admin.initRadioGroup();
 		T3V3Admin.initChosen();

@@ -552,6 +552,10 @@ button.btn-primary:active {
   z-index: 10;
 }
 
+.t3-changed {
+  box-shadow: 0 0 2px 2px rgba(255,255,0,.75);
+}
+
 
 /* USERS INTERACTION ELEMENTS
 ---------------------------------------------------*/
