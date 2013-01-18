@@ -182,10 +182,10 @@
 /* Tour icon in tab 
 --------------------*/
 .t3-tour-help {
-  font-size: 32px;
+  font-size: 28px;
   position: absolute;
   right: 30px;
-  top: 10px;
+  top: 8px;
   cursor: pointer;
 }
 

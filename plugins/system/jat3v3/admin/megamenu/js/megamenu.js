@@ -323,11 +323,11 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		if ($('.toolbox-togglescreen').hasClass('.toolbox-togglescreen-full')) {
 			$('.subhead-collapse').removeClass ('subhead-fixed');
 			$('#megamenu-admin').closest('.controls').removeClass ('controlbox-fixed');			
-			$('.toolbox-togglescreen').removeClass ('.toolbox-togglescreen-full').find('i').removeClass().addClass('icon-resize-full');
+			$('.toolbox-togglescreen').removeClass ('.toolbox-togglescreen-full').find('i').removeClass().addClass(actions.datas.iconfull);
 		} else {
 			$('.subhead-collapse').addClass ('subhead-fixed');
 			$('#megamenu-admin').closest('.controls').addClass ('controlbox-fixed');
-			$('.toolbox-togglescreen').addClass ('.toolbox-togglescreen-full').find('i').removeClass().addClass('icon-resize-small');
+			$('.toolbox-togglescreen').addClass ('.toolbox-togglescreen-full').find('i').removeClass().addClass(actions.datas.iconsmall);
 		}
 	}
 
