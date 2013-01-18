@@ -318,6 +318,19 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 		show_toolbox ($(nextActiveCol));
 	}
 
+	// toggle screen
+	actions.toggleScreen = function () {
+		if ($('.toolbox-togglescreen').hasClass('.toolbox-togglescreen-full')) {
+			$('.subhead-collapse').removeClass ('subhead-fixed');
+			$('#megamenu-admin').closest('.controls').removeClass ('controlbox-fixed');			
+			$('.toolbox-togglescreen').removeClass ('.toolbox-togglescreen-full').find('i').removeClass().addClass('icon-resize-full');
+		} else {
+			$('.subhead-collapse').addClass ('subhead-fixed');
+			$('#megamenu-admin').closest('.controls').addClass ('controlbox-fixed');
+			$('.toolbox-togglescreen').addClass ('.toolbox-togglescreen-full').find('i').removeClass().addClass('icon-resize-small');
+		}
+	}
+
 	actions.saveConfig = function (e) {
 		var config = {},
 		items = megamenu.find('ul[class*="level"] > li');

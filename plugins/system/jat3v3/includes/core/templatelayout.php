@@ -293,6 +293,10 @@ class T3v3TemplateLayout extends T3v3Template
 		$this->addScript (T3V3_URL.'/bootstrap/js/bootstrap.js');
 	}
 
+	function megamenu($menutype){
+		echo "megamenu ($menutype)";
+	}
+
 	/**
 	*  Parse information
 	*  @var 

@@ -12,6 +12,15 @@
 #megamenu-admin .t3-inline-toolbox {
   height: 119px;
 }
+
+.controlbox-fixed {
+  position: fixed;
+  top: 73px;
+  left: 0;
+  right: 0;
+  padding: 20px !important;
+  margin: 0 !important;
+}
 /* Intro
 ---------------------*/
 
