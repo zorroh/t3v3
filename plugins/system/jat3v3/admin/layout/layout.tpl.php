@@ -10,7 +10,6 @@
 				<li class="active mode-structure"><a href="#" title="Module Positions">Module Positions</a></li>
 				<li class="mode-layout"><a href="#" title="Responsive Layout">Responsive Layout</a></li>
 			</ul>
-			<button class="btn t3-tog-fullscreen pull-right"><i class="icon-resize-full"></i>Toogle Fullscreen</button>
 			<button class="btn t3-reset-all pull-right"><i class="icon-undo"></i>Reset All</button>
 		</div>
 		<div class="t3-row-device clearfix">
@@ -23,6 +22,7 @@
 			</div>
 			<button class="btn t3-reset-device pull-right hide">Reset layout for current device</button>
 			<button class="btn t3-reset-position pull-right">Reset Positions</button>
+      <button class="t3-tog-fullscreen" title="Toggle Fullscreen"><i class="icon-resize-full"></i></button>
 		</div>
 	</div>
 	<div id="t3-layout-cont" class="t3-layout-cont layout-custom t3-layout-mode-m"></div>

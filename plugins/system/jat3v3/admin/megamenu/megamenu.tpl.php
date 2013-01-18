@@ -172,7 +172,7 @@ $modules = $db->loadObjectList();
       </div> 
       
       <div class="toolbox-actions-group">
-        <button class="toolbox-action toolbox-togglescreen" data-action="toggleScreen" data-iconfull="icon-resize-full" data-iconsmall="icon-resize-small"><i class="icon-resize-full"></i></button>
+        <button class="t3-tog-fullscreen toolbox-action toolbox-togglescreen" data-action="toggleScreen" data-iconfull="icon-resize-full" data-iconsmall="icon-resize-small"><i class="icon-resize-full"></i></button>
 
         <button class="btn btn-success toolbox-action toolbox-saveConfig hide" data-action="saveConfig"><i class="icon-save"></i><?php echo JTexT::_('T3V3_NAVIGATION_MM_SAVE') ?></button>
         <!--button class="btn btn-danger toolbox-action toolbox-resetConfig"><i class="icon-undo"></i><?php echo JTexT::_('T3V3_NAVIGATION_MM_RESET') ?></button-->

@@ -211,13 +211,15 @@ h1.page-title small {
 /* ADMIN TAB NAVIGATIONS
 ---------------------------------------------------*/
 .t3-inline-nav {
-  margin: -15px -20px 20px;
+  margin: 15px -20px 20px;
   padding: 20px 0 0;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -o-box-sizing: border-box;
   background: #eee;
+  border-top: 1px solid #e6e6e6;
+  position: relative;
 }
 
 .t3-inline-nav .nav-tabs {
@@ -245,13 +247,14 @@ h1.page-title small {
 /* ADMIN TOOLBOX
 ---------------------------------------------------*/
 .t3-inline-toolbox {
-  margin: -15px 0 20px;
+  margin: 15px 0 30px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -o-box-sizing: border-box;
   background: #eee;
-  border-bottom: 1px solid #e6e6e6; 
+  border-bottom: 1px solid #e6e6e6;
+  border-top: 1px solid #e6e6e6; 
 }
 
 .t3-inline-toolbox ul {
@@ -266,6 +269,12 @@ h1.page-title small {
   list-style: none;
 }
 
+/* Fullscreen Toggle */
+.t3-tog-fullscreen {
+  border: 1px solid #ccc;
+  background: #e6e6e6;
+  padding: 5px 10px;
+}
 
 
 /* ADMIN FORMS
