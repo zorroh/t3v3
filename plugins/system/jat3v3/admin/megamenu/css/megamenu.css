@@ -45,12 +45,12 @@
 ---------------------*/
 #megamenu-toolbox {
   float: left;
-  text-shadow: 0 1px 1px white;
+  text-shadow: 0 1px 1px #fff;
 }
 
 #megamenu-admin .t3-inline-toolbox {
   height: 119px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #e6e6e6;
 }
 
 #megamenu-toolbox .toolbox {
@@ -82,11 +82,14 @@
 .t3-row-mega .toolbox-actions-group {
   height: 100px;
   position: absolute;
-  right: 30px;
+  right: 20px;
 }
 
-.t3-row-mega .toolbox-actions-group .btn {
-  margin-top: 40px;
+.t3-row-mega .toolbox-actions-group button {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  background: #e6e6e6;
+  padding: 5px 10px;
 }
 
 
@@ -96,13 +99,6 @@
 #megamenu-container {
   float: left;
   margin-left: 20px;
-}
-
-#megamenu-container * {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -o-box-sizing: border-box;
 }
 
 
@@ -117,6 +113,7 @@
   margin-top: 0;
   border-top: 0;
 }
+
 .ja-megamenu .row-fluid [class*="span"] {
   border: 1px dotted #cccccc;
   border-radius: 3px;
@@ -257,6 +254,7 @@
 
 .ja-megamenu .ja-module .module-title {
   margin-top: 0;
+  margin-bottom: 5px;
   font-size: 14px;
 }
 
@@ -270,7 +268,16 @@
   border-style: solid;
   border-color: #666666;
   background: #ffbb00;
-  color: white;
+  color: #fff;
+}
+
+/* Fix Form display problem in Modules */
+.ja-megamenu .ja-module .control-group {
+  margin-bottom: 5px;
+}
+
+.ja-megamenu .ja-module .controls {
+  margin-left: 3px;
 }
 
 
@@ -299,7 +306,7 @@
 .ja-megamenu ul[class*="level"] > li > a:active {
   background: #fffbf0 !important;
   color: #333333 !important;
-  text-shadow: 0 1px 1px white !important;
+  text-shadow: 0 1px 1px #fff !important;
 }
 
 /* The caret */

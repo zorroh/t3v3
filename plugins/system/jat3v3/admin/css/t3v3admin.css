@@ -654,7 +654,7 @@ button.btn-primary:active {
   text-align: left;
 }
 
-.tip {
+.tip-wrap .tip {
   background: #333;
   color: #fff;
   border: 1px solid #000;
@@ -664,7 +664,7 @@ button.btn-primary:active {
   box-shadow: 1px 2px 2px rgba(0,0,0,.25);
 }
 
-.tip-title {
+.tip-wrap .tip-title {
   padding: 0;
   margin: 0;
   font-size: 14px;
@@ -676,7 +676,7 @@ button.btn-primary:active {
   background: url(../images/selector-arrow.png) no-repeat;
 }
 
-.tip-text {
+.tip-wrap .tip-text {
   font-size: 12px;
   margin: 0;
 }
