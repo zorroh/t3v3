@@ -350,14 +350,14 @@ var T3V3Theme = window.T3V3Theme || {};
 						adjust = null,
 						filter = this.className.match(/t3tm-(\w*)\s?/);
 
-					if(filter && $.isFunction(T3V3Theme['filter' + filter[1]])){
-						adjust = T3V3Theme['filter' + filter[1]](val);
-					}
+					//if(filter && $.isFunction(T3V3Theme['filter' + filter[1]])){
+					//	adjust = T3V3Theme['filter' + filter[1]](val);
+					//}
 
-					if(adjust != null && adjust != val){
-						val = adjust;
-						T3V3Theme.setValues(this, $.makeArray(val));
-					}
+					//if(adjust != null && adjust != val){
+					//	val = adjust;
+					//	T3V3Theme.setValues(this, $.makeArray(val));
+					//}
 
 					json[name] = val;
 				}
@@ -373,7 +373,7 @@ var T3V3Theme = window.T3V3Theme || {};
 		},
 
 		filtercolor: function(hex){
-			if(hex.charAt(0) === '@' || T3V3Theme.colors[hex.toLowerCase()]){
+			if(hex.charAt(0) === '@' || hex.toLowerCase() == 'inherit' || T3V3Theme.colors[hex.toLowerCase()]){
 				return hex;
 			}
 
