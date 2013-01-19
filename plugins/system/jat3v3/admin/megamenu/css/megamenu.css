@@ -10,7 +10,7 @@
 }
 
 .controlbox-fixed {
-  position: fixed;
+  position: absolute;
   top: 73px;
   left: 0;
   right: 0;
