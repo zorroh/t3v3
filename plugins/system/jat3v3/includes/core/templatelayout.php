@@ -223,10 +223,8 @@ class T3v3TemplateLayout extends T3v3Template
 		return parent::getPosname ($condition) . '" data-original="'.$condition;
 	}
 
-	/*
 	function _c ($name, $cls = array()) {
-		parent::_c($name, $cls);
-
+		
 		$posparams = $this->getLayoutSetting($name, '');
 
 		$oinfo = $this->parseInfo($cls);
@@ -240,7 +238,6 @@ class T3v3TemplateLayout extends T3v3Template
 
 		echo '" data-vis="' . $this->htmlattr($visible) . '" data-others="' . $this->htmlattr($this->extractKey(array($oinfo), 'others'));
 	}
-	*/
 
 	protected function _parse($html) {
 		$html = preg_replace_callback('#<jdoc:include\ type="([^"]+)" (.*)\/>#iU', array($this, '_parseJDoc'), $html);

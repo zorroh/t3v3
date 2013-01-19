@@ -884,13 +884,20 @@ button.btn-primary:active {
 /* @end */
 
 /* JA Chosen default icon*/
+#t3-layout-tpl-positions {
+  width: 248px;
+}
+
+#t3-layout-tpl-positions select {
+  margin-bottom: 5px;
+}
+
 .t3-chzn-default,
 .t3-chzn-empty {
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 5px;
   z-index: 10;
 }
-
 
 
 /* ------------------------------------------------*/

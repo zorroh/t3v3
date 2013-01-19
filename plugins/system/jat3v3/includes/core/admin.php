@@ -91,27 +91,10 @@ class T3v3Admin {
 			'lblCompile' => JText::_('T3V3_LBL_RECOMPILE'),
 			'lblThemer' => JText::_('T3V3_LBL_VIEWTHEMER'),
 			'enableThemeMagic' => JText::_('T3V3_MSG_ENABLE_THEMEMAGIC'),
-			
-			'popoverLayoutTitle' => JText::_('T3V3_LAYOUT_POPOVER_TITLE'),
-			'popoverLayoutDesc' => JText::_('T3V3_LAYOUT_POPOVER_DESC'),
-			'popoverResponTitle' => JText::_('T3V3_LAYOUT_RESPON_PTITLE'),
-			'popoverResponDesc' => JText::_('T3V3_LAYOUT_RESPON_PDESC'),
+
 			'logoPresent' => JText::_('T3V3_LAYOUT_LOGO_TEXT'),
 			'emptyLayoutPosition' => JText::_('T3V3_LAYOUT_EMPTY_POSITION'),
 			'defaultLayoutPosition' => JText::_('T3V3_LAYOUT_DEFAULT_POSITION'),
-			
-			'devideWide' => JText::_('T3V3_LAYOUT_DVI_WIDE'),
-			'devideNormal' => JText::_('T3V3_LAYOUT_DVI_NORMAL'),
-			'devideXTablet' => JText::_('T3V3_LAYOUT_DVI_XTABLET'),
-			'devideTablet' => JText::_('T3V3_LAYOUT_DVI_TABLET'),
-			'devideMobile' => JText::_('T3V3_LAYOUT_DVI_MOBILE'),
-
-			'displayModeStructure' => JText::_('T3V3_LAYOUT_MODE_STRUCTURE'),
-			'displayModeLayout' => JText::_('T3V3_LAYOUT_MODE_LAYOUT'),
-
-			'layoutResetAll' => JText::_('T3V3_LAYOUT_RESET_ALL'),
-			'layoutResetDevice' => JText::_('T3V3_LAYOUT_RESET_PER_DEVICE'),
-			'layoutResetPosition' => JText::_('T3V3_LAYOUT_RESET_POSITION'),
 			
 			'layoutConfig' => JText::_('T3V3_LAYOUT_CONFIG_TITLE'),
 			'layoutConfigDesc' => JText::_('T3V3_LAYOUT_CONFIG_DESC'),
@@ -125,10 +108,6 @@ class T3v3Admin {
 			'correctLayoutName' => JText::_('T3V3_LAYOUT_ASK_CORRECT_NAME'),
 			'askDeleteLayout' => JText::_('T3V3_LAYOUT_ASK_DEL_THEME'),
 
-			'lblLayoutName' => JText::_('T3V3_LAYOUT_LAYOUT_NAME'),
-			'layoutSave' => JText::_('T3V3_LAYOUT_LABEL_SAVE'),
-			'layoutSaveAsCopy' => JText::_('T3V3_LAYOUT_LABEL_SAVE_AS_COPY'),
-			'layoutDelete' => JText::_('T3V3_LAYOUT_LABEL_DELETE'),
 			'lblCancel' => JText::_('JCANCEL'),
 			'lblOk'	=> JText::_('T3V3_LAYOUT_LABEL_OK'),
 			'lblNo' => JText::_('JNO'),

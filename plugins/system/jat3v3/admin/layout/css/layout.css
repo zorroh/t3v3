@@ -439,3 +439,15 @@
 #t3-layout-clone-btns .btn {
   margin-left: 5px;
 }
+
+/* Layout Clone Modal
+---------------------------------------------------*/
+
+#t3-layout-clone-dlg {
+  font: 14px/20px sans-serif;
+  color: #666;
+  width: 450px;
+  margin: -200px 0 0 -225px;
+  border: 1px solid #333;
+  border-radius: 3px;
+}

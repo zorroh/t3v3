@@ -366,7 +366,7 @@ class T3v3Template extends ObjectExtendable
 	* @param $poskey string
 	*     the key used in block
 	*/
-	/*
+
 	function _c ($name, $cls = array()){
 		$data = '';
 		$param = $this->getLayoutSetting($name, '');
@@ -378,7 +378,7 @@ class T3v3Template extends ObjectExtendable
 				$param = (object)$cls;
 			}
 
-			$data = ' "';
+			$data = '"';
 			$data .= isset($param->default) ? ' data-default="' . $param->default . '"' : '';
 			$data .= isset($param->normal) ? ' data-normal="' . $param->normal . '"' : '';
 			$data .= isset($param->wide) ? ' data-wide="' . $param->wide . '"' : '';
@@ -386,7 +386,7 @@ class T3v3Template extends ObjectExtendable
 			$data .= isset($param->tablet) ? ' data-tablet="' . $param->tablet . '"' : '';
 			$data .= isset($param->mobile) ? ' data-mobile="' . $param->mobile . '"' : '';
 
-			if($data == ' "'){
+			if($data == '"'){
 				$data = '';
 			} else {
 				$data = substr($data, 0, strrpos($data, '"'));
@@ -395,7 +395,6 @@ class T3v3Template extends ObjectExtendable
 		
 		echo $data;
 	}
-	*/
 
 	/**
 	* Add current template css base on template setting. 

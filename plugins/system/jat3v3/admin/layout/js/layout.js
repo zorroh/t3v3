@@ -72,6 +72,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 						jdevices.removeClass('hide');
 						jresetdevice.removeClass('hide');
 						jresetposition.addClass('hide');
+						jselect.hide();
 
 						jelms.find('.t3-layout-vis').each(T3V3AdminLayout.t3updatevisible);
 						jdevices.find('[data-device="wide"]').removeClass('active').trigger('click');
@@ -257,7 +258,7 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 			T3V3AdminLayout.modalCallback = callback;
 			var jdialog = $('#t3-layout-clone-dlg');
 			jdialog.find('.message-block').hide();
-			jdialog.find('.prompt-block').show().find('span').html(msg);
+			jdialog.find('.prompt-block').show().find('legend').html(msg);
 			jdialog.find('.cancel').html(T3V3Admin.langs.lblCancel);
 			jdialog.find('.btn-primary').html(T3V3Admin.langs.lblOk);
 
@@ -563,6 +564,8 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 			for(var p in pos){
 				if(pos[p] === ''){
 					delete pos[p];
+				} else {
+					pos[p] = $.trim(pos[p]);
 				}
 			}
 		},
@@ -1091,8 +1094,6 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 						jtabpane.addClass('active');
 					}
 
-					T3V3AdminLayout.layout.mode = 0; // 0 for structure, 1 for layout
-
 					var	curspan = T3V3AdminLayout.curspan = null,
 						jelms = T3V3AdminLayout.jelms = $('#t3-layout-cont').empty().html(bdhtml),
 						jrlems = T3V3AdminLayout.jrlems = jelms.find('[class*="span"]').each(function(){
@@ -1146,8 +1147,9 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 						});
 
 					jelms
-						.on('click', '.t3-layout-vis', T3V3AdminLayout.t3onvisible)
-						.on('click', '.t3-layout-edit', function(e){
+						.off('click.t3lvis').off('click.t3ledit')
+						.on('click.t3lvis', '.t3-layout-vis', T3V3AdminLayout.t3onvisible)
+						.on('click.t3ledit', '.t3-layout-edit', function(e){
 							if(curspan){
 								$(curspan).parent().removeClass('pos-active');
 							}
