@@ -210,13 +210,13 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 		initModalDialog: function(){
 			$('#t3-layout-clone-dlg')
 				.appendTo(document.body)
-				.on('click', '.modal-footer a', function(){
+				.on('click', '.modal-footer button', function(e){
 					if($.isFunction(T3V3AdminLayout.modalCallback)){
 						T3V3AdminLayout.modalCallback($(this).hasClass('yes'));
-						return false;
 					} else if($(this).hasClass('yes')){
 						$('#t3-layout-clone-dlg').modal('hide');
 					}
+					return false;
 				})
 				.find('.form-horizontal').on('submit', function(){
 					$('#t3-layout-clone-dlg .modal-footer .yes').trigger('click');
@@ -247,7 +247,8 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 			jdialog.find('h3').html(msg);
 			jdialog.find('.prompt-block').hide();
 			jdialog.find('.message-block').show();
-			jdialog.find('.btn-success').html(T3V3Admin.langs.lblDeleteIt);
+			jdialog.find('.btn-danger').show();
+			jdialog.find('.btn-success').hide();
 
 			jdialog.removeClass('modal-prompt modal-alert')
 				.addClass('modal-confirm')
@@ -261,11 +262,28 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 			jdialog.find('h3').html(msg);
 			jdialog.find('.message-block').hide();
 			jdialog.find('.prompt-block').show();
-			jdialog.find('.btn-primary').html(T3V3Admin.langs.lblCloneIt);
+			jdialog.find('.btn-success').show();
+			jdialog.find('.btn-danger').hide();
 
 			jdialog.removeClass('modal-alert modal-confirm')
 				.addClass('modal-prompt')
 				.modal('show');
+		},
+
+		t3reset: function(){
+			var jlayout = $('#t3-layout-admin'),
+				jelms = $('#t3-layout-cont');
+
+			jelms.removeClass('t3-layout-mode-r').addClass('t3-layout-mode-m');
+			jelms.removeClass(T3V3AdminLayout.layout.clayout);
+
+			T3V3AdminLayout.layout.mode = 0;
+			T3V3AdminLayout.layout.clayout = 'default';
+
+			jlayout.find('.mode-structure').addClass('active').siblings().removeClass('active');
+			jlayout.find('.t3-layout-devices').addClass('hide');
+			jlayout.find('.t3-reset-device').addClass('hide');
+			jlayout.find('.t3-reset-position').removeClass('hide');
 		},
 
 		t3clonelayout: function(ok){
@@ -1108,6 +1126,9 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 						jselect = T3V3AdminLayout.jselect,
 						jallpos = T3V3AdminLayout.jallpos,
 						jspls = T3V3AdminLayout.jspls = jelms.find('[data-spotlight]');
+
+					//reset
+					T3V3AdminLayout.t3reset();
 
 					jelms
 						.find('.logo h1:first')

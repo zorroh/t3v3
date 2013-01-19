@@ -65,6 +65,7 @@
 	</div>
 	<div class="modal-footer">
 		<button class="btn cancel" data-dismiss="modal"><?php echo JTexT::_('JCANCEL') ?></button>
+		<button class="btn yes btn-danger hide" id="t3-layout-clone-btn"><?php echo JTexT::_('T3V3_LAYOUT_LABEL_DELETEIT') ?></button>
 		<button class="btn yes btn-success" id="t3-layout-clone-btn"><?php echo JTexT::_('T3V3_LAYOUT_LABEL_CLONEIT') ?></button>
 	</div>
 </div>
