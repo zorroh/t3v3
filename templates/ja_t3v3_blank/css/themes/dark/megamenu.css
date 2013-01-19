@@ -4,10 +4,8 @@
 .ja-megamenu .row-fluid + .row-fluid {
   border-top: 1px solid #444;
 }
-.ja-megamenu .mega-dropdown-menu {
-  min-width: 200px;
-}
-.ja-megamenu .mega-nav .mega-group > a {
+.ja-megamenu .mega-nav .mega-group > a,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > a {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
@@ -15,11 +13,15 @@
 }
 .ja-megamenu .mega-nav .mega-group > a:hover,
 .ja-megamenu .mega-nav .mega-group > a:active,
-.ja-megamenu .mega-nav .mega-group > a:focus {
+.ja-megamenu .mega-nav .mega-group > a:focus,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > a:hover,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > a:active,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > a:focus {
   background: inherit;
   color: #222;
 }
-.ja-megamenu .mega-nav > li a {
+.ja-megamenu .mega-nav > li a,
+.ja-megamenu .dropdown-menu .mega-nav > li a {
   padding: 5px 10px;
 }
 .ja-megamenu .mega-nav .dropdown-submenu > a::after {
@@ -35,6 +37,21 @@
 .ja-megamenu .ja-module ul {
   margin: 0 0 0 20px;
 }
+.ja-megamenu .mega-nav .mega-group > a,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > a {
+  color: #fff;
+}
+.ja-megamenu .mega-nav .mega-group > a:hover,
+.ja-megamenu .mega-nav .mega-group > a:active,
+.ja-megamenu .mega-nav .mega-group > a:focus,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > a:hover,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > a:active,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > a:focus {
+  color: #fff;
+}
+.ja-megamenu .ja-module .module-title {
+  color: #fff;
+}
 @media (max-width: 767px) {
   .ja-megamenu .mega-inner {
     padding: 10px 20px;
@@ -45,7 +62,8 @@
   .ja-megamenu .span12.mega-col-nav .mega-inner {
     padding: 0;
   }
-  .ja-megamenu .mega-nav > li a {
+  .ja-megamenu .mega-nav > li a,
+  .ja-megamenu .dropdown-menu .mega-nav > li a {
     padding: 5px 20px;
   }
   .ja-megamenu .ja-module {

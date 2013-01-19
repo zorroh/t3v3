@@ -163,7 +163,7 @@
 // Mixin for form field states
 .formFieldState(@textColor: #555, @borderColor: #ccc, @backgroundColor: #f5f5f5) {
   // Set the text color
-  > label,
+  .control-label,
   .help-block,
   .help-inline {
     color: @textColor;
@@ -602,18 +602,18 @@
 
   .fluid (@fluidGridColumnWidth, @fluidGridGutterWidth) {
 
-    .spanX (@index, @fluidGridColumnWidth, @fluidGridGutterWidth) when (@index > 0) {
+    .spanX (@index) when (@index > 0) {
       (~".span@{index}") { .span(@index); }
-      .spanX(@index - 1, @fluidGridColumnWidth, @fluidGridGutterWidth);
+      .spanX(@index - 1);
     }
-    .spanX (0, @fluidGridColumnWidth, @fluidGridGutterWidth) {}
+    .spanX (0) {}
 
-    .offsetX (@index, @fluidGridColumnWidth, @fluidGridGutterWidth) when (@index > 0) {
+    .offsetX (@index) when (@index > 0) {
       (~'.offset@{index}') { .offset(@index); }
       (~'.offset@{index}:first-child') { .offsetFirstChild(@index); }
-      .offsetX(@index - 1, @fluidGridColumnWidth, @fluidGridGutterWidth);
+      .offsetX(@index - 1);
     }
-    .offsetX (0, @fluidGridColumnWidth, @fluidGridGutterWidth) {}
+    .offsetX (0) {}
 
     .offset (@columns) {
       margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) + (@fluidGridGutterWidth*2);
@@ -649,8 +649,8 @@
       }
 
       // generate .spanX and .offsetX
-      .spanX (@gridColumns, @fluidGridColumnWidth, @fluidGridGutterWidth);
-      .offsetX (@gridColumns, @fluidGridColumnWidth, @fluidGridGutterWidth);
+      .spanX (@gridColumns);
+      .offsetX (@gridColumns);
     }
 
   }

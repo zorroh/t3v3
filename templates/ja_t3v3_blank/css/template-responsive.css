@@ -1044,8 +1044,7 @@
   .ja-mainnav .nav-collapse .dropdown-menu li + li a {
     margin-bottom: 0;
   }
-  .ja-mainnav .nav-collapse .nav > li > a:hover,
-  .ja-mainnav .nav-collapse .dropdown-menu a:hover {
+  .ja-mainnav .nav-collapse .nav > li > a:hover {
     background-color: #666;
     background-image: none;
     filter: none;
@@ -1078,7 +1077,7 @@
   .ja-mainnav .navbar .nav > li > .dropdown-menu .divider {
     display: none;
   }
-  .customization {
+  .ja-mainnav .customization {
     display: none;
   }
 }
