@@ -46,8 +46,12 @@
 						}
 					};
 				
-				jitems.on('touchstart', onTouch).on('click', onClick).data('noclick', 0);
+				jitems.on('touchstart', onTouch).data('noclick', 0);
 				
+				$(this).on('touchstart', 'li', function(e){
+					e.stopPropagation();
+				}).on('click', 'li', onClick);
+
 				$(document).on('touchstart', function(){
 					jitems.data('noclick', 0);
 					$(document.body).removeClass('hoverable');
