@@ -53,18 +53,18 @@
 	</div>
 	<div class="modal-body">
 		<form class="form-horizontal prompt-block">
-			<div class="msg"><?php echo JTexT::_('T3V3_LAYOUT_ASK_ADD_LAYOUT_DESC') ?></div>
-			<div class="control-group">
-				<label class="control-label" for="t3-layout-cloned-name"><?php echo JTexT::_('T3V3_LAYOUT_LAYOUT_NAME') ?></label>
-				<div class="controls"><input type="text" id="t3-layout-cloned-name" /></div>
-			</div>
+			<p><?php echo JTexT::_('T3V3_LAYOUT_ASK_ADD_LAYOUT_DESC') ?></p>
+      <div class="input-prepend">
+        <span class="add-on"><i class="icon-info-sign"></i></span>
+        <input type="text" class="input-xlarge" id="t3-layout-cloned-name" />
+      </div>
 		</form>
 		<div class="message-block">
 			<div class="msg"><?php echo JTexT::_('T3V3_LAYOUT_ASK_DEL_LAYOUT_DESC') ?></div>
 		</div>
 	</div>
 	<div class="modal-footer">
-		<a href="" class="btn cancel" data-dismiss="modal"><?php echo JTexT::_('JCANCEL') ?></a>
-		<a href="" class="btn yes btn-success" id="t3-layout-clone-btn"><?php echo JTexT::_('T3V3_LAYOUT_LABEL_CLONEIT') ?></a>
+		<button class="btn cancel" data-dismiss="modal"><?php echo JTexT::_('JCANCEL') ?></button>
+		<button class="btn yes btn-success" id="t3-layout-clone-btn"><?php echo JTexT::_('T3V3_LAYOUT_LABEL_CLONEIT') ?></button>
 	</div>
 </div>
