@@ -212,14 +212,14 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 				.appendTo(document.body)
 				.on('click', '.modal-footer a', function(){
 					if($.isFunction(T3V3AdminLayout.modalCallback)){
-						T3V3AdminLayout.modalCallback($(this).hasClass('btn-primary'));
+						T3V3AdminLayout.modalCallback($(this).hasClass('yes'));
 						return false;
-					} else if($(this).hasClass('btn-primary')){
+					} else if($(this).hasClass('yes')){
 						$('#t3-layout-clone-dlg').modal('hide');
 					}
 				})
 				.find('.form-horizontal').on('submit', function(){
-					$('#t3-layout-clone-dlg .modal-footer .btn-primary').trigger('click');
+					$('#t3-layout-clone-dlg .modal-footer .yes').trigger('click');
 
 					return false;
 				});
@@ -244,10 +244,10 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 			T3V3AdminLayout.modalCallback = callback;
 
 			var jdialog = $('#t3-layout-clone-dlg');
+			jdialog.find('h3').html(msg);
 			jdialog.find('.prompt-block').hide();
-			jdialog.find('.message-block').show().find('p').html(msg);
-			jdialog.find('.cancel').html(T3V3Admin.langs.lblNo);
-			jdialog.find('.btn-primary').html(T3V3Admin.langs.lblYes);
+			jdialog.find('.message-block').show();
+			jdialog.find('.btn-success').html(T3V3Admin.langs.lblDeleteIt);
 
 			jdialog.removeClass('modal-prompt modal-alert')
 				.addClass('modal-confirm')
@@ -256,11 +256,12 @@ var T3V3AdminLayout = window.T3V3AdminLayout || {};
 
 		prompt: function(msg, callback){
 			T3V3AdminLayout.modalCallback = callback;
+
 			var jdialog = $('#t3-layout-clone-dlg');
+			jdialog.find('h3').html(msg);
 			jdialog.find('.message-block').hide();
-			jdialog.find('.prompt-block').show().find('legend').html(msg);
-			jdialog.find('.cancel').html(T3V3Admin.langs.lblCancel);
-			jdialog.find('.btn-primary').html(T3V3Admin.langs.lblOk);
+			jdialog.find('.prompt-block').show();
+			jdialog.find('.btn-primary').html(T3V3Admin.langs.lblCloneIt);
 
 			jdialog.removeClass('modal-alert modal-confirm')
 				.addClass('modal-prompt')

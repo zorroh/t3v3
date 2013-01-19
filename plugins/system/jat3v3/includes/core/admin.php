@@ -106,12 +106,10 @@ class T3v3Admin {
 
 			'askCloneLayout' => JText::_('T3V3_LAYOUT_ASK_ADD_LAYOUT'),
 			'correctLayoutName' => JText::_('T3V3_LAYOUT_ASK_CORRECT_NAME'),
-			'askDeleteLayout' => JText::_('T3V3_LAYOUT_ASK_DEL_THEME'),
+			'askDeleteLayout' => JText::_('T3V3_LAYOUT_ASK_DEL_LAYOUT'),
 
-			'lblCancel' => JText::_('JCANCEL'),
-			'lblOk'	=> JText::_('T3V3_LAYOUT_LABEL_OK'),
-			'lblNo' => JText::_('JNO'),
-			'lblYes' => JText::_('JYES'),
+			'lblDeleteIt' => JText::_('T3V3_LAYOUT_LABEL_DELETEIT'),
+			'lblCloneIt' => JText::_('T3V3_LAYOUT_LABEL_CLONEIT'),
 
 			'layoutEditPosition' => JText::_('T3V3_LAYOUT_EDIT_POSITION'),
 			'layoutShowPosition' => JText::_('T3V3_LAYOUT_SHOW_POSITION'),
