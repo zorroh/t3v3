@@ -165,6 +165,44 @@
 }
 
 
+
+//  MEGAMENU (Inverted)
+// -------------------------------------------------------
+
+.T3Navbar() when (@T3NavbarInverted = 1) {
+
+  // The Group
+  // ---------
+  // Group Title
+  .mega-nav .mega-group > a,
+  .dropdown-menu .mega-nav .mega-group > a {
+    color: @white;
+
+    &:hover, &:active, &:focus {
+      color: @white;
+    }
+  }
+
+  // Modules in Megamenu
+  // -------------------
+  // Module Title
+  .ja-module .module-title {
+    color: @white;
+  }
+
+  // End Mixin
+}
+
+.T3Navbar() when (@T3NavbarInverted = 0) {
+  // Leave blank here because we will use the default style.
+}
+
+// Calling the styles
+.ja-megamenu {
+  .T3Navbar();
+}
+
+
 // RESPONSIVE FOR MEGAMENU
 // -------------------------
 @import "megamenu-responsive.less";

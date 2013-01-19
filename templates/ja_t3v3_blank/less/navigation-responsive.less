@@ -74,8 +74,7 @@
   }
 
   // Hover state
-  .ja-mainnav .nav-collapse .nav > li > a:hover,
-  .ja-mainnav .nav-collapse .dropdown-menu a:hover {
+  .ja-mainnav .nav-collapse .nav > li > a:hover {
     background-color: @dropdownLinkBackgroundHover;
     background-image: none;
     filter: none;
@@ -111,15 +110,92 @@
     .box-shadow(none);
   }
 
-  // Hiding un-nessecary elements
+
+
+  // -------------------------------------------------------
+  //  JA MAIN MENU (Inverted)
+  // -------------------------------------------------------
+
+  .T3Navbar() when (@T3NavbarInverted = 1) {
+
+    // Begin: Mixin Styling
+    background: @grayDark;
+    border-top: 1px solid @grayDark;
+
+    // Toggle Button
+    .navbar .btn-navbar {
+    }
+
+
+    // COLLAPSIBLE NAVBAR
+    // ----------------------------------------------------
+
+    // The nav
+    .nav-collapse {
+      background: @grayDarker;
+      color: @grayLighter;
+    }
+
+
+    // Nav and dropdown links in navbar
+    // -------------------------------
+    .nav-collapse .nav > li > a,
+    .nav-collapse .dropdown-menu a {
+      border-bottom: 1px solid @gray;
+    }
+
+    // Hover state
+    .nav-collapse .nav > li > a:hover,
+    .nav-collapse .dropdown-menu a:hover {
+      background-color: @dropdownLinkBackgroundHover;
+    }
+
+
+    // dropdown links
+    // --------------
+    .nav-collapse .dropdown-menu a {
+      border-top: 1px solid @gray;
+      border-bottom: 0;
+    }
+
+
+    // Hover state
+    .nav-collapse .dropdown-menu a:hover {
+      background-color: @dropdownLinkBackgroundHover;
+    }
+
+
+    // Dropdowns in the navbar
+    // -----------------------
+    .nav-collapse .dropdown-menu {
+      background-color: @grayDark;
+    }
+
+  // End: Mixin Styling
+  }
+
+  .T3Navbar() when (@T3NavbarInverted = 0) {
+    // Leave blank here because we will use the default style.
+  }
+
+  // Calling the styles
+  .ja-mainnav {
+    .T3Navbar();
+  }
+
+
+  
+  //  MISC
+  // ----------------------------------------------------
   .ja-mainnav .navbar .nav > li > .dropdown-menu {
     &:before, &:after, .divider {
       display: none;
     }
   }
-  
-  .customization {
+
+  .ja-mainnav .customization {
     display: none;
   }
 
+  // End Responsive
 }
