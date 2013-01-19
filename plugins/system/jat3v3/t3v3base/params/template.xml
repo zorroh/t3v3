@@ -104,8 +104,7 @@
 		<fieldset name="navigation_params" label="T3V3_NAVIGATION_LABEL" description="T3V3_NAVIGATION_DESC">
 			<field name="navigation_group_default" type="jadepend" function="@group">
 				<option for="navigation_type" value="megamenu">
-					mm_type,
-					mm_panel
+					mm_type
 				</option>
 			</field>
 			<field name="navigation_ajax_default" type="jadepend" function="@ajax">

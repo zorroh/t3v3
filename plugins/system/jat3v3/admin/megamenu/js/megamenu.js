@@ -635,14 +635,15 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 				setTimeout(function(){ //wait for page ready
 					$('#jform_params_mm_type').trigger('change.less');
 				}, 500);
-			}
+			} else {
 
-			// handle event for enable megamenu
-			$('#jform_params_navigation_type').on('change', function() {
-				if ($(this).val() == 'megamenu'){
-					$('#jform_params_mm_type').trigger('change.less');
-				}
-			});
+				// handle event for enable megamenu
+				$('#jform_params_navigation_type').on('change', function(e) {
+					if ($(this).val() == 'megamenu'){
+						$('#jform_params_mm_type').trigger('change.less');
+					}
+				});
+			}
 		},
 
 		t3megamenu: function(form, ctrlelm, ctrl, rsp){
