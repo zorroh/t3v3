@@ -27,14 +27,22 @@ class JFormFieldJaDepend extends JFormField
 	function loadAsset(){
 		if (!defined ('_JA_DEPEND_ASSET_')) {
 			define ('_JA_DEPEND_ASSET_', 1);
-			$uri = str_replace(DIRECTORY_SEPARATOR, '/', str_replace( JPATH_SITE, JURI::base(), dirname(__FILE__) ));
-			$uri = str_replace('/administrator/', '', $uri);
+			$uri = str_replace(DIRECTORY_SEPARATOR, '/', str_replace( JPATH_SITE, JURI::base(true), dirname(__FILE__) ));
+			$uri = str_replace('/administrator/', '/', $uri);
+
+			$jdoc = JFactory::getDocument();
 
 			if(!defined('T3V3_TEMPLATE')){
-				$jdoc = JFactory::getDocument();
 				$jdoc->addStyleSheet($uri.'/css/jadepend.css');
-				$jdoc->addScript($uri.'/js/jadepend.js');	
+				$jdoc->addScript($uri.'/js/jadepend.js');
 			}
+
+			JFactory::getDocument()->addScriptDeclaration ( '
+				jQuery.extend(JADepend, {
+					adminurl: \'' . JFactory::getURI()->toString() . '\',
+					rooturl: \'' . JURI::root() . '\'
+				});
+			');
 		}
 	}
 

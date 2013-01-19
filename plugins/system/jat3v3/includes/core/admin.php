@@ -190,8 +190,8 @@ class T3v3Admin {
 			var T3V3Admin = window.T3V3Admin || {};
 			T3V3Admin.adminurl = \'' . JFactory::getURI()->toString() . '\';
 			T3V3Admin.t3adminurl = \'' . T3V3_ADMIN_URL . '\';
-			T3V3Admin.baseurl = \'' . JURI::base(true) . '\';			
-			T3V3Admin.rooturl = \'' . JURI::root() . '\';			
+			T3V3Admin.baseurl = \'' . JURI::base(true) . '\';
+			T3V3Admin.rooturl = \'' . JURI::root() . '\';
 			T3V3Admin.template = \'' . T3V3_TEMPLATE . '\';
 			T3V3Admin.langs = ' . json_encode($langs) . ';
 			T3V3Admin.devmode = ' . $params->get('devmode', 0) . ';
