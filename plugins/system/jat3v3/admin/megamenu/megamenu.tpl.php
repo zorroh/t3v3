@@ -12,9 +12,7 @@ $modules = $db->loadObjectList();
 <?php if(is_file(T3V3_PATH . '/css/megamenu.css')): ?>
   <link rel="stylesheet" href="<?php echo T3V3_URL ?>/css/megamenu.css" type="text/css" />
 <?php endif; ?>
-<?php if(is_file(T3V3_TEMPLATE_PATH . '/css/megamenu.css')): ?>
-  <link rel="stylesheet" href="<?php echo T3V3_TEMPLATE_URL ?>/css/megamenu.css" type="text/css" />
-<?php endif; ?>
+
 <?php if(is_file(T3V3_ADMIN_PATH . '/admin/megamenu/css/megamenu.css')): ?>
   <link rel="stylesheet" href="<?php echo T3V3_ADMIN_URL ?>/admin/megamenu/css/megamenu.css" type="text/css" />
 <?php endif; ?>
