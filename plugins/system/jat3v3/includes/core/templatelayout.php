@@ -291,7 +291,7 @@ class T3v3TemplateLayout extends T3v3Template
 	}
 
 	function megamenu($menutype){
-		echo "megamenu ($menutype)";
+		echo "<div class='t3-layout-pos block-nav t3-layout-uneditable'> <h3>Megamenu [$menutype]</h3></div>";
 	}
 
 	/**
