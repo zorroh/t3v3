@@ -1,3 +1,30 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 .ja-megamenu .mega-inner {
   padding: 10px;
   *zoom: 1;
@@ -15,6 +42,9 @@
   padding-top: 10px;
   border-top: 1px solid #eeeeee;
 }
+.ja-megamenu .mega-dropdown-menu {
+  min-width: 200px;
+}
 .ja-megamenu .mega-group {
   *zoom: 1;
 }
@@ -27,14 +57,18 @@
 .ja-megamenu .mega-group:after {
   clear: both;
 }
-.ja-megamenu .mega-nav .mega-group > a {
+.ja-megamenu .mega-nav .mega-group > a,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > a {
   font-weight: bold;
   padding: 0;
   margin: 0;
 }
 .ja-megamenu .mega-nav .mega-group > a:hover,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > a:hover,
 .ja-megamenu .mega-nav .mega-group > a:active,
-.ja-megamenu .mega-nav .mega-group > a:focus {
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > a:active,
+.ja-megamenu .mega-nav .mega-group > a:focus,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > a:focus {
   background: inherit;
   color: inherit;
 }
@@ -58,19 +92,23 @@
 .ja-megamenu .span12.mega-col-nav .mega-inner {
   padding: 5px;
 }
-.ja-megamenu .mega-nav {
+.ja-megamenu .mega-nav,
+.ja-megamenu .dropdown-menu .mega-nav {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.ja-megamenu .mega-nav > li {
+.ja-megamenu .mega-nav > li,
+.ja-megamenu .dropdown-menu .mega-nav > li {
   list-style: none;
   margin-left: 0;
 }
-.ja-megamenu .mega-nav > li a {
+.ja-megamenu .mega-nav > li a,
+.ja-megamenu .dropdown-menu .mega-nav > li a {
   white-space: normal;
 }
-.ja-megamenu .mega-group > .mega-nav {
+.ja-megamenu .mega-group > .mega-nav,
+.ja-megamenu .dropdown-menu .mega-group > .mega-nav {
   margin-left: -5px;
   margin-right: -5px;
 }
@@ -88,11 +126,13 @@
   padding: 0;
 }
 .ja-megamenu .ja-module ul,
-.ja-megamenu .ja-module .nav {
+.ja-megamenu .ja-module .nav,
+.ja-megamenu .dropdown-menu .nav {
   margin: 0 0 0 15px;
 }
 .ja-megamenu .ja-module ul li,
-.ja-megamenu .ja-module .nav li {
+.ja-megamenu .ja-module .nav li,
+.ja-megamenu .dropdown-menu .nav li {
   list-style: disc;
   display: list-item;
   float: none;
@@ -101,7 +141,8 @@
   border: 0;
 }
 .ja-megamenu .ja-module ul li a,
-.ja-megamenu .ja-module .nav li a {
+.ja-megamenu .ja-module .nav li a,
+.ja-megamenu .dropdown-menu .ja-module li a {
   display: inline;
   padding: 0;
   margin: 0;
@@ -112,13 +153,17 @@
   white-space: normal;
 }
 .ja-megamenu .ja-module ul li a:hover,
-.ja-megamenu .ja-module ul li a:active,
-.ja-megamenu .ja-module ul li a:focus,
-.ja-megamenu .ja-module ul li a:visited,
 .ja-megamenu .ja-module .nav li a:hover,
+.ja-megamenu .dropdown-menu .ja-module li a:hover,
+.ja-megamenu .ja-module ul li a:active,
 .ja-megamenu .ja-module .nav li a:active,
+.ja-megamenu .dropdown-menu .ja-module li a:active,
+.ja-megamenu .ja-module ul li a:focus,
 .ja-megamenu .ja-module .nav li a:focus,
-.ja-megamenu .ja-module .nav li a:visited {
+.ja-megamenu .dropdown-menu .ja-module li a:focus,
+.ja-megamenu .ja-module ul li a:visited,
+.ja-megamenu .ja-module .nav li a:visited,
+.ja-megamenu .dropdown-menu .ja-module li a:visited {
   background: none;
   color: inherit;
   font: inherit;

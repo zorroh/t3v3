@@ -201,7 +201,8 @@
 
 
 /* The group ---*/
-.ja-megamenu .mega-nav .mega-group > a {
+.ja-megamenu .mega-nav .mega-group > a,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > a {
   padding: 5px 20px 5px 10px;
 }
 

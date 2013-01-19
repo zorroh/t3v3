@@ -43,6 +43,14 @@
   .row-fluid [class*="span"] {
   }
 
+
+  // The Dropdown
+  // ------------
+  .mega-dropdown-menu {
+    min-width: 200px;
+  }
+
+
   // The Group
   // ---------
   .mega-group {
@@ -50,19 +58,17 @@
   }
 
   // Group Title
-  .mega-nav .mega-group > a {
+  .mega-nav .mega-group > a,
+  .dropdown-menu .mega-nav .mega-group > a {
     font-weight: bold;
     padding: 0;
     margin: 0;
-  }
 
-  .mega-nav .mega-group > a:hover,
-  .mega-nav .mega-group > a:active,
-  .mega-nav .mega-group > a:focus {
+    &:hover, &:active, &:focus {
     background: inherit;
     color: inherit;
+    }
   }
-
 
   // Group Content
   .mega-group-ct {
@@ -91,31 +97,37 @@
   }
 
   // The Nav
-  .mega-nav {
+  .mega-nav,
+  .dropdown-menu .mega-nav {
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
-  .mega-nav > li {
+  .mega-nav > li,
+  .dropdown-menu .mega-nav > li {
     list-style: none;
     margin-left: 0;
   }
 
-  .mega-nav > li a {
+  .mega-nav > li a,
+  .dropdown-menu .mega-nav > li a {
     white-space: normal;
   }
 
   // Nav in Group
-  .mega-group > .mega-nav {
+  .mega-group > .mega-nav,
+  .dropdown-menu .mega-group > .mega-nav {
     margin-left: -5px;
     margin-right: -5px;
   }
 
-  .mega-group > .mega-nav > li {
+  .mega-group > .mega-nav > li,
+  .dropdown-menu .mega-group > .mega-nav > li {
   }
 
-  .mega-group .mega-nav > li a {
+  .mega-group .mega-nav > li a,
+  .dropdown-menu .mega-group .mega-nav > li a {
   }
 
   // The caret
@@ -155,12 +167,14 @@
 
   // Reset List Style in Module
   .ja-module ul,
-  .ja-module .nav {
+  .ja-module .nav,
+  .dropdown-menu .nav {
     margin: 0 0 0 15px;
   }
 
   .ja-module ul li,
-  .ja-module .nav li {
+  .ja-module .nav li,
+  .dropdown-menu .nav li {
     list-style: disc;
     display: list-item;
     float: none;
@@ -170,7 +184,8 @@
   }
 
   .ja-module ul li a,
-  .ja-module .nav li a {
+  .ja-module .nav li a,
+  .dropdown-menu .ja-module li a {
     display: inline;
     padding: 0;
     margin: 0;
@@ -179,19 +194,12 @@
     background: none;
     font: inherit;
     white-space: normal;
-  }
 
-  .ja-module ul li a:hover,
-  .ja-module ul li a:active,
-  .ja-module ul li a:focus,
-  .ja-module ul li a:visited,
-  .ja-module .nav li a:hover,
-  .ja-module .nav li a:active,
-  .ja-module .nav li a:focus,
-  .ja-module .nav li a:visited {
-    background: none;
-    color: inherit;
-    font: inherit;
+    &:hover, &:active, &:focus, &:visited {
+      background: none;
+      color: inherit;
+      font: inherit;
+    }
   }
 
 
