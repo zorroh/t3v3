@@ -22,7 +22,6 @@
   }
 
 
-
   // Menu Grids
   // ----------
   .row-fluid {
@@ -39,7 +38,6 @@
   // The Dropdown
   // ------------
   .mega-dropdown-menu {
-    min-width: 200px;
   }
 
 
@@ -49,20 +47,18 @@
   }
 
   // Group Title
-  .mega-nav .mega-group > a {
+  .mega-nav .mega-group > a,
+  .dropdown-menu .mega-nav .mega-group > a {
     font-size: @T3biggerFontSize;
     font-weight: bold;
     margin-bottom: 5px;
     color: @grayDarker;
-  }
 
-  .mega-nav .mega-group > a:hover,
-  .mega-nav .mega-group > a:active,
-  .mega-nav .mega-group > a:focus {
-    background: inherit;
-    color: @grayDarker;
+    &:hover, &:active, &:focus {
+      background: inherit;
+      color: @grayDarker;
+    }
   }
-
 
   // Group Content
   .mega-group-ct {
@@ -86,24 +82,30 @@
   }
 
   // The Nav
-  .mega-nav {
+  .mega-nav,
+  .dropdown-menu .mega-nav {
   }
 
-  .mega-nav > li {
+  .mega-nav > li,
+  .dropdown-menu .mega-nav > li {
   }
 
-  .mega-nav > li a {
-    padding: 5px (@baseLineHeight / 2);
+  .mega-nav > li a,
+  .dropdown-menu .mega-nav > li a {
+    padding: 5px ( @baseLineHeight / 2 );
   }
 
   // Nav in Group
-  .mega-group > .mega-nav {
+  .mega-group > .mega-nav,
+  .dropdown-menu .mega-group > .mega-nav {
   }
 
-  .mega-group > .mega-nav > li {
+  .mega-group > .mega-nav > li,
+  .dropdown-menu .mega-group > .mega-nav > li {
   }
 
-  .mega-group .mega-nav > li a {
+  .mega-group .mega-nav > li a,
+  .dropdown-menu .mega-group .mega-nav > li a {
   }
 
   // The caret
