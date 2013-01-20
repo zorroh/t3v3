@@ -20,7 +20,7 @@ require_once JPATH_INSTALLATION . '/helpers/database.php';
  */
 class InstallationModelDatabase extends JModelLegacy
 {
-	static protected $userId = 0;
+	static protected $userId = 42;
 
 	/**
 	 * Generates the user ID
