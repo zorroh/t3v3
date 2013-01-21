@@ -1,6 +1,6 @@
-T3v3 - Joomla Responsive Template Framework
+T3v3 - Joomla Responsive Template Framework, built with Bootstrap & LESS
 ==============
-__Built with Bootstrap & LESS, powered by YOU __
+
 
 The 3rd generation of JA T3 Framework - re-written from the scratch to support Bootstrap & LESS.  
 
@@ -22,7 +22,7 @@ Demo (Frontend & Backend)
 - Joomla 3.0 http://demo.t3.joomlart.com/joomla30/
 - Joomla 2.5 http://demo.t3.joomlart.com/joomla25/
 
-Backend Admin Login: username=*demo*, password=*demo*
+Backend Admin Login: username=demo, password=demo
 
 Help & Userguide
 ------------
