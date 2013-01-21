@@ -441,7 +441,7 @@ INSERT INTO `#__categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `level
 (76, 167, 29, 53, 54, 3, 'sample-data-articles/fruit-shop-site/recipes', 'com_content', 'Recipes', 'recipes', '', '<p>Customers and suppliers can post their favorite recipes for fruit here.</p>\r\n<p>A good idea is to promote the use of metadata keywords to make finding other recipes for the same fruit easier.</p>\r\n<p><em>To see this in action, create a user assigned to the customer group and a user assigned to the suppliers group. These users will be able to create their own recipe pages and edit those pages. They will not be able to edit other users\' pages.</em><br /><br /></p>', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 42, '2011-01-01 00:00:01', 42, '2011-12-27 12:18:25', 0, '*', 1),
 (77, 169, 1, 135, 136, 1, 'uncategorised', 'com_users.notes', 'Uncategorised', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"target":"","image":""}', '', '', '{"page_title":"","author":"","robots":""}', 42, '2011-01-01 00:00:01', 0, '2011-01-01 00:00:01', 0, '*', 1),
 (78, 174, 1, 137, 138, 1, 'text-ads', 'com_banners', 'Text Ads', 'text-ads', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 42, '2012-08-22 02:09:45', 0, '0000-00-00 00:00:00', 0, '*', 1),
-(79, 183, 1, 139, 140, 1, 'documentation', 'com_content', 'Documentation', 'documentation', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 42, '2012-08-23 04:09:23', 42, '2012-09-10 09:23:55', 187, '*', 1),
+(79, 183, 1, 139, 140, 1, 'documentation', 'com_content', 'Documentation', 'documentation', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 42, '2012-08-23 04:09:23', 42, '2012-09-10 09:23:55', 188, '*', 1),
 (80, 191, 14, 56, 57, 2, 'sample-data-articles/demo-articles', 'com_content', 'Demo Articles', 'demo-articles', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 42, '2012-09-04 09:21:04', 0, '0000-00-00 00:00:00', 8, '*', 1),
 (81, 202, 1, 141, 144, 1, 'features-demo', 'com_content', 'Features Demo', 'features-demo', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 42, '2012-09-10 09:24:12', 42, '2012-09-11 06:41:46', 0, '*', 1),
 (82, 204, 81, 142, 143, 2, 'features-demo/layouts', 'com_content', 'Layouts', 'layouts', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 42, '2012-09-11 07:14:02', 0, '0000-00-00 00:00:00', 0, '*', 1);
@@ -1730,7 +1730,8 @@ INSERT INTO `#__modules` (`id`, `title`, `note`, `content`, `ordering`, `positio
 (111, 'Position 8', '', 'Curabitur orci hendrerit In rhoncus iaculis ut Quisque convallis sem egestas. Curabitur quis wisi id Fusce neque sem Cras id Curabitur eros. Velit nec tempus ligula sed penatibus dui habitasse tellus Lorem Sed. Elit condimentum dapibus Phasellus Nunc turpis tristique tincidunt ac orci at. Dapibus scelerisque.', 1, 'position-8', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static"}', 0, '*'),
 (114, 'T3v3 Layout', '', '<iframe width="230" height="129" src="http://www.youtube.com/embed/zoiqgS7N21o?list=UUpnsoR6n_Mr_PlNBtwcWG0w" frameborder="0" allowfullscreen></iframe>\r\n<p>T3v3 - Responsive Layout Video</p>', 1, 'sidebar-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_custom', 1, 1, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (112, 'Login Form (2)', '', '', 1, 'login_mainnav', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_login', 1, 1, '{"pretext":"","posttext":"","login":"","logout":"","greeting":"0","name":"0","usesecure":"0","layout":"_:default","moduleclass_sfx":"","cache":"0","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
-(113, 'Sample module', '', '<img src="images/joomlart/demo/banner1.jpg" alt="Sample banner" />', 1, 'mega-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 0, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*');
+(113, 'Sample module', '', '<img src="images/joomlart/demo/banner1.jpg" alt="Sample banner" />', 1, 'mega-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 0, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(116, 'T3v3 Layout', '', '<iframe width="220" height="124" src="http://www.youtube.com/embed/cqfRrWV-IPY" frameborder="0" allowfullscreen></iframe>', 1, 'sidebar-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*');
 
 DROP TABLE IF EXISTS `#__modules_menu`;
 CREATE TABLE `#__modules_menu` (
@@ -2494,7 +2495,8 @@ INSERT INTO `#__modules_menu` (`moduleid`, `menuid`) VALUES
 (114, 517),
 (114, 519),
 (114, 520),
-(114, 521);
+(114, 521),
+(116, 0);
 
 DROP TABLE IF EXISTS `#__newsfeeds`;
 CREATE TABLE `#__newsfeeds` (
@@ -2648,9 +2650,9 @@ CREATE TABLE `#__update_sites` (
 ) ENGINE=MyISAM  COMMENT='Update Sites';
 
 INSERT INTO `#__update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`) VALUES
-(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 1, 1358764850),
-(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1358764850),
-(3, 'JoomlArt Extension Directory', 'collection', 'http://update.joomlart.com/service/tracking/list.xml', 1, 1358764850);
+(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 1, 1358771557),
+(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1358771557),
+(3, 'JoomlArt Extension Directory', 'collection', 'http://update.joomlart.com/service/tracking/list.xml', 1, 1358771557);
 
 DROP TABLE IF EXISTS `#__update_sites_extensions`;
 CREATE TABLE `#__update_sites_extensions` (

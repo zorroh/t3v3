@@ -1185,7 +1185,8 @@ INSERT INTO `#__modules` (`id`, `title`, `note`, `content`, `ordering`, `positio
 (111, 'Position 8', '', 'Curabitur orci hendrerit In rhoncus iaculis ut Quisque convallis sem egestas. Curabitur quis wisi id Fusce neque sem Cras id Curabitur eros. Velit nec tempus ligula sed penatibus dui habitasse tellus Lorem Sed. Elit condimentum dapibus Phasellus Nunc turpis tristique tincidunt ac orci at. Dapibus scelerisque.', 1, 'position-8', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static"}', 0, '*'),
 (114, 'T3v3 Layout', '', '<iframe width="230" height="129" src="http://www.youtube.com/embed/zoiqgS7N21o?list=UUpnsoR6n_Mr_PlNBtwcWG0w" frameborder="0" allowfullscreen></iframe>\r\n<p>T3v3 - Responsive Layout Video</p>', 1, 'sidebar-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_custom', 1, 1, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (112, 'Login Form (2)', '', '', 1, 'login_mainnav', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_login', 1, 1, '{"pretext":"","posttext":"","login":"","logout":"","greeting":"0","name":"0","usesecure":"0","layout":"_:default","moduleclass_sfx":"","cache":"0","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
-(113, 'Sample module', '', '<img src="images/joomlart/demo/banner1.jpg" alt="Sample banner" />', 1, 'mega-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 0, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*');
+(113, 'Sample module', '', '<img src="images/joomlart/demo/banner1.jpg" alt="Sample banner" />', 1, 'mega-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 0, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(116, 'T3v3 Layout', '', '<iframe width="220" height="124" src="http://www.youtube.com/embed/cqfRrWV-IPY" frameborder="0" allowfullscreen></iframe>', 1, 'sidebar-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*');
 
 DROP TABLE IF EXISTS `#__modules_menu`;
 CREATE TABLE `#__modules_menu` (
@@ -1949,7 +1950,8 @@ INSERT INTO `#__modules_menu` (`moduleid`, `menuid`) VALUES
 (114, 517),
 (114, 519),
 (114, 520),
-(114, 521);
+(114, 521),
+(116, 0);
 
 DROP TABLE IF EXISTS `#__newsfeeds`;
 CREATE TABLE `#__newsfeeds` (
@@ -2092,9 +2094,9 @@ CREATE TABLE `#__update_sites` (
 ) ENGINE=MyISAM  COMMENT='Update Sites';
 
 INSERT INTO `#__update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`) VALUES
-(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 1, 1358764850),
-(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1358764850),
-(3, 'JoomlArt Extension Directory', 'collection', 'http://update.joomlart.com/service/tracking/list.xml', 1, 1358764850);
+(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 1, 1358771557),
+(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1358771557),
+(3, 'JoomlArt Extension Directory', 'collection', 'http://update.joomlart.com/service/tracking/list.xml', 1, 1358771557);
 
 DROP TABLE IF EXISTS `#__update_sites_extensions`;
 CREATE TABLE `#__update_sites_extensions` (
