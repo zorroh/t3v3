@@ -1,5 +1,6 @@
-T3v3 Framework
+T3v3 - Joomla Responsive Template Framework
 ==============
+__Built with Bootstrap & LESS, powered by YOU __
 
 The 3rd generation of JA T3 Framework - re-written from the scratch to support Bootstrap & LESS.  
 
