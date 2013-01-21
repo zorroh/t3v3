@@ -60,7 +60,7 @@
       </div>
 		</form>
 		<div class="message-block">
-			<div class="msg"><?php echo JTexT::_('T3V3_LAYOUT_ASK_DEL_LAYOUT_DESC') ?></div>
+			<p class="msg"><?php echo JTexT::_('T3V3_LAYOUT_ASK_DEL_LAYOUT_DESC') ?></p>
 		</div>
 	</div>
 	<div class="modal-footer">
