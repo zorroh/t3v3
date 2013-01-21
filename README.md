@@ -44,10 +44,10 @@ Joomla developers. Feel free to post your comment and or question to our [T3v3 f
 Developer Network Update
 ----------
 - Nov 2011: With the first stable release, JoomlArt officially move monthly template development to T3v3 
-- Dec 2012: A handful independent Joomla team and group started using T3v3 as their codebase for custom work: http://pbwebdev.com/, http://www.qubesys.com/, Themeforest.com authors
+- Dec 2012: A handful independent Joomla developer and group started using T3v3 as their codebase for custom work: http://pbwebdev.com/, http://www.qubesys.com/, Themeforest.com authors
 - Jan 2013: The JoomlaBamboo Club adopted T3v3 http://www.joomlabamboo.com/blog/template-news/zen-to-the-power-of-t3
 
-Copyright and license
+Credits, Copyright and license
 ----------
   * Copyright (C) 2005 - 2013 JoomlArt.com. All rights reserved.
   * Distributed under the GNU General Public License version 2 or later
