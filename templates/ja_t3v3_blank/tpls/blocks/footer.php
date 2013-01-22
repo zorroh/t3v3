@@ -20,7 +20,7 @@ defined('_JEXEC') or die;
   <section class="ja-copyright">
     <div class="container">
       <div class="row">
-        <div class="span8 copyright">
+        <div class="span8 copyright<?php $this->_c('footer')?>">
           <jdoc:include type="modules" name="<?php $this->_p('footer') ?>" />
         </div>
         <div class="span4 poweredby">

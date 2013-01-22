@@ -9,7 +9,7 @@ defined('_JEXEC') or die;
 ?>
 
 <!-- NAV HELPER -->
-<nav class="wrap ja-navhelper">
+<nav class="wrap ja-navhelper<?php $this->_c('navhelper') ?>">
   <div class="container">
     <jdoc:include type="modules" name="<?php $this->_p('navhelper') ?>" />
   </div>

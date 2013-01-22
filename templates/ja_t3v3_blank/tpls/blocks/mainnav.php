@@ -23,7 +23,9 @@ defined('_JEXEC') or die;
       <?php if ($this->getParam('navigation_type') == 'megamenu') : ?>
         <?php $this->megamenu($this->getParam('mm_type', 'mainmenu')) ?>
       <?php else : ?>
-        <jdoc:include type="modules" name="mainnav" style="raw" />
+        <div class="mainnav-wrap <?php $this->_c('navhelper') ?>">
+          <jdoc:include type="modules" name="mainnav" style="raw" />
+        </div>
       <?php endif ?>
   		</div>
     </div>
