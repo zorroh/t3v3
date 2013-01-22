@@ -193,3 +193,20 @@
   padding-right: 70px;
   position: relative;
 }
+
+
+/* Tour icon in tab 
+--------------------*/
+.t3-tour-quickhelp {
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  color: #666;
+  display: none;
+  font-weight: bold;
+  padding: 5px;
+  position: absolute;
+  top: -50000px;
+  line-height: 1;
+  z-index: 2000;
+}

@@ -39,6 +39,10 @@ defined('_JEXEC') or die;
 	</div>
 </div>
 
+<div id="t3-tour-quickhelp" class="t3-tour-quickhelp hide">
+	<div><?php echo JTexT::_('T3V3_TOUR_QUICK_HELP') ?></div>
+</div>
+
 <script type="text/javascript">
 	var T3v3Tours = {};
 
