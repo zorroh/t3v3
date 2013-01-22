@@ -159,6 +159,25 @@
 			if (atip !== undefined) {
 				$('.popover-controls').addClass ('t3-tour-single-tip');
 			}
+
+			this.focusTip();
+		},
+
+		focusTip: function(){
+			// scroll to target
+			$('html, body').stop(true);
+
+			setTimeout(function(){
+				var tipover = $('.t3-tour-popover');
+			
+				tipover.jaload(function(){
+					if(tipover.offset().top < $(window).scrollTop() || (tipover.offset().top + tipover.outerHeight(true)) > ($(window).scrollTop() + $(window).height())){
+						$('html, body').animate({
+							scrollTop: Math.max(0, tipover.offset().top - ($(window).height() - tipover.outerHeight(true))/ 2)
+						});
+					}	
+				});
+			}, 160);
 		},
 
 		hideTip: function () {

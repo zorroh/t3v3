@@ -181,6 +181,7 @@ class T3v3Admin {
 		$jdoc->addScript(T3V3_ADMIN_URL . '/admin/plugins/chosen/chosen.jquery.min.js');	
 		$jdoc->addScript(T3V3_ADMIN_URL . '/includes/depend/js/jadepend.js');
 		$jdoc->addScript(T3V3_ADMIN_URL . '/admin/js/json2.js');
+		$jdoc->addScript(T3V3_ADMIN_URL . '/admin/js/jimgload.js');
 		$jdoc->addScript(T3V3_ADMIN_URL . '/admin/layout/js/layout.js');
 		$jdoc->addScript(T3V3_ADMIN_URL . '/admin/js/t3v3admin.js');
 
