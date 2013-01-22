@@ -66,7 +66,7 @@ defined('_JEXEC') or die;
     <div class="ja-sidebar <?php echo $this->getClass($layout, $col) ?>" <?php echo $this->getData ($layout, $col++) ?>>
       <?php if ($this->countModules($mastcol)) : ?>
       <!-- MASSCOL 1 -->
-      <div class="ja-mastcol ja-mastcol-1">
+      <div class="ja-mastcol ja-mastcol-1<?php $this->_c($mastcol)?>">
         <jdoc:include type="modules" name="<?php $this->_p($mastcol) ?>" style="JAxhtml" />
       </div>
       <!-- //MASSCOL 1 -->
@@ -76,7 +76,7 @@ defined('_JEXEC') or die;
       <div class="row">
         <?php if ($this->countModules($sidebar1)) : ?>
         <!-- SIDEBAR 1 -->
-        <div class="ja-sidebar ja-sidebar-1 <?php echo $this->getClass($layout, $col) ?>" <?php echo $this->getData ($layout, $col++) ?>>
+        <div class="ja-sidebar ja-sidebar-1 <?php echo $this->getClass($layout, $col) ?><?php $this->_c($sidebar1)?>" <?php echo $this->getData ($layout, $col++) ?>>
           <jdoc:include type="modules" name="<?php $this->_p($sidebar1) ?>" style="JAxhtml" />
         </div>
         <!-- //SIDEBAR 1 -->
@@ -84,7 +84,7 @@ defined('_JEXEC') or die;
         
         <?php if ($this->countModules($sidebar2)) : ?>
         <!-- SIDEBAR 2 -->
-        <div class="ja-sidebar ja-sidebar-2 <?php echo $this->getClass($layout, $col) ?>" <?php echo $this->getData ($layout, $col++) ?>>
+        <div class="ja-sidebar ja-sidebar-2 <?php echo $this->getClass($layout, $col) ?><?php $this->_c($sidebar2)?>" <?php echo $this->getData ($layout, $col++) ?>>
           <jdoc:include type="modules" name="<?php $this->_p($sidebar2) ?>" style="JAxhtml" />
         </div>
         <!-- //SIDEBAR 2 -->
