@@ -341,6 +341,17 @@ defined('_JEXEC') or die;
 			dismiss : <?php echo json_encode(JText::_('T3V3_TOUR_GUIDE_DISMISS_1')) ?>,
 			beforeShow : function() {jQuery('#jform_params_mm_enable1').prop('checked', true).trigger('update').trigger('change')}
 		},
+		{
+			id		: '29',
+			element : "#jform_params_navigation_type_chzn",
+			position: "bottom",
+			highlighter: "", 
+			monitor	: "mouseover",
+			title	: <?php echo json_encode(JText::_('T3V3_TOUR_GUIDE_29_TITLE')) ?>,
+			text    : <?php echo json_encode(JText::_('T3V3_TOUR_GUIDE_29_CONTENT')) ?>,
+			dismiss : <?php echo json_encode(JText::_('T3V3_TOUR_GUIDE_DISMISS_1')) ?>,
+			beforeShow : function() {jQuery('#jform_params_mm_enable1').prop('checked', true).trigger('update').trigger('change')}
+		},
 	];
 
 
@@ -367,14 +378,9 @@ defined('_JEXEC') or die;
 		},
 		{
 			when: function() {return jQuery('.t3-admin-nav ul li:eq(4)').hasClass('active');},
-			tour: ["26", "27", "28"],
+			tour: ["26", "29", "27", "28"],
 			/*intro	: <?php echo json_encode(JText::_('T3V3_TOUR_INTRO_TOUR4')) ?>*/
 		},
-		{
-			when: function() {return jQuery('.t3-admin-nav ul li:eq(5)').hasClass('active');},
-			tour: ["20"],
-			/*intro	: <?php echo json_encode(JText::_('T3V3_TOUR_INTRO_TOUR5')) ?>*/
-		}
 	];
 
 
