@@ -250,6 +250,10 @@
 		},
 		
 		showControls: function(firstTour){
+			if(this.options.onShow && $.isFunction(this.options.onShow)){
+				this.options.onShow(this);
+			}
+
 			if (this.moveControls === undefined) {
 				this.moveControls = true;
 				$('#t3-tour-overlay').appendTo ($('body'));

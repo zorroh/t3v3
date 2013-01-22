@@ -310,7 +310,7 @@ defined('_JEXEC') or die;
 		},
 		{
 			id		: '26',
-			element : "#jform_params_mm_enable label:first",
+			element : "#jform_params_navigation_trigger_chzn",
 			position: "bottom",
 			highlighter: "", 
 			monitor	: "mouseover",
@@ -377,9 +377,17 @@ defined('_JEXEC') or die;
 		}
 	];
 
+
 	// init tours
 	jQuery(document).ready(function($) {
 		if(!T3v3Tours.init){
+			T3v3Tours.onShow = function(){
+				var fullscreen = $('.t3-fullscreen-full');
+				if(fullscreen.length){
+					fullscreen.trigger('click');
+				}
+			};
+
 			$.each(T3v3Tours.tours, function(idx, tour){
 				tour.title = tour.title.replace(/T3V3_ADMIN_URL/g, T3V3Admin.t3adminurl);
 				tour.text = tour.text.replace(/T3V3_ADMIN_URL/g, T3V3Admin.t3adminurl);
@@ -394,6 +402,5 @@ defined('_JEXEC') or die;
 				$(document.body).t3tour('defaultTour');
 			}
 		});
-
 	});
 </script>

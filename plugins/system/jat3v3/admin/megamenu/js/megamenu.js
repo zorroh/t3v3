@@ -320,14 +320,14 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 
 	// toggle screen
 	actions.toggleScreen = function () {
-		if ($('.toolbox-togglescreen').hasClass('.toolbox-togglescreen-full')) {
+		if ($('.toolbox-togglescreen').hasClass('t3-fullscreen-full')) {
 			$('.subhead-collapse').removeClass ('subhead-fixed');
 			$('#megamenu-admin').closest('.controls').removeClass ('controlbox-fixed');			
-			$('.toolbox-togglescreen').removeClass ('.toolbox-togglescreen-full').find('i').removeClass().addClass(actions.datas.iconfull);
+			$('.toolbox-togglescreen').removeClass ('t3-fullscreen-full').find('i').removeClass().addClass(actions.datas.iconfull);
 		} else {
 			$('.subhead-collapse').addClass ('subhead-fixed');
 			$('#megamenu-admin').closest('.controls').addClass ('controlbox-fixed');
-			$('.toolbox-togglescreen').addClass ('.toolbox-togglescreen-full').find('i').removeClass().addClass(actions.datas.iconsmall);
+			$('.toolbox-togglescreen').addClass ('t3-fullscreen-full').find('i').removeClass().addClass(actions.datas.iconsmall);
 		}
 	}
 
