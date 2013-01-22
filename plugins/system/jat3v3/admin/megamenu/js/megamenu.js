@@ -10,7 +10,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 
 		var options = $.extend(defaultOptions, options);
 		megamenu = $(this);
-		nav_items = megamenu.find('ul[class*="level"]>li>a');
+		nav_items = megamenu.find('ul[class*="level"]>li>:first-child');
 		nav_subs = megamenu.find('.nav-child');
 		nav_cols = megamenu.find('[class*="span"]');
 		
@@ -399,7 +399,7 @@ var T3V3AdminMegamenu = window.T3V3AdminMegamenu || {};
 	}
 
 	toolbox_type = function () {
-		return currentSelected[0].tagName == 'A' ? 'item' : (currentSelected.hasClass ('nav-child') ? 'sub' : 'col');
+		return currentSelected.hasClass ('nav-child') ? 'sub' : (currentSelected[0].tagName == 'DIV' ? 'col':'item');
 	}
 
 	hide_toolbox = function (show_intro) {

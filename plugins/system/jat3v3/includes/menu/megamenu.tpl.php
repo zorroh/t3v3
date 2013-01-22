@@ -122,19 +122,24 @@ class T3V3MenuMegamenuTpl {
 		}
 
 		$flink = $item->link;
-		switch ($item->type)
-		{
-			case 'separator':
-				return self::item_separator ($vars);
-				break;
-			case 'component':
-				return self::item_component ($vars);
-				break;
-			case 'url':
-			default:
-				return self::item_url ($vars);
+		if ($item->group) {
+			return self::item_grouptitle ($vars);
+		} else {
+			switch ($item->type)
+			{
+				case 'separator':
+					return self::item_separator ($vars);
+					break;
+				case 'component':
+					return self::item_component ($vars);
+					break;
+				case 'url':
+				default:
+					return self::item_url ($vars);
+			}
 		}
 	}
+
 	static function item_url ($vars) {
 		$item = $vars['item'];
 		// Note. It is important to remove spaces between elements.
@@ -182,6 +187,21 @@ class T3V3MenuMegamenuTpl {
 
 		return $link;
 	}
+	static function item_grouptitle ($vars) {
+		$item = $vars['item'];
+		// Note. It is important to remove spaces between elements.
+		$title = $item->anchor_title ? 'title="'.$item->anchor_title.'" ' : '';
+		if ($item->menu_image) {
+			$item->params->get('menu_text', 1 ) ?
+			$linktype = '<img src="'.$item->menu_image.'" alt="'.$item->title.'" /><span class="image-title">'.$item->title.'</span> ' :
+			$linktype = '<img src="'.$item->menu_image.'" alt="'.$item->title.'" />';
+		}
+		else { 
+			$linktype = $item->title;
+		}
+
+		return "<span class=\"mega-group-title\">$title $linktype</span>";
+	}	
 	static function item_separator ($vars) {
 		$item = $vars['item'];
 		// Note. It is important to remove spaces between elements.

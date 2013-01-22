@@ -1,9 +1,9 @@
-.ja-megamenu .mega-inner{padding:20px}.ja-megamenu .row-fluid+.row-fluid{border-top:1px solid #ddd}.ja-megamenu .mega-nav .mega-group > a,
-.ja-megamenu .dropdown-menu .mega-nav .mega-group>a{font-size:16px;font-weight:bold;margin-bottom:5px;color:#222}.ja-megamenu .mega-nav .mega-group > a:hover,
-.ja-megamenu .mega-nav .mega-group > a:active,
-.ja-megamenu .mega-nav .mega-group > a:focus,
-.ja-megamenu .dropdown-menu .mega-nav .mega-group > a:hover,
-.ja-megamenu .dropdown-menu .mega-nav .mega-group > a:active,
+.ja-megamenu .mega-inner{padding:20px}.ja-megamenu .row-fluid+.row-fluid{border-top:1px solid #ddd}.ja-megamenu .mega-nav .mega-group > span,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group>a{font-size:16px;font-weight:bold;margin-bottom:5px;color:#222}.ja-megamenu .mega-nav .mega-group > span:hover,
+.ja-megamenu .mega-nav .mega-group > span:active,
+.ja-megamenu .mega-nav .mega-group > span:focus,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > span:hover,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > span:active,
 .ja-megamenu .dropdown-menu .mega-nav .mega-group>a:focus{background:inherit;color:#222}.ja-megamenu .mega-nav > li a,
 .ja-megamenu .dropdown-menu .mega-nav > li
 a{padding:5px
