@@ -57,18 +57,18 @@
 .ja-megamenu .mega-group:after {
   clear: both;
 }
-.ja-megamenu .mega-nav .mega-group > a,
-.ja-megamenu .dropdown-menu .mega-nav .mega-group > a {
+.ja-megamenu .mega-nav .mega-group > span,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > span {
   font-weight: bold;
   padding: 0;
   margin: 0;
 }
-.ja-megamenu .mega-nav .mega-group > a:hover,
-.ja-megamenu .dropdown-menu .mega-nav .mega-group > a:hover,
-.ja-megamenu .mega-nav .mega-group > a:active,
-.ja-megamenu .dropdown-menu .mega-nav .mega-group > a:active,
-.ja-megamenu .mega-nav .mega-group > a:focus,
-.ja-megamenu .dropdown-menu .mega-nav .mega-group > a:focus {
+.ja-megamenu .mega-nav .mega-group > span:hover,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > span:hover,
+.ja-megamenu .mega-nav .mega-group > span:active,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > span:active,
+.ja-megamenu .mega-nav .mega-group > span:focus,
+.ja-megamenu .dropdown-menu .mega-nav .mega-group > span:focus {
   background: inherit;
   color: inherit;
 }
